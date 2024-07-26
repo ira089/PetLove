@@ -1,13 +1,25 @@
 {
   "files": {
-    "main.css": "/PetLove/static/css/main.f69ab608.css",
-    "main.js": "/PetLove/static/js/main.ded451d9.js",
+    "main.css": "/PetLove/static/css/main.5d105fba.css",
+    "main.js": "/PetLove/static/js/main.3ddf2c5d.js",
+    "static/media/Manrope-Medium.ttf": "/PetLove/static/media/Manrope-Medium.101a50f661e51b761ca1.ttf",
+    "static/media/Manrope-Bold.ttf": "/PetLove/static/media/Manrope-Bold.5b3c8d2d19fbbcbadad6.ttf",
+    "static/media/Manrope-Semibold.ttf": "/PetLove/static/media/Manrope-Semibold.6dbafb64c6f4e28f8cc1.ttf",
+    "static/media/Manrope-ExtraBold.ttf": "/PetLove/static/media/Manrope-ExtraBold.f51189cd27d0d0318509.ttf",
+    "static/media/Manrope-Bold.woff": "/PetLove/static/media/Manrope-Bold.b6c4aa0b0b711186d005.woff",
+    "static/media/Manrope-Medium.woff": "/PetLove/static/media/Manrope-Medium.4e55dc20921a95ef83f4.woff",
+    "static/media/Manrope-Semibold.woff": "/PetLove/static/media/Manrope-Semibold.f4e54434d986b1395b3b.woff",
+    "static/media/Manrope-ExtraBold.woff": "/PetLove/static/media/Manrope-ExtraBold.af754df8afbc222b77e8.woff",
+    "static/media/Manrope-Bold.woff2": "/PetLove/static/media/Manrope-Bold.1fc53579e1040cbf987d.woff2",
+    "static/media/Manrope-Medium.woff2": "/PetLove/static/media/Manrope-Medium.9cccfee0f8d3153ae547.woff2",
+    "static/media/Manrope-Semibold.woff2": "/PetLove/static/media/Manrope-Semibold.0d44fe833dd4c7229544.woff2",
+    "static/media/Manrope-ExtraBold.woff2": "/PetLove/static/media/Manrope-ExtraBold.a90ad203eaed8bfd3323.woff2",
     "index.html": "/PetLove/index.html",
-    "main.f69ab608.css.map": "/PetLove/static/css/main.f69ab608.css.map",
-    "main.ded451d9.js.map": "/PetLove/static/js/main.ded451d9.js.map"
+    "main.5d105fba.css.map": "/PetLove/static/css/main.5d105fba.css.map",
+    "main.3ddf2c5d.js.map": "/PetLove/static/js/main.3ddf2c5d.js.map"
   },
   "entrypoints": [
-    "static/css/main.f69ab608.css",
-    "static/js/main.ded451d9.js"
+    "static/css/main.5d105fba.css",
+    "static/js/main.3ddf2c5d.js"
   ]
 }
