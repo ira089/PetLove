@@ -8,6 +8,9 @@ const Layout = () => {
   return (
     <div>
       {/* <RegisterForm/> */}
+      <p className={styles.title}>fgfhg</p>
+      <p className={styles.titleQ}>bshdkshknc</p>
+
       <Login/>
        <Button className={styles.wrap} type="primary">lau</Button>
     </div>

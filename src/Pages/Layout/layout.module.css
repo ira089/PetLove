@@ -1,3 +1,11 @@
 .wrap {
     background-color: aqua;
 }
+
+.title {
+  font-weight: 500; 
+}
+
+.titleQ {
+font-weight: 800;
+}

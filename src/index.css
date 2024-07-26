@@ -1,12 +1,57 @@
 @import-normalize; /* bring in normalize.css styles */
 
+@font-face {
+  font-family: 'Manrope' ;
+  src: url('./assets/fonts/Manrope-Bold/Manrope-Bold.woff2'),
+  url('./assets/fonts/Manrope-Bold/Manrope-Bold.woff'),
+  url('./assets/fonts/Manrope-Bold/Manrope-Bold.ttf');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Manrope' ;
+  src: url('./assets/fonts/Manrope-ExtraBold/Manrope-ExtraBold.woff2'),
+  url('./assets/fonts/Manrope-ExtraBold/Manrope-ExtraBold.woff'),
+  url('./assets/fonts/Manrope-ExtraBold/Manrope-ExtraBold.ttf');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Manrope' ;
+  src: url('./assets/fonts/Manrope-Medium/Manrope-Medium.woff2'),
+  url('./assets/fonts/Manrope-Medium/Manrope-Medium.woff'),
+  url('./assets/fonts/Manrope-Medium/Manrope-Medium.ttf');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Manrope' ;
+  src: url('./assets/fonts/Manrope-Semibold/Manrope-Semibold.woff2'),
+  url('./assets/fonts/Manrope-Semibold/Manrope-Semibold.woff'),
+  url('./assets/fonts/Manrope-Semibold/Manrope-Semibold.ttf');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Manrope', Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; */
 }
 
 code {

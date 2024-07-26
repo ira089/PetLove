@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Manrope ';
+    src: local('Manrope  Extra Bold'), local('Manrope--Extra-Bold'),
+        url('Manrope-ExtraBold.woff2') format('woff2'),
+        url('Manrope-ExtraBold.woff') format('woff'),
+        url('Manrope-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+  }
