@@ -1,0 +1,50 @@
+.container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   padding: 10px 20px;
+
+}
+
+.wrapText {
+    background: #f6b83d;
+    border-radius: 30px;
+    width: 295px;
+height: 390px;
+padding: 18px 20px 50px 20px;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 96%;
+    letter-spacing: -0.03em;
+    color: #fff;
+    margin-top: 60px;
+    margin-bottom: 24px;
+}
+
+.title span {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.text {
+    font-size: 14px;
+    line-height: 129%;
+    letter-spacing: -0.02em;
+    color: #fff; 
+    margin: 0;
+}
+
+.image {
+    border-radius: 30px;
+    width: 335px;
+    height: 402px; 
+    background-image: url("../../assets/img/kissDog.svg");
+     background-repeat: no-repeat;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     background-size: cover;
+     background-position: center
+}

@@ -4,6 +4,10 @@
     align-items: center;
 }
 
+.link {
+    text-decoration: none;
+  }
+
 .textLogo {
     font-weight: 700;
     font-size: 20px;
