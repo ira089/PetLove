@@ -1,7 +1,9 @@
 {
   "files": {
-    "main.css": "/PetLove/static/css/main.5d105fba.css",
-    "main.js": "/PetLove/static/js/main.3ddf2c5d.js",
+    "main.css": "/PetLove/static/css/main.c39f7aa8.css",
+    "main.js": "/PetLove/static/js/main.44403de2.js",
+    "static/media/kissDog.svg": "/PetLove/static/media/kissDog.0b6375a62bb40c66fae9.svg",
+    "static/media/mainsvg .svg": "/PetLove/static/media/mainsvg .385c136b458872b4f06d.svg",
     "static/media/Manrope-Medium.ttf": "/PetLove/static/media/Manrope-Medium.101a50f661e51b761ca1.ttf",
     "static/media/Manrope-Bold.ttf": "/PetLove/static/media/Manrope-Bold.5b3c8d2d19fbbcbadad6.ttf",
     "static/media/Manrope-Semibold.ttf": "/PetLove/static/media/Manrope-Semibold.6dbafb64c6f4e28f8cc1.ttf",
@@ -14,12 +16,13 @@
     "static/media/Manrope-Medium.woff2": "/PetLove/static/media/Manrope-Medium.9cccfee0f8d3153ae547.woff2",
     "static/media/Manrope-Semibold.woff2": "/PetLove/static/media/Manrope-Semibold.0d44fe833dd4c7229544.woff2",
     "static/media/Manrope-ExtraBold.woff2": "/PetLove/static/media/Manrope-ExtraBold.a90ad203eaed8bfd3323.woff2",
+    "static/media/icons.svg": "/PetLove/static/media/icons.4e7b040548e8646d2e63f811f62cb5f6.svg",
     "index.html": "/PetLove/index.html",
-    "main.5d105fba.css.map": "/PetLove/static/css/main.5d105fba.css.map",
-    "main.3ddf2c5d.js.map": "/PetLove/static/js/main.3ddf2c5d.js.map"
+    "main.c39f7aa8.css.map": "/PetLove/static/css/main.c39f7aa8.css.map",
+    "main.44403de2.js.map": "/PetLove/static/js/main.44403de2.js.map"
   },
   "entrypoints": [
-    "static/css/main.5d105fba.css",
-    "static/js/main.3ddf2c5d.js"
+    "static/css/main.c39f7aa8.css",
+    "static/js/main.44403de2.js"
   ]
 }
