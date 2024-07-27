@@ -1,20 +1,27 @@
 import React from 'react';
-import { Button } from 'antd';
+import { Suspense } from 'react';
+import { Outlet } from 'react-router-dom';
 import styles from './layout.module.css';
-// import RegisterForm from 'components/RegisterForm/RegisterForm';
-import Login from 'Pages/Login/Login';
+import Header from 'components/Header/Header';
+import Loader from 'components/Loader/Loader';
+
+
 
 const Layout = () => {
   return (
-    <div>
-      {/* <RegisterForm/> */}
-      <p className={styles.title}>fgfhg</p>
-      <p className={styles.titleQ}>bshdkshknc</p>
-
-      <Login/>
-       <Button className={styles.wrap} type="primary">lau</Button>
+    <div className={styles.container}>
+      
+         <Header />
+      
+      <Suspense fallback={<Loader/>}>
+        <main>
+           <Outlet />
+        </main>
+      </Suspense>
     </div>
-    // classNames
+
+    
+    
   )
 }
 

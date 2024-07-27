@@ -1,0 +1,12 @@
+.wrapHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.textLogo {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: -0.04em;
+}
