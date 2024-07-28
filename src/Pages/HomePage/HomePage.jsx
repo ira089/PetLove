@@ -14,7 +14,7 @@ const HomePage = () => {
              </p>
       </div>
       <div className={styles.image}>
-          <img src="" alt="" />
+          
        </div>
 
     </section>

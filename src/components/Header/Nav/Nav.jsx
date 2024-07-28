@@ -6,19 +6,19 @@ import styles from '../heder.module.css';
 const Nav = () => {
   
   return (
-    <nav className={styles.nav}>
+    
       <ul className={styles.navList}>
          <li className={styles.navItem}>
-            <NavLink className={styles.link} to="/news">News</NavLink>
+            <NavLink className={styles.navLink} to="/news">News</NavLink>
          </li>
          <li className={styles.navItem}>
-            <NavLink className={styles.link} to="/notices">Find pet</NavLink>
+            <NavLink className={styles.navLink} to="/notices">Find pet</NavLink>
          </li>
          <li className={styles.navItem}>
-            <NavLink className={styles.link} to="/friends">Our friends</NavLink>
+            <NavLink className={styles.navLink} to="/friends">Our friends</NavLink>
          </li>
       </ul>
-    </nav>
+    
   );
 };
 

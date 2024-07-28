@@ -1,0 +1,31 @@
+.burger {
+    position: fixed;
+    top: -28px;
+    right: -268px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 280px;
+    width: 65%;
+    max-width: 218px;
+    height: 110vh;
+    background: #f6b83d;
+    transition: transform 0.3s linear;
+    border: 1px solid red;
+    padding: 20px 20px 40px 20px ;
+  }
+
+  .active {
+    transform: translateX(-80%);
+    position: absolute;
+  }
+
+  .btnClose {
+    position: absolute;
+    top: 28px;
+    right: 20px;
+    background-color: transparent;
+    padding: 0;
+    border: none;
+}
