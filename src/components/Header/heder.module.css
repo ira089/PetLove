@@ -2,10 +2,39 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .link {
     text-decoration: none;
+  }
+
+  .burger {
+    position: fixed;
+    top: -28px;
+    right: -238px;
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    max-width: 218px;
+    height: 136vh;
+    background-color: #fff;
+    transition: transform 0.3s linear;
+    border: 1px solid red;
+    z-index: 5;
+  }
+
+  .active {
+    transform: translateX(-100%);
+    position: absolute;
+  }
+
+  .burgerBtn {
+    display: block;
+    margin-left: auto;
+    background-color: transparent;
+    padding: 0;
+    border: 0;
   }
 
 .textLogo {
@@ -14,3 +43,67 @@
     line-height: 100%;
     letter-spacing: -0.04em;
 }
+
+.navList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    list-style-type: none;
+}
+
+.navItem {
+    border: 1px solid rgba(38, 38, 38, 0.15);
+    border-radius: 30px;
+    padding: 15px 31px;
+    width: 119px;
+    height: 48px;
+font-size: 14px;
+line-height: 129%;
+letter-spacing: -0.03em;
+color: #262626;
+}
+
+.navItem .link:global(.active) {
+    border: 1px solid #f6b83d;
+  }
+
+  .authNav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .linkLogin {
+    border-radius: 30px;
+padding: 12px 67px;
+width: 178px;
+height: 42px;
+background: #f6b83d;
+font-weight: 700;
+font-size: 14px;
+line-height: 129%;
+letter-spacing: -0.03em;
+text-transform: uppercase;
+color: #fff;
+text-decoration: none;
+  }
+
+  .linkReg {
+    border-radius: 30px;
+padding: 12px 41px;
+width: 178px;
+height: 42px;
+background: #fff4df;
+font-family: var(--font-family);
+font-weight: 700;
+font-size: 14px;
+line-height: 129%;
+letter-spacing: -0.03em;
+text-transform: uppercase;
+color: #f6b83d;
+text-decoration: none;
+  }
