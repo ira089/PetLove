@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import Logo from './Logo/Logo'
 import UserBar from './UserBar/UserBar';
 import styles from './heder.module.css';
@@ -12,6 +12,7 @@ import BurgerMenu from './BurgerMenu/BurgerMenu';
 const Header = ({color, fill, background}) => {
 const [open, setOpen] = useState(false);
 const isOpen = () => setOpen(!open);
+const location = useLocation();
 
   return (
     <header className={styles.wrapHeader}>
@@ -22,16 +23,16 @@ const isOpen = () => setOpen(!open);
            <NavLink className={styles.link}  to="/profile">
                <UserBar background={background} fill={fill}/>
             </NavLink>
-            <BurgerMenu isOpen= {isOpen} open={open}/>
-            {/* <nav className={classNames(styles.burger, { [styles.active]: open })}>
-                <button className={styles.btnClose} onClick={() => setOpen(false)}>
-                    <Icon width={32} height={32} name={"icon-cross-small"}  fillColor={'#262626'} stroke={'none'}/>
-                 </button>
-                <Nav/>
-                <AuthNav/>
-             </nav> */}
+            {location.pathname === '/' ? 
+             (<BurgerMenu isOpen= {isOpen} open={open} background='#fff' color='#262626'
+              borderColor='rgba(38, 38, 38, 0.15)' borderColorHover='#f6b83d'  borderColorLog='transparent'/>) :
+             (<BurgerMenu isOpen= {isOpen} open={open} background='#f6b83d' color='#fff'
+              borderColor='rgba(255, 255, 255, 0.15)' borderColorHover='rgba(255, 255, 255, 0.5)' borderColorLog='rgba(255, 255, 255, 0.5)'/>)}
+            
              <button className={styles.burgerBtn} onClick={isOpen}> 
-                <Icon   width={32} height={32} name={"icon-menu-01"}  fillColor={'#fff'} stroke='none'/>  
+             {location.pathname === '/' ? 
+                <Icon   width={32} height={32} name={"icon-menu-01"}  />  :
+                <Icon   width={32} height={32} name={"icon-menu-03"} />}
               </button>
 
         </div>
