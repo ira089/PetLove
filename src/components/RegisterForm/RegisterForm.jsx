@@ -1,81 +1,36 @@
+import PetBlock from 'components/PetBlock/PetBlock'
 import React from 'react';
-import { Button, Checkbox, Form, Input } from 'antd';
-
+import { NavLink } from 'react-router-dom';
+import Cat1M from '../../assets/img/cat1M.png';
+import Cat1D from '../../assets/img/cat1D.png';
+import Cat1P from '../../assets/img/cat1P.png';
+import Cat2D from '../../assets/img/cat2D.png';
+import Cat2M from '../../assets/img/cat2M.png';
+import Cat2P from '../../assets/img/cat2P.png';
+import styles from './registerForm.module.css';
 
 const RegisterForm = () => {
-    const onFinish = (values) => {
-        console.log('Success:', values);
-      };
-      const onFinishFailed = (errorInfo) => {
-        console.log('Failed:', errorInfo);
-      };
   return (
-    <Form
-    name="basic"
-    labelCol={{
-      span: 8,
-    }}
-    wrapperCol={{
-      span: 16,
-    }}
-    style={{
-      maxWidth: 600,
-    }}
-    initialValues={{
-      remember: true,
-    }}
-    onFinish={onFinish}
-    onFinishFailed={onFinishFailed}
-    autoComplete="off"
-  >
-    <Form.Item
-      label="Username"
-      name="username"
-      rules={[
-        {
-          required: true,
-          message: 'Please input your username!',
-        },
-      ]}
-    >
-      <Input />
-    </Form.Item>
+    <div className={styles.wrap}>
+      <PetBlock
+      mobileImage1x={Cat1M}
+       mobileImage2x={Cat2M}
+       tabletImage1x={Cat1P}
+      tabletImage2x={Cat2P}
+       desktopImage1x={Cat1D}
+        desktopImage2x={Cat2D}
+      />
+      <div className={styles.wrapForma}>
+         <h3 className={styles.title}>Registration</h3>
+         <p className={styles.text}>Thank you for your interest in our platform.</p>
+         <form></form>
+         <div className={styles.linkWrap}>
+           <p className={styles.linkText}>Already have an account?</p>
+           <NavLink className={styles.link} to="/login">Login</NavLink>
 
-    <Form.Item
-      label="Password"
-      name="password"
-      rules={[
-        {
-          required: true,
-          message: 'Please input your password!',
-        },
-      ]}
-    >
-      <Input.Password />
-    </Form.Item>
-
-    <Form.Item
-      name="remember"
-      valuePropName="checked"
-      wrapperCol={{
-        offset: 8,
-        span: 16,
-      }}
-    >
-      <Checkbox>Remember me</Checkbox>
-    </Form.Item>
-
-    <Form.Item
-      wrapperCol={{
-        offset: 8,
-        span: 16,
-      }}
-    >
-      <Button type="primary" htmlType="submit">
-        Submit
-      </Button>
-    </Form.Item>
-  </Form>
+         </div>
+      </div >
+    </div>
   )
 }
 

@@ -32,6 +32,7 @@
     transition: transform 0.3s linear;
     border: 1px solid red;
     padding: 20px 20px 40px 20px ;
+    
     /* z-index: 5; */
   }
 
@@ -46,6 +47,7 @@
     background-color: transparent;
     padding: 0;
     border: 0;
+    cursor: pointer;
   }
 
   .btnClose {
@@ -77,7 +79,7 @@
 }
 
 .navItem {
-    /* border: 1px solid rgba(38, 38, 38, 0.15); */
+    border: 1px solid ;
     border-radius: 30px;
     padding: 0px 15px;
     width: 119px;
@@ -97,15 +99,6 @@ align-items: center;
     /* color: #262626; */
 
 }
-
-.navItem:hover {
-    /* border: 1px solid #f6b83d;  */
-    
-} 
-
-/* .navItem .link:global(.active) {
-    border: 1px solid #f6b83d;
-  } */
 
   .authNav {
     display: flex;

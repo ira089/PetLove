@@ -1,0 +1,13 @@
+.wrapImg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img {
+  border-radius: 30px;
+  width: 335px;
+  height: 280px;
+  object-fit: cover;
+  object-position: center;
+}
