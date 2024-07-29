@@ -20,9 +20,10 @@ const location = useLocation();
            <Logo color= {color} fill={fill}/>
         </NavLink>
         <div className={styles.rightMenu}>
-           <NavLink className={styles.link}  to="/profile">
+          {location.pathname !== '/register' && (<NavLink className={styles.link}  to="/profile">
                <UserBar background={background} fill={fill}/>
-            </NavLink>
+            </NavLink>)}
+           
             {location.pathname === '/' ? 
              (<BurgerMenu isOpen= {isOpen} open={open} background='#fff' color='#262626'
               borderColor='rgba(38, 38, 38, 0.15)' borderColorHover='#f6b83d'  borderColorLog='transparent'/>) :

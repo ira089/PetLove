@@ -8,6 +8,7 @@ import Cat2D from '../../assets/img/cat2D.png';
 import Cat2M from '../../assets/img/cat2M.png';
 import Cat2P from '../../assets/img/cat2P.png';
 import styles from './registerForm.module.css';
+import FormaReactReg from 'components/FormaReact/FormaReactReg';
 
 const RegisterForm = () => {
   return (
@@ -23,7 +24,7 @@ const RegisterForm = () => {
       <div className={styles.wrapForma}>
          <h3 className={styles.title}>Registration</h3>
          <p className={styles.text}>Thank you for your interest in our platform.</p>
-         <form></form>
+         <FormaReactReg/>
          <div className={styles.linkWrap}>
            <p className={styles.linkText}>Already have an account?</p>
            <NavLink className={styles.link} to="/login">Login</NavLink>
