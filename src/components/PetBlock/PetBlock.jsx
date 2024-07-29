@@ -7,21 +7,21 @@ const PetBlock = ({mobileImage1x, mobileImage2x, tabletImage1x,
     <div className={styles.wrapImg}>
         <picture className={styles.img}>
         <source
-          media="(max-width: 375px)"
+          media="(min-width: 320px)"
           srcSet={`${mobileImage1x} 1x, ${mobileImage2x} 2x`}
         />
 
         <source
-          media="(max-width: 768px)"
+          media="(min-width: 768px)"
           srcSet={`${tabletImage1x} 1x, ${tabletImage2x} 2x`}
         />
 
         <source
-          media="(max-width: 1280px)"
+          media="(min-width: 1280px)"
           srcSet={`${desktopImage1x} 1x, ${desktopImage2x} 2x`}
         />
 
-<img src={desktopImage1x} srcSet={`${desktopImage1x} 1x, ${desktopImage2x} 2x`} alt="pet" />
+<img className={styles.img} src={desktopImage1x} srcSet={`${desktopImage1x} 1x, ${desktopImage2x} 2x`} alt="pet" />
       </picture>
 
     </div>

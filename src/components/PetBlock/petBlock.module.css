@@ -11,3 +11,18 @@
   object-fit: cover;
   object-position: center;
 }
+
+@media (min-width: 768px) {
+  .img {
+    border-radius: 60px;
+    width: 704px;
+    height: 302px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .img {
+    width: 592px;
+    height: 654px;
+  }
+}
