@@ -1,7 +1,7 @@
 import * as yup from 'yup';
 
 export const registerSchema = yup.object().shape({
-  firstName: yup.string().required('Name is required'),
+  name: yup.string().required('Name is required'),
 
   email: yup
     .string()
@@ -16,7 +16,7 @@ export const registerSchema = yup.object().shape({
     .min(7, 'Password must be at least 7 characters')
     .required('Password is required'),
 
-  confirmPassword: yup
+  confirmpassword: yup
     .string()
     .oneOf([yup.ref('password'), null], 'Passwords must match')
     .required('Confirm password is required'),
