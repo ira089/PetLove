@@ -1,36 +1,36 @@
 .form {
-    margin-bottom: 12px;
+  margin-bottom: 12px;
 }
 .inputWrap {
-position: relative;
-margin-bottom: 26px;
-width: 100%;
-margin-bottom: 10px;
+  position: relative;
+  margin-bottom: 26px;
+  width: 100%;
+  margin-bottom: 10px;
 }
 
-.inputWrap label{
-display: block;
-position: relative;
+.inputWrap label {
+  display: block;
+  position: relative;
 }
 
 .inputWrap input {
-   width: 100%;
-   border: 1px solid rgba(38, 38, 38, 0.15);
-border-radius: 30px;
-padding: 12px ;
-/* width: 295px; */
-height: 42px;
-font-size: 14px;
-line-height: 129%;
-letter-spacing: -0.03em;
-color: rgba(38, 38, 38, 0.5);
-box-sizing: border-box;
-cursor: pointer;
-outline: none;
+  width: 100%;
+  border: 1px solid rgba(38, 38, 38, 0.15);
+  border-radius: 30px;
+  padding: 12px;
+  /* width: 295px; */
+  height: 42px;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: rgba(38, 38, 38, 0.5);
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
 }
 
 .inputWrap input:focus {
-    border: 1px solid #f6b83d;
+  border: 1px solid #f6b83d;
 }
 
 .inputWrap span {
@@ -39,24 +39,29 @@ outline: none;
   top: 100%;
   padding-left: 6px;
   color: #ef2447;
-  font-size: 8px;
-  
+  font-size: 10px;
+font-size: 8px;
+line-height: 120%;
+letter-spacing: -0.03em;
 }
 
 .btn {
-    margin-top: 14px;
+  margin-top: 14px;
 }
-
+.btnEyeWrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(-50%, 50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 .btnEye {
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-50%, 50%);
-    /* opacity: 0.4; */
-    background-color: transparent;
-    cursor: pointer; 
-    border: none;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  padding: 0;
 }
-
 
 

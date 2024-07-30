@@ -3,7 +3,6 @@ import { Formik, Form } from 'formik';
 import styles from './formaReactReg.module.css';
 import * as schema from '../../schemas/schemas'
 import Input from './Input';
-import InputEye from './InputEye';
 import Button from 'components/Button/Button';
 
 const FormaReactReg = () => {
@@ -21,10 +20,10 @@ const FormaReactReg = () => {
            }}>
            
             <Form className={styles.form}>
-                <Input name="firstName"  placeholder="Name"/>
-                <Input name="email"  placeholder="Email"/>
-                <InputEye name="password"  placeholder="Password"/>
-                <InputEye name="confirmPassword"  placeholder="Confirm password"/>
+                <Input name="firstName"  placeholder="Name" type='name'/>
+                <Input name="email"  placeholder="Email" type='email'/>
+                <Input name="password"  placeholder="Password" type='password'/>
+                <Input name="confirmPassword"  placeholder="Confirm password" type='password'/>
                 <Button className={styles.btn}>Registration</Button>
 
             </Form>
