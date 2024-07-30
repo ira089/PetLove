@@ -16,7 +16,7 @@ const location = useLocation();
 
   return (
     <header className={styles.wrapHeader}>
-        <NavLink className={styles.link} to="/home">
+        <NavLink className={styles.link} to="/">
            <Logo color= {color} fill={fill}/>
         </NavLink>
         <div className={styles.rightMenu}>
