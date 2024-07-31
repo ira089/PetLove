@@ -22,6 +22,7 @@ const Header = ({ color, fill, background }) => {
       <div className={styles.rightMenu}>
         {location.pathname !== '/register' &&
           location.pathname !== '/login' &&
+          location.pathname !== '/news' &&
           isLogin && (
             <NavLink className={styles.link} to="/profile">
               <UserBar background={background} fill={fill} />

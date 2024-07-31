@@ -1,0 +1,18 @@
+.inputSearch {
+    border: 1px solid rgba(38, 38, 38, 0.15);
+border-radius: 30px;
+/* padding: 12px 278px 12px 12px; */
+width: 100%;
+max-width: 335px;
+/* height: 42px; */
+
+font-size: 16px;
+line-height: 125%;
+letter-spacing: -0.03em;
+color: rgba(38, 38, 38, 0.5);
+}
+
+.inputSearch:focus {
+    border: 1px solid #f6b83d;
+    color: #262626;
+}

@@ -20,7 +20,7 @@ const UserNav = () => {
           Log out
         </button>
       </div>
-      <Modal isOpen={isModalOpen} onClose={closeModal} height={270}>
+      <Modal isOpen={isModalOpen} onClose={closeModal} height={270} width={335}>
         <ModalApproveAction onClose={closeModal}/>
       </Modal>
     </>

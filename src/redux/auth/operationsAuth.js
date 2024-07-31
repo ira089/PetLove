@@ -38,6 +38,7 @@ export const registerThunk = createAsyncThunk(
         const logOut = await authApi.fetchLogOut();
         return logOut;
       } catch (error) {
+        toast.error(`${error.message}`);
         return thunkAPI.rejectWithValue(error.message);
       }
     }

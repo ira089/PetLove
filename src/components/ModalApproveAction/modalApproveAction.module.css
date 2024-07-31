@@ -1,0 +1,50 @@
+.wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* padding: 40px 28px 45px 28px; */
+    gap: 15px;
+    align-items: center;
+}
+
+.text {
+    margin: 0;
+    margin-bottom: 13px;
+    font-family: var(--font-family);
+font-weight: 700;
+font-size: 20px;
+line-height: 100%;
+letter-spacing: -0.03em;
+color: #262626;
+}
+
+.wrapBtn{
+    display: flex;
+    gap: 8px;
+}
+
+.btnYes, .btnCancel {
+    border-radius: 30px;
+padding: 12px 57px;
+width: 137px;
+height: 42px;
+font-family: var(--font-family);
+font-weight: 700;
+font-size: 14px;
+line-height: 129%;
+letter-spacing: -0.03em;
+display: flex;
+justify-content: center;
+align-items: center;
+border: none;
+}
+
+.btnYes {
+    background: #f6b83d; 
+    color: #fff;
+}
+
+.btnCancel  {
+    background: rgba(38, 38, 38, 0.05);
+    color: #262626;
+}
