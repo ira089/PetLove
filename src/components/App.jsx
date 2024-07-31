@@ -1,10 +1,12 @@
 import { Routes, Route } from 'react-router-dom';
-import {  useSelector } from 'react-redux';
+import React, {useEffect} from 'react';
+import {useDispatch,  useSelector } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 // import { lazy } from 'react';
 import Layout from '../Pages/Layout/Layout';
 import { selectIsRefreshing } from '../redux/auth/selectorsAuth';
+import { refresThunk } from '../redux/auth/operationsAuth';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import PublicRoute from './PublicRoute/PublicRoute'
 import Register from 'Pages/Register/Register';
@@ -15,12 +17,12 @@ import ProfilePage from 'Pages/ProfilePage/ProfilePage';
 import Loader from './Loader/Loader';
 
 const App = () => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const isRefreshing = useSelector(selectIsRefreshing);
 
-  // useEffect(() => {
-  //   dispatch(refresThunk());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(refresThunk());
+  }, [dispatch]);
 
   return isRefreshing ? ( <Loader/>) : (
     <>

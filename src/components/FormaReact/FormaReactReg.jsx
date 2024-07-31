@@ -24,7 +24,7 @@ const FormaReactReg = () => {
         dispatch(registerThunk(dataThunk));
 
         resetForm();
-        // <Navigate to="/profile" />;
+        
       }}
     >
       <Form className={styles.form}>

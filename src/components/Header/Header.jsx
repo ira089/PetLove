@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { NavLink, useLocation } from 'react-router-dom';
+import { selectIsLoggedIn } from '../../redux/auth/selectorsAuth';
 import Logo from './Logo/Logo';
 import UserBar from './UserBar/UserBar';
 import styles from './heder.module.css';
@@ -10,6 +12,7 @@ const Header = ({ color, fill, background }) => {
   const [open, setOpen] = useState(false);
   const isOpen = () => setOpen(!open);
   const location = useLocation();
+  const isLogin = useSelector(selectIsLoggedIn);
 
   return (
     <header className={styles.wrapHeader}>
@@ -18,7 +21,8 @@ const Header = ({ color, fill, background }) => {
       </NavLink>
       <div className={styles.rightMenu}>
         {location.pathname !== '/register' &&
-          location.pathname !== '/login' && (
+          location.pathname !== '/login' &&
+          isLogin && (
             <NavLink className={styles.link} to="/profile">
               <UserBar background={background} fill={fill} />
             </NavLink>
