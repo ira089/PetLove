@@ -12,6 +12,7 @@ import Login from 'Pages/Login/Login';
 import NotFoundPage from 'Pages/NotFoundPage/NotFoundPage';
 import HomePage from 'Pages/HomePage/HomePage';
 import ProfilePage from 'Pages/ProfilePage/ProfilePage';
+import Loader from './Loader/Loader';
 
 const App = () => {
   // const dispatch = useDispatch();
@@ -21,7 +22,7 @@ const App = () => {
   //   dispatch(refresThunk());
   // }, [dispatch]);
 
-  return isRefreshing ? ( 'Loading...') : (
+  return isRefreshing ? ( <Loader/>) : (
     <>
     <Routes>
        <Route path="/" element={<Layout />}>
