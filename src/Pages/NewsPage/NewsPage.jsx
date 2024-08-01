@@ -9,19 +9,18 @@ import styles from './NewPage.module.css';
 
 
 export const NewsPage = () => {
-  console.log('first')
   const dispatch = useDispatch();
-  const page= useSelector(selestorNews.selectPage);
-  const search= useSelector(selestorNews.selectSearch);
-console.log(search)
+  const {page, query} = useSelector(selestorNews.selectSearch);
+  
+console.log(query)
 console.log(page)
  useEffect(() => {
-     if(search === '' ){
+     if(query === '' ){
       return
     }
 
-     dispatch(newsThunk({ search, page }));
-   }, [dispatch, page, search]);
+     dispatch(newsThunk({ query, page }));
+   }, [dispatch, page, query]);
 
   return (
     <section className={styles.wrapNews}>

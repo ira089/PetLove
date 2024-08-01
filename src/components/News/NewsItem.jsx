@@ -1,8 +1,11 @@
 import React from 'react'
 
-const NewsItem = () => {
+const NewsItem = ({item}) => {
+  console.log(item)
   return (
-    <div>NewsItem</div>
+    <li key={item._id}>
+      {item.title}
+    </li>
   )
 }
 

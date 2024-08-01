@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 // import { AudioOutlined } from '@ant-design/icons';
 import { useDispatch } from 'react-redux';
 import { Input } from 'antd';
-import { newsThunk } from '../../redux/new/opertionsNew';
 import { addQuery } from '../../redux/new/searchSlice';
 import styles from './searchField.module.css';
 
@@ -25,15 +24,6 @@ const SearchField = () => {
     console.log(value);
     dispatch(addQuery(value))
   };
-  
-  
-
-  // useEffect(() => {
-  //   if(searh === '' ){
-  //     return
-  //   }
-  //   dispatch(newsThunk({ searh, page }));
-  // }, [dispatch, page, searh]);
 
   return (
     <Search
