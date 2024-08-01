@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 // import { AudioOutlined } from '@ant-design/icons';
+import { useDispatch } from 'react-redux';
 import { Input } from 'antd';
+import { newsThunk } from '../../redux/new/opertionsNew';
+import { addQuery } from '../../redux/new/searchSlice';
 import styles from './searchField.module.css';
 
 const { Search } = Input;
@@ -12,19 +15,37 @@ const { Search } = Input;
 //     }}
 //   />
 // );
-const onSearch = (value, _e) => console.log( value);
 
 const SearchField = () => {
-  return (
-    <Search className={styles.inputSearch}
-    placeholder="Search"
-    allowClear
-    onSearch={onSearch}
-    // style={{
-    //   width: 335,
-    // }}
-  />
-  )
-}
+  
+  const dispatch = useDispatch();
+ 
 
-export default SearchField
+  const onSearch = (value, _e) => {
+    console.log(value);
+    dispatch(addQuery(value))
+  };
+  
+  
+
+  // useEffect(() => {
+  //   if(searh === '' ){
+  //     return
+  //   }
+  //   dispatch(newsThunk({ searh, page }));
+  // }, [dispatch, page, searh]);
+
+  return (
+    <Search
+      className={styles.inputSearch}
+      placeholder="Search"
+      allowClear
+      onSearch={onSearch}
+      // style={{
+      //   width: 335,
+      // }}
+    />
+  );
+};
+
+export default SearchField;
