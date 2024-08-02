@@ -12,8 +12,8 @@ export const NewsPage = () => {
   const dispatch = useDispatch();
   const {page, query} = useSelector(selestorNews.selectSearch);
   
-console.log(query)
-console.log(page)
+// console.log(query)
+// console.log(page)
  useEffect(() => {
      if(query === '' ){
       return

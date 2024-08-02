@@ -12,9 +12,9 @@ const PaginationMy = () => {
   const {page} = useSelector(selectorNew.selectSearch);
  
  
-  console.log(page)
+  // console.log(page)
   const totalPages = useSelector(selectorNew.selectCurrentTotalPages);
-  console.log(totalPages)
+  // console.log(totalPages)
 
   const selectPage = (num) => {
     dispatch(addPage(num))

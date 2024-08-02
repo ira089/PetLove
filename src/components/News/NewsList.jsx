@@ -10,16 +10,16 @@ import NewsItem from './NewsItem';
 import PaginationMy from 'components/Pagination/PaginationMy';
 
 const NewsList = () => {
-  const { isLoading, error, news } = useSelector(selectNews);
+  const { isLoading, error, news, totalPages } = useSelector(selectNews);
   
   
-  console.log(news)
-  // const pageQty = news.totalPages
-// console.log(pageQty)
+  console.log(isLoading)
+  
+console.log(totalPages)
  
 const elements = news.map(item => (
   <Grid item xs={12} md={6} lg={4}>
-          <NewsItem  item={item}/>
+          <NewsItem key={item._id} item={item}/>
         </Grid>
   ))
 
@@ -30,14 +30,14 @@ const elements = news.map(item => (
     {isLoading && <p>...Loading</p>}
     {error && <p>{error.message}</p>}
     <Box sx={{ width: '100%' }}>
-      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+      <Grid container rowSpacing={{xs: 3, sm: 4, lg: 5 }} columnSpacing={{  sm: 3, lg: 4 }}>
         {elements}
         
       </Grid>
     </Box>
 
-{/* {!!pageQty && pageQty !== 1 && <PaginationMy/>} */}
-<PaginationMy/>
+{!!totalPages && totalPages !== 1 && <PaginationMy/>}
+
    
     </>
     
