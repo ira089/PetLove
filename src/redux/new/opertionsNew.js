@@ -4,7 +4,7 @@ import {fetchNews} from '../../api/newsApi'
 export const newsThunk = createAsyncThunk(
     'news/get',
     async (body, thunkAPI) => {
-      console.log(body)
+      // console.log(body)
       try {
         const news = fetchNews(body);
         return news;

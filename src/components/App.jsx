@@ -16,6 +16,7 @@ import HomePage from 'Pages/HomePage/HomePage';
 import ProfilePage from 'Pages/ProfilePage/ProfilePage';
 import Loader from './Loader/Loader';
 import { NewsPage } from 'Pages/NewsPage/NewsPage';
+import OurFriendsPage from 'Pages/OurFriendsPage/OurFriendsPage';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -35,6 +36,7 @@ const App = () => {
              <Route path="register" element={<Register />} />
              <Route path="login" element={<Login />} />
              <Route path="news" element={<NewsPage />} />
+             <Route path="friends" element={<OurFriendsPage />} />
           </Route>
           <Route element={<PrivateRoute />}>
             <Route path="profile" element={<ProfilePage/>}/>

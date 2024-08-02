@@ -12,10 +12,9 @@ import PaginationMy from 'components/Pagination/PaginationMy';
 const NewsList = () => {
   const { isLoading, error, news, totalPages } = useSelector(selectNews);
   
+  // console.log(isLoading)
   
-  console.log(isLoading)
-  
-console.log(totalPages)
+// console.log(totalPages)
  
 const elements = news.map(item => (
   <Grid item xs={12} md={6} lg={4}>
