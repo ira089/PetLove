@@ -1,0 +1,14 @@
+.wrapNotices {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.title {
+   margin: 0;
+font-weight: 700;
+font-size: 28px;
+line-height: 100%;
+letter-spacing: -0.03em;
+color: #262626;
+}

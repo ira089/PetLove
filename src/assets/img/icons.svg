@@ -79,10 +79,7 @@
 <path d="M4 24H28" stroke="#262626" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 </symbol>
 
-<symbol id="icon-cat" width="80" height="80" viewBox="0 0 80 80" fill="none" >
-<circle cx="40" cy="40" r="40" fill="#FFF4DF"/>
-<path d="M18 62.08H62V18.08H18V62.08Z" fill="white"/>
-</symbol>
+
 
 
 

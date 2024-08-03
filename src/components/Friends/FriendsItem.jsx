@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 const FriendsItem = ({ item }) => {
   const { workDays, imageUrl, title, email, phone, address } = item;
   // console.log(workDays);
-  console.log(item);
+  // console.log(item);
   const isLength = Boolean(workDays?.length);
   const isAddress = Boolean(address);
   const isPhone = Boolean(phone);
