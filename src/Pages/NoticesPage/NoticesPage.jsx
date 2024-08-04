@@ -11,20 +11,13 @@ import styles from './noticesPage.module.css';
 const NoticesPage = () => {
   const dispatch = useDispatch();
   // const {notices} = useSelector(selectNotices);
-  const {page} = useSelector(selectSearch);
+  const {page, query} = useSelector(selectSearch);
 
   // console.log(notices)
   // console.log(page)
   useEffect(() => {
-    dispatch(noticesThunk({  page }))
-  }, [dispatch, page]);
-
-  // useEffect(() => {
-  //   if(page === 1 ){
-  //    return
-  //  }
-  //   dispatch(newsThunk({  page }));
-  // }, [dispatch, page]);
+    dispatch(noticesThunk({ page, query }))
+  }, [dispatch, page, query]);
 
   return (
     <section className={styles.wrapNotices}>

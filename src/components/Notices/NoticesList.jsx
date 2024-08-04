@@ -9,7 +9,7 @@ import NoticesItem from './NoticesItem';
 
 const NoticesList = () => {
   const { isLoading, error, notices, totalPages, page } = useSelector(selectNotices);
-console.log(page)
+// console.log(page)
 const dispatch = useDispatch();
   
   const selectPage = num => {

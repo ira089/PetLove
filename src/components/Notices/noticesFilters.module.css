@@ -1,0 +1,25 @@
+.wrapFilter {
+    border-radius: 30px;
+max-width: 335px;
+width: 100%;
+height: 378px;
+background: #fff4df;
+display: flex;
+flex-direction: column;
+padding: 20px;
+}
+
+.wrapInput, .wrapRadio {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.wrapInput {
+    row-gap: 10px;
+    column-gap: 12px ;
+}
+
+.wrapRadio {
+    row-gap: 10px;
+    column-gap: 10px ;
+}

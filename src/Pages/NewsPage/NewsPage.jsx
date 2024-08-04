@@ -15,10 +15,6 @@ export const NewsPage = () => {
 // console.log(query)
 // console.log(page)
  useEffect(() => {
-     if(query === '' ){
-      return
-    }
-
      dispatch(newsThunk({ query, page }));
    }, [dispatch, page, query]);
 
