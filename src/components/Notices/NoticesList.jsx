@@ -1,5 +1,6 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { addPage } from '../../redux/search/searchSlice';
 import { selectNotices } from '../../redux/notices/selectornotices';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
@@ -7,8 +8,14 @@ import PaginationMy from 'components/Pagination/PaginationMy';
 import NoticesItem from './NoticesItem';
 
 const NoticesList = () => {
-  const { isLoading, error, notices, totalPages } = useSelector(selectNotices);;
-console.log(totalPages)
+  const { isLoading, error, notices, totalPages, page } = useSelector(selectNotices);
+console.log(page)
+const dispatch = useDispatch();
+  
+  const selectPage = num => {
+    dispatch(addPage(num));
+  };
+  
   const elements = notices.map(item => (
     <Grid item xs={12} md={6} lg={4}>
       <NoticesItem key={item._id} item={item} />
@@ -28,7 +35,9 @@ console.log(totalPages)
         </Grid>
       </Box>
 
-      {!!totalPages && totalPages !== 1 && <PaginationMy />}
+      {!!totalPages && totalPages !== 1 && <PaginationMy page={page}
+          totalPages={totalPages}
+          selectPage={selectPage} />}
     </>
   );
 };

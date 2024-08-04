@@ -8,9 +8,9 @@ export const fetchNotices = async () => {
   };
 
 
-// export const fetchNews = async ({query, page}) => {
-//     // console.log(query)
-//     const { data } = await axios.get(`/news?keyword=${query}&page=${page}&limit=6`);
-//     // console.log(data);
-//     return data;
-//   };
+ export const fetchNoticesSelect = async ({ page}) => {
+    // console.log(query)
+    const { data } = await axios.get(`/notices?byDate=true&page=${page}&limit=6`);
+    // console.log(data);
+     return data;
+   };

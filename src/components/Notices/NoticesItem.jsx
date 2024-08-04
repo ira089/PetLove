@@ -6,7 +6,7 @@ import styles from './noticesItem.module.css';
 import Button from 'components/Button/Button';
 
 const NoticesItem = ({ item }) => {
-  console.log(item);
+  // console.log(item);
   const {
     imgURL,
     title,
@@ -20,7 +20,8 @@ const NoticesItem = ({ item }) => {
     _id,
   } = item;
   const rating = Math.round(popularity / 10);
-  const parsedDate = parseISO(birthday);
+  const date =  Date.now()
+  const parsedDate = birthday ? parseISO(birthday) : date;
   const birthdayData = format(parsedDate, 'dd.MM.yyyy');
   const capitalizedSex = capitalizeFirstLetter(sex);
   const capitalizedCategory = capitalizeFirstLetter(category);

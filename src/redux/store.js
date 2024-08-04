@@ -11,7 +11,7 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { newReducer } from './new/newSlice';
-import searchReducer from './new/searchSlice';
+import searchReducer from './search/searchSlice';
 import { authReducer } from './auth/authSlice';
 import {friendsReducer} from './friends/friendsSlice';
 import {noticesReducer } from'./notices/noticesSlice';

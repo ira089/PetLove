@@ -2,7 +2,7 @@ import React from 'react';
 // import { AudioOutlined } from '@ant-design/icons';
 import { useDispatch } from 'react-redux';
 import { Input } from 'antd';
-import { addQuery } from '../../redux/new/searchSlice';
+import { addQuery } from '../../redux/search/searchSlice';
 import styles from './searchField.module.css';
 
 const { Search } = Input;
