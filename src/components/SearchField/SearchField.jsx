@@ -21,7 +21,6 @@ const SearchField = () => {
  
 
   const onSearch = (value, _e) => {
-    console.log(value);
     dispatch(addQuery(value))
   };
 

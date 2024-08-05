@@ -1,12 +1,14 @@
 .wrapFilter {
     border-radius: 30px;
-max-width: 335px;
+/* max-width: 335px; */
+/* может дать ширину на переломах */
 width: 100%;
 height: 378px;
 background: #fff4df;
-display: flex;
-flex-direction: column;
+/* display: flex; */
+/* flex-direction: column; */
 padding: 20px;
+margin-bottom: 20px;
 }
 
 .wrapInput, .wrapRadio {
@@ -17,9 +19,27 @@ padding: 20px;
 .wrapInput {
     row-gap: 10px;
     column-gap: 12px ;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(38, 38, 38, 0.1); ;
 }
 
 .wrapRadio {
     row-gap: 10px;
     column-gap: 10px ;
+    margin-top: 20px;
+}
+
+.label {
+    border-radius: 30px;
+    padding: 12px;
+    /* width: 72px; */
+    height: 42px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+font-size: 14px;
+line-height: 129%;
+letter-spacing: -0.03em;
+color: #262626;
 }

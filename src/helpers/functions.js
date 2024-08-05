@@ -16,3 +16,10 @@ export const handlePending = state => {
     if (string.length === 0) return string;
   return string.charAt(0).toUpperCase() + string.slice(1);
   }
+
+  export const optionObj = (arr) => {
+    return arr.map(el => ({
+        value: el,
+        label: capitalizeFirstLetter(el)
+    }))
+}
