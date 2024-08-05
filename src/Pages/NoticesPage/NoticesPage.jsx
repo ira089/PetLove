@@ -11,14 +11,14 @@ import styles from './noticesPage.module.css';
 const NoticesPage = () => {
   const dispatch = useDispatch();
   // const {notices} = useSelector(selectNotices);
-  const {page, query,  category, type, location} = useSelector(selectSearch);
+  const {page, query,  category, type, location, byPrice, byPopularity} = useSelector(selectSearch);
 // params.fetchSex()
 
   // console.log(notices)
   // console.log(page)
   useEffect(() => {
-    dispatch(noticesThunk({ page, query,  category, type, location }))
-  }, [category, dispatch, location, page, query, type]);
+    dispatch(noticesThunk({ page, query,  category, type, location, byPrice, byPopularity }))
+  }, [byPopularity, byPrice, category, dispatch, location, page, query, type]);
 
   return (
     <section className={styles.wrapNotices}>

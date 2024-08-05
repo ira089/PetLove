@@ -19,5 +19,11 @@ export const fetchSex = async () => {
     return data;
   };
 
+  export const fetchCities = async () => {
+    const { data } = await axios.get('/cities');
+  console.log(data)
+    return data;
+  };
+
 
 
