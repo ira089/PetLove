@@ -10,6 +10,7 @@ import styles from './noticesFilters.module.css';
 const NoticesFilters = () => {
   const [category, setCategory] = useState([]);
   const [byType, setByType] = useState([]);
+console.log(category)  
 
   const dispatch = useDispatch();
 
@@ -40,6 +41,7 @@ const NoticesFilters = () => {
   }, []);
   
   const options = [
+    {value: '', label: 'Show all' },
     { value: 'female', label: 'Female' },
     { value: 'male', label: 'Male' },
     { value: 'multiple', label: 'Multiple' },
