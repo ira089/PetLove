@@ -19,6 +19,10 @@ const NoticesFilters = () => {
   const [category, setCategory] = useState([]);
   const [byType, setByType] = useState([]);
   const [location, setLocation] = useState([]);
+  const [inputValue, setInputValue] = useState('');
+  console.log(typeof(inputValue))
+  const isInputValue = Boolean(inputValue)
+  console.log(isInputValue)
 
   // const [selectedOption, setSelectedOption] = useState(null);
   // console.log(selectedOption)
@@ -86,6 +90,14 @@ const NoticesFilters = () => {
     // setSelectedOption(value);
   };
 
+  const handleClear = () => {
+    dispatch(addLocation(''));
+  };
+
+  const handleInputChange = (value) => {
+    setInputValue(value);
+  };
+
   const customFilter = (option, inputValue) => {
     return option.label.toLowerCase().includes(inputValue.toLowerCase());
   };
@@ -135,9 +147,17 @@ const NoticesFilters = () => {
         <Select
           options={location}
           onChange={handleChangeLocation}
+          onInputChange={handleInputChange}
+          inputValue={inputValue}
           // value={selectedOption}
           styles={customStyles}
-          components={{ DropdownIndicator, ClearIndicator }}
+          components={{ DropdownIndicator,
+            ClearIndicator
+            // ClearIndicator: <ClearIndicator clearValue={handleClear} /> 
+            // ClearIndicator: isInputValue ? (props) => <ClearIndicator {...props} clearValue={handleClear} /> : null 
+            
+           }}
+           
           isClearable
           placeholder={'Location'}
           filterOption={customFilter}
