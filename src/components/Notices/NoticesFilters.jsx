@@ -7,16 +7,24 @@ import {
   addType,
   addByPrice,
   addByPopularity,
+  addLocation
 } from '../../redux/search/searchSlice';
-import { optionObj } from '../../helpers/functions';
+import { optionObj, optionObjLoc } from '../../helpers/functions';
 import SearchField from 'components/SearchField/SearchField';
+import customStyles from './customStyles';
+import { DropdownIndicator, ClearIndicator } from './customComponents';
 import styles from './noticesFilters.module.css';
 
 const NoticesFilters = () => {
-  params.fetchCities()
+ 
   const [category, setCategory] = useState([]);
   const [byType, setByType] = useState([]);
+  const [location, setLocation] = useState([]);
 
+  // const [selectedOption, setSelectedOption] = useState(null);
+  // console.log(selectedOption)
+  // console.log(location)
+  
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -53,12 +61,35 @@ const NoticesFilters = () => {
     { value: 'unknown', label: 'Unknown' },
   ];
 
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const dataArr = await params.fetchCities();
+        const dataObj = optionObjLoc(dataArr)
+        setLocation(dataObj);
+      } catch (error) {
+        return error.message;
+      }
+    };
+    getData();
+  }, []);
+  
+
   const handleChangeCategory = value => {
     dispatch(addCategory(value.value));
   };
 
   const handleChangeType = value => {
     dispatch(addType(value.value));
+  };
+
+  const handleChangeLocation = value => {
+dispatch(addLocation(value.value))
+    // setSelectedOption(value);
+  };
+
+  const customFilter = (option, inputValue) => {
+    return option.label.toLowerCase().includes(inputValue.toLowerCase());
   };
 
   const onRadio = evt => {
@@ -97,7 +128,15 @@ const NoticesFilters = () => {
           onChange={handleChangeType}
           placeholder={'By type'}
         />
-        <Select placeholder={'Location'} />
+        <Select
+          options={location}
+          onChange={handleChangeLocation}
+          // value={selectedOption}
+          styles={customStyles}
+        components={{ DropdownIndicator, ClearIndicator }}
+          placeholder={'Location'}
+          filterOption={customFilter}
+        />
       </div>
 
       <form className={styles.wrapRadio} onClick={onRadio}>

@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import{selectSearch} from '../../redux/search/selectorSearch'
 import { noticesThunk } from '../../redux/notices/operationsNotices';
-// import * as params from '../../api/filterApi'
 import NoticesFilters from 'components/Notices/NoticesFilters';
 import NoticesList from 'components/Notices/NoticesList';
 import styles from './noticesPage.module.css';
