@@ -90,7 +90,7 @@ const NoticesFilters = () => {
     // setSelectedOption(value);
   };
 
-  const handleClear = () => {
+  const clearValue = () => {
     dispatch(addLocation(''));
   };
 
@@ -151,10 +151,11 @@ const NoticesFilters = () => {
           inputValue={inputValue}
           // value={selectedOption}
           styles={customStyles}
+          // components={{  ClearIndicator, DropdownIndicator}}
           components={{ DropdownIndicator,
-            ClearIndicator
+            // ClearIndicator
             // ClearIndicator: <ClearIndicator clearValue={handleClear} /> 
-            // ClearIndicator: isInputValue ? (props) => <ClearIndicator {...props} clearValue={handleClear} /> : null 
+            ClearIndicator: (props) => <ClearIndicator {...props} clearValue={clearValue} />  
             
            }}
            

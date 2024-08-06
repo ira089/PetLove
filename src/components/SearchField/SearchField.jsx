@@ -3,6 +3,8 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Input } from 'antd';
 import { addQuery } from '../../redux/search/searchSlice';
+import customStyles from './customStyles';
+// import 'antd/dist/antd.css'
 import styles from './searchField.module.css';
 
 const { Search } = Input;
@@ -27,12 +29,12 @@ const SearchField = () => {
   return (
     <Search
       className={styles.inputSearch}
+      
       placeholder="Search"
       allowClear
       onSearch={onSearch}
-      // style={{
-      //   width: 335,
-      // }}
+      style={customStyles}
+      
     />
   );
 };
