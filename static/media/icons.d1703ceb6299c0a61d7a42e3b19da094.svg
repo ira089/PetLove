@@ -79,6 +79,15 @@
 <path d="M4 24H28" stroke="#262626" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 </symbol>
 
+<symbol id="icon-loofah" viewBox="0 0 18 18" fill="none">
+  <path d="M8.25 14.25C11.5637 14.25 14.25 11.5637 14.25 8.25C14.25 4.93629 11.5637 2.25 8.25 2.25C4.93629 2.25 2.25 4.93629 2.25 8.25C2.25 11.5637 4.93629 14.25 8.25 14.25Z" stroke="#262626" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M15.7508 15.75L12.4883 12.4875" stroke="#262626" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+</symbol>
+
+<symbol id="icon-cross" viewBox="0 0 18 18" fill="none" >
+  <path d="M14.25 3.75L3.75 14.25M3.75003 3.75L14.25 14.25" stroke="#262626" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+</symbol>
+
 
 
 
