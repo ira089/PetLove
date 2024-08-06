@@ -4,17 +4,30 @@ const customStyles = {
     control: (provided, state) => ({
       ...provided,
       fontFamily: 'Manrope',
-      borderColor: '#ef9a9a',
+    //   borderColor: 'transparent',
       background: '#fff',
       borderRadius: '30px',
-      padding: '12px',
+    //   padding: '12px',
       height: '42px',
-
-    //   borderColor: state.isFocused ? '#000' : '#ccc', // Рамка
-    //   boxShadow: state.isFocused ? '0 0 0 1px #000' : 'none',
-      '&:hover': {
-        borderColor: '#f6b83d' // Рамка при ховере
-      }
+      display: 'flex',
+      alignItems: 'center',
+      cursor: 'pointer',
+      justifyContent: 'space-between',
+      borderColor: state.isFocused ? '#f6b83d' : 'transparent', 
+    boxShadow: state.isFocused ? '#f6b83d' : '0 0 0 1px transparent',
+    
+    //   '&:focus': {
+    //     borderColor: '#f6b83d',
+    //     boxShadow: '0 0 0 1px #f6b83d'
+    //   },
+    //   '&:hover': {
+    //     borderColor: '#f6b83d',
+    //     boxShadow: '0 0 0 1px #f6b83d'
+    //   },
+    //   '&:active': {
+    //     borderColor: '#f6b83d',
+    //      boxShadow: '0 0 0 1px #f6b83d'
+    //   }
     }),
     placeholder: (provided) => ({
       ...provided,

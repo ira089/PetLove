@@ -7,7 +7,7 @@ import {
   addType,
   addByPrice,
   addByPopularity,
-  addLocation
+  addLocation,
 } from '../../redux/search/searchSlice';
 import { optionObj, optionObjLoc } from '../../helpers/functions';
 import SearchField from 'components/SearchField/SearchField';
@@ -16,7 +16,6 @@ import { DropdownIndicator, ClearIndicator } from './customComponents';
 import styles from './noticesFilters.module.css';
 
 const NoticesFilters = () => {
- 
   const [category, setCategory] = useState([]);
   const [byType, setByType] = useState([]);
   const [location, setLocation] = useState([]);
@@ -24,7 +23,7 @@ const NoticesFilters = () => {
   // const [selectedOption, setSelectedOption] = useState(null);
   // console.log(selectedOption)
   // console.log(location)
-  
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -65,7 +64,7 @@ const NoticesFilters = () => {
     const getData = async () => {
       try {
         const dataArr = await params.fetchCities();
-        const dataObj = optionObjLoc(dataArr)
+        const dataObj = optionObjLoc(dataArr);
         setLocation(dataObj);
       } catch (error) {
         return error.message;
@@ -73,7 +72,6 @@ const NoticesFilters = () => {
     };
     getData();
   }, []);
-  
 
   const handleChangeCategory = value => {
     dispatch(addCategory(value.value));
@@ -84,7 +82,7 @@ const NoticesFilters = () => {
   };
 
   const handleChangeLocation = value => {
-dispatch(addLocation(value.value))
+    dispatch(addLocation(value.value));
     // setSelectedOption(value);
   };
 
@@ -121,19 +119,26 @@ dispatch(addLocation(value.value))
           options={category}
           onChange={handleChangeCategory}
           placeholder={'Category'}
+          styles={customStyles}
         />
-        <Select options={options} placeholder={'By gender'} />
+        <Select
+          options={options}
+          styles={customStyles}
+          placeholder={'By gender'}
+        />
         <Select
           options={byType}
           onChange={handleChangeType}
           placeholder={'By type'}
+          styles={customStyles}
         />
         <Select
           options={location}
           onChange={handleChangeLocation}
           // value={selectedOption}
           styles={customStyles}
-        components={{ DropdownIndicator, ClearIndicator }}
+          components={{ DropdownIndicator, ClearIndicator }}
+          isClearable
           placeholder={'Location'}
           filterOption={customFilter}
         />
