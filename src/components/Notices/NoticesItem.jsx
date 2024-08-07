@@ -1,11 +1,25 @@
-import React from 'react';
+import React, {useState} from 'react';
+import {  useSelector } from 'react-redux'
 import { parseISO, format } from 'date-fns';
+import {selectIsLoggedIn} from '../../redux/auth/selectorsAuth'
 import Icon from 'components/Icon/Icon';
+import Modal from 'components/Modal/Modal';
 import { capitalizeFirstLetter } from '../../helpers/functions';
 import styles from './noticesItem.module.css';
 import Button from 'components/Button/Button';
+import ModalNotice from 'components/ModalNotice/ModalNotice';
+import ModalAttention from 'components/ModalAttention/ModalAttention';
 
 const NoticesItem = ({ item }) => {
+  const isLogin = useSelector(selectIsLoggedIn);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
   // console.log(item);
   const {
     imgURL,
@@ -27,13 +41,14 @@ const NoticesItem = ({ item }) => {
   const capitalizedCategory = capitalizeFirstLetter(category);
   const capitalizedSpecies = capitalizeFirstLetter(species);
 
-  const onLoadMore = id => {
-    console.log('first');
-  };
+  // const onLoadMore = id => {
+  //   console.log('first');
+  // };
 
   //  console.log(rating)
   return (
-    <li className={styles.itemWrap}>
+    <>
+     <li className={styles.itemWrap}>
       <img className={styles.image} src={imgURL} alt="notice" />
       <div className={styles.titleWrap}>
         <h4 className={styles.title}>{title}</h4>
@@ -68,8 +83,8 @@ const NoticesItem = ({ item }) => {
       <div className={styles.btnWrap}>
         <Button
           style={{ textTransform: 'lowercase' }}
-          type="submit"
-          onClick={() => onLoadMore(_id)}
+          type="button"
+          onClick={openModal}
         >
           Learn more
         </Button>
@@ -78,6 +93,15 @@ const NoticesItem = ({ item }) => {
         </button>
       </div>
     </li>
+    {isLogin ? <Modal isOpen={isModalOpen} onClose={closeModal} height={446} width={335}>
+        <ModalNotice onClose={closeModal} id={_id}/>
+      </Modal> :
+      <Modal isOpen={isModalOpen} onClose={closeModal} height={394} width={335}>
+      <ModalAttention onClose={closeModal}/>
+    </Modal>}
+    
+    </>
+   
   );
 };
 
