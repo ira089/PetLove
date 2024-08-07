@@ -15,7 +15,7 @@ const ModalNotice = ({ item }) => {
     sex,
     species,
     comment,
-    _id,
+    
   } = item;
 
   const rating = Math.round(popularity / 10);
