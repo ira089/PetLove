@@ -1,6 +1,5 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-// import { Navigate } from 'react-router-dom';
 import { Formik, Form } from 'formik';
 import styles from './formaReactReg.module.css';
 import * as schema from '../../schemas/schemas';
@@ -23,7 +22,6 @@ const LoginReactForma = () => {
         dispatch(loginThunk(values));
 
         resetForm();
-        // <Navigate to="/profile" />;
       }}
     >
       <Form className={styles.form}>

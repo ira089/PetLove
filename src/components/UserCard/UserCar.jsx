@@ -1,7 +1,7 @@
 import React from 'react'
 import EditUserBtn from './EditUserBtn'
 import UserBlock from './UserBlock'
-import PetsBlock from './PetsBlock'
+import PetsBlock from './PetsBlock/PetsBlock'
 import UserNav from 'components/Header/UserNav/UserNav';
 import styles from './userCard.module.css';
 
