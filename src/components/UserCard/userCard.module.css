@@ -1,0 +1,40 @@
+.wrapUserCard {
+    border-radius: 30px;
+width: 100%;
+max-width: 335px;
+/* height: 864px; */
+background: #fff;
+}
+
+.wrapEdit {
+    display: flex;
+    justify-content: space-between;
+}
+
+.user,.pencil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.user {
+    border-radius: 30px;
+    /* padding: 0 14px; */
+    width: 80px;
+    height: 38px; 
+    background: #f6b83d;
+font-size: 14px;
+line-height: 129%;
+letter-spacing: -0.02em;
+color: #fff;
+}
+
+.pencil {
+    border-radius: 30px;
+    padding: 10px;
+    width: 38px;
+    height: 38px; 
+    background: #fff4df;
+    border: none;
+}

@@ -1,0 +1,31 @@
+.avatar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 28px;
+}
+
+/* .wrapImg {
+    border-radius: 100px;
+    padding: 10px;
+    width: 94px;
+    height: 94px; 
+    background: #fff4df;
+} */
+
+.avatar p {
+    font-size: 12px;
+    line-height: 133%;
+    letter-spacing: -0.02em;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: #262626;
+    margin: 0; 
+}
+
+
+.info {
+    display: flex;
+    flex-direction: column;  
+}
