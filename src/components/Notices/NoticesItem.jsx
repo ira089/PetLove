@@ -5,10 +5,10 @@ import {selectIsLoggedIn} from '../../redux/auth/selectorsAuth'
 import Icon from 'components/Icon/Icon';
 import Modal from 'components/Modal/Modal';
 import { capitalizeFirstLetter } from '../../helpers/functions';
-import styles from './noticesItem.module.css';
 import Button from 'components/Button/Button';
 import ModalNotice from 'components/ModalNotice/ModalNotice';
 import ModalAttention from 'components/ModalAttention/ModalAttention';
+import styles from './noticesItem.module.css';
 
 const NoticesItem = ({ item }) => {
   const isLogin = useSelector(selectIsLoggedIn);
@@ -31,7 +31,6 @@ const NoticesItem = ({ item }) => {
     sex,
     species,
     comment,
-    _id,
   } = item;
   const rating = Math.round(popularity / 10);
   const date =  Date.now()
@@ -49,7 +48,7 @@ const NoticesItem = ({ item }) => {
   return (
     <>
      <li className={styles.itemWrap}>
-      <img className={styles.image} src={imgURL} alt="notice" />
+      <img className={styles.image} src={imgURL} alt="pet" />
       <div className={styles.titleWrap}>
         <h4 className={styles.title}>{title}</h4>
         <div className={styles.rating}>
@@ -94,7 +93,7 @@ const NoticesItem = ({ item }) => {
       </div>
     </li>
     {isLogin ? <Modal isOpen={isModalOpen} onClose={closeModal} height={446} width={335}>
-        <ModalNotice onClose={closeModal} id={_id}/>
+        <ModalNotice onClose={closeModal} item={item}/>
       </Modal> :
       <Modal isOpen={isModalOpen} onClose={closeModal} height={394} width={335}>
       <ModalAttention onClose={closeModal}/>
