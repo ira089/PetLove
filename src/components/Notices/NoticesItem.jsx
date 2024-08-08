@@ -134,7 +134,7 @@ const NoticesItem = ({ item }) => {
           height={446}
           width={335}
         >
-          <ModalNotice onClose={closeModal} item={item} />
+          <ModalNotice onClose={closeModal} item={item} isFavorite={isFavorite}/>
         </Modal>
       ) : (
         <Modal
