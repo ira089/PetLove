@@ -17,7 +17,8 @@ import ModalNotice from 'components/ModalNotice/ModalNotice';
 import ModalAttention from 'components/ModalAttention/ModalAttention';
 import styles from './noticesItem.module.css';
 
-const NoticesItem = ({ item }) => {
+const NoticesItem = ({ item, isVariant }) => {
+  const { variant } = isVariant;
   const dispatch = useDispatch();
 
   const isLogin = useSelector(selectIsLoggedIn);
@@ -55,7 +56,7 @@ const NoticesItem = ({ item }) => {
   const capitalizedSpecies = capitalizeFirstLetter(species);
   const isFavorite = favorites.includes(_id);
 
-  const onFavorite =  itemId => {
+  const onFavorite = itemId => {
     if (!isLogin) {
       setIsModalOpen(true);
       return;
@@ -64,14 +65,18 @@ const NoticesItem = ({ item }) => {
       dispatch(delFavoritesThunk(itemId));
       setTogleBtnColor(false);
     } else {
-       dispatch(addFavoritesThunk(itemId));
+      dispatch(addFavoritesThunk(itemId));
       setTogleBtnColor(true);
     }
   };
 
+  const delFavorite = itemId => {
+    dispatch(delFavoritesThunk(itemId));
+  }
+
   return (
     <>
-      <li className={styles.itemWrap}>
+      <li key={_id} className={styles.itemWrap}>
         <img className={styles.image} src={imgURL} alt="pet" />
         <div className={styles.titleWrap}>
           <h4 className={styles.title}>{title}</h4>
@@ -111,20 +116,35 @@ const NoticesItem = ({ item }) => {
           >
             Learn more
           </Button>
-          <div
-            className={styles.wrapBtnHeart}
-            style={{
-              background: isFavorite || togleBtnColor ? '#fbe7c1' : '#fff4df',
-            }}
-          >
-            <button
-              className={styles.btn}
-              type="button"
-              onClick={() => onFavorite(_id)}
+          {variant ? (
+            <div
+              className={styles.wrapBtnHeart}
+              style={{
+                background: isFavorite || togleBtnColor ? '#fbe7c1' : '#fff4df',
+              }}
             >
-              <Icon width={18} height={18} name={'icon-heart'} />
-            </button>
-          </div>
+              <button
+                className={styles.btn}
+                type="button"
+                onClick={() => onFavorite(_id)}
+              >
+                <Icon width={18} height={18} name={'icon-heart'} />
+              </button>
+            </div>
+          ) : (
+            <div
+              className={styles.wrapBtnHeart}
+              style={{ background: '#fff4df' }}
+            >
+              <button
+                className={styles.btn}
+                type="button"
+                onClick={() => delFavorite(_id)}
+              >
+                <Icon width={18} height={18} name={'icon-trash-2'} />
+              </button>
+            </div>
+          )}
         </div>
       </li>
       {isLogin ? (
@@ -134,7 +154,11 @@ const NoticesItem = ({ item }) => {
           height={446}
           width={335}
         >
-          <ModalNotice onClose={closeModal} item={item} isFavorite={isFavorite}/>
+          <ModalNotice
+            onClose={closeModal}
+            item={item}
+            isFavorite={isFavorite}
+          />
         </Modal>
       ) : (
         <Modal

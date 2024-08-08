@@ -8,17 +8,18 @@ import PaginationMy from 'components/Pagination/PaginationMy';
 import NoticesItem from './NoticesItem';
 
 const NoticesList = () => {
-  const { isLoading, error, notices, totalPages, page } = useSelector(selectNotices);
-// console.log(page)
-const dispatch = useDispatch();
-  
+  const { isLoading, error, notices, totalPages, page } =
+    useSelector(selectNotices);
+  // console.log(page)
+  const dispatch = useDispatch();
+
   const selectPage = num => {
     dispatch(addPage(num));
   };
-  
+  const isVariant = { variant: true };
   const elements = notices.map(item => (
     <Grid item xs={12} md={6} lg={4}>
-      <NoticesItem key={item._id} item={item} />
+      <NoticesItem key={item._id} item={item} isVariant={isVariant} />
     </Grid>
   ));
   return (
@@ -35,9 +36,13 @@ const dispatch = useDispatch();
         </Grid>
       </Box>
 
-      {!!totalPages && totalPages !== 1 && <PaginationMy page={page}
+      {!!totalPages && totalPages !== 1 && (
+        <PaginationMy
+          page={page}
           totalPages={totalPages}
-          selectPage={selectPage} />}
+          selectPage={selectPage}
+        />
+      )}
     </>
   );
 };

@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import Button from 'components/Button/Button';
 import styles from './myNotices.module.css';
 import FavoritesList from 'components/FavoritesList/FavoritesList';
 import ViewedList from 'components/ViewedList/ViewedList';
