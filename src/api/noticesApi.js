@@ -42,7 +42,7 @@ export const fetchNotices = async ({
     const { data } = await axios.get(
       `/notices?byDate=true&page=${page}&limit=6&keyword=${query}&category=${category}&species=${type}&locationId=${location}`
     );
-    console.log(data);
+    // console.log(data);
     return data;
   }
 };
@@ -54,9 +54,7 @@ export const fetchNoticesId = async (id) => {
 };
 
 export const fetchAddNoticesFavorites = async (id) => {
-  console.log(id)
   const { data } = await axios.post(`/notices/favorites/add/${id}`);
-  console.log(data);
   return data;
 };
 

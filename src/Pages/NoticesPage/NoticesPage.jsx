@@ -16,8 +16,6 @@ const NoticesPage = () => {
   // console.log(notices)
   // console.log(page)
   useEffect(() => {
-    console.log('first')
-    console.log(dispatch)
     dispatch(noticesThunk({ page, query,  category, type, location, byPrice, byPopularity }))
   }, [byPopularity, byPrice, category, dispatch, location, page, query, type]);
 

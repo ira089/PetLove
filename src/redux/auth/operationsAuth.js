@@ -65,7 +65,6 @@ export const registerThunk = createAsyncThunk(
   export const addFavoritesThunk = createAsyncThunk(
     'auth/addfavorites',
     async (id, thunkAPI) => {
-      console.log(id)
       try {
         const favorites = await fetchAddNoticesFavorites(id);
         return favorites;

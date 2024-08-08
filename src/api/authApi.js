@@ -33,7 +33,7 @@ export const fetchRefresh = async token => {
   setAuthHeader(token);
   try {
     const { data } = await axios.get('/users/current');
-    console.log(data);
+    // console.log(data);
     return data;
   } catch (error) {
     clearAuthHeader();

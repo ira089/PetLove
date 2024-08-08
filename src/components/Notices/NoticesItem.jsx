@@ -55,18 +55,16 @@ const NoticesItem = ({ item }) => {
   const capitalizedSpecies = capitalizeFirstLetter(species);
   const isFavorite = favorites.includes(_id);
 
-  const onFavorite = async itemId => {
+  const onFavorite =  itemId => {
     if (!isLogin) {
       setIsModalOpen(true);
       return;
     }
     if (isFavorite) {
-      await console.log('first');
-      // dispatch(delFavoritesThunk(itemId));
+      dispatch(delFavoritesThunk(itemId));
       setTogleBtnColor(false);
     } else {
-       console.log('qwe');
-      await dispatch(addFavoritesThunk(itemId));
+       dispatch(addFavoritesThunk(itemId));
       setTogleBtnColor(true);
     }
   };
