@@ -22,7 +22,7 @@ const NoticesItem = ({ item }) => {
 
   const isLogin = useSelector(selectIsLoggedIn);
   const favorites = useSelector(selectFaforites);
-  console.log(favorites)
+  // console.log(favorites)
   // const togleBtnColor = false;
 
   const [togleBtnColor, setTogleBtnColor] = useState(false);

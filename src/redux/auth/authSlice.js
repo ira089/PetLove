@@ -87,10 +87,10 @@ const initialState = {
         })
         .addCase(addFavoritesThunk.pending, handlePending)
         .addCase(addFavoritesThunk.fulfilled, handleFulfilledFavorites)
-        .addCase(addFavoritesThunk.rejected, handleRejected);
-        // .addCase(delFavoritesThunk.pending, handlePending)
-        // .addCase(delFavoritesThunk.fulfilled, handleFulfilledFavoritesDel)
-        // .addCase(delFavoritesThunk.rejected, handleRejected);
+        .addCase(addFavoritesThunk.rejected, handleRejected)
+        .addCase(delFavoritesThunk.pending, handlePending)
+        .addCase(delFavoritesThunk.fulfilled, handleFulfilledFavoritesDel)
+        .addCase(delFavoritesThunk.rejected, handleRejected);
     },
   });
   export const authReducer = authSlice.reducer;
