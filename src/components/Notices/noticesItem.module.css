@@ -88,9 +88,22 @@ color: rgba(38, 38, 38, 0.5);
     align-items: center;
     gap: 24px;
   }
-   
+  .wrapBtnHeart{
+    border-radius: 100%;
+    padding: 0 4px;
+    width: 46px;
+    height: 46px;
+    /* background: red; */
+    /* background: #fff4df; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .btn {
     background-color: transparent;
     border: none;
   }
+
+  
   

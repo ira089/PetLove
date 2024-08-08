@@ -20,9 +20,9 @@ const NoticesFilters = () => {
   const [byType, setByType] = useState([]);
   const [location, setLocation] = useState([]);
   const [inputValue, setInputValue] = useState('');
-  console.log(typeof(inputValue))
-  const isInputValue = Boolean(inputValue)
-  console.log(isInputValue)
+  // console.log(typeof(inputValue))
+  // const isInputValue = Boolean(inputValue)
+  // console.log(isInputValue)
 
   // const [selectedOption, setSelectedOption] = useState(null);
   // console.log(selectedOption)

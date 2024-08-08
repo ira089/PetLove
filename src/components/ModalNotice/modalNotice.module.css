@@ -25,7 +25,8 @@ margin: 20px 0 10px 0;
     display: flex;
     margin-bottom: 24px;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 4px;
   }
 
   .rating span {
@@ -81,15 +82,19 @@ color: rgba(38, 38, 38, 0.5);
 
   .btn {
     width: 135px;
-  }
-
-  .wrapBtn span {
-font-size: 16px;
+    font-size: 16px;
 line-height: 125%;
 letter-spacing: -0.03em;
 color: #fff;
-text-transform: lowercase;
-text-transform: capitalize;
+border-radius: 30px;
+/* padding: 12px 31px; */
+height: 44px;
+background: #f6b83d;
+border: none;
+display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
   }
 
   .link {
@@ -99,8 +104,9 @@ width: 134px;
 height: 44px;
 background: #fff4df;
 display: flex;
-justify-items: center;
+justify-content: center;
 align-items: center;
+border: none;
 
   }
 

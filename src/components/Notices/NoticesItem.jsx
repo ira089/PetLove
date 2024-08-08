@@ -1,7 +1,14 @@
-import React, {useState} from 'react';
-import {  useSelector } from 'react-redux'
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { parseISO, format } from 'date-fns';
-import {selectIsLoggedIn} from '../../redux/auth/selectorsAuth'
+import {
+  selectIsLoggedIn,
+  selectFaforites,
+} from '../../redux/auth/selectorsAuth';
+import {
+  addFavoritesThunk,
+  delFavoritesThunk,
+} from '../../redux/auth/operationsAuth';
 import Icon from 'components/Icon/Icon';
 import Modal from 'components/Modal/Modal';
 import { capitalizeFirstLetter } from '../../helpers/functions';
@@ -11,8 +18,14 @@ import ModalAttention from 'components/ModalAttention/ModalAttention';
 import styles from './noticesItem.module.css';
 
 const NoticesItem = ({ item }) => {
-  const isLogin = useSelector(selectIsLoggedIn);
+  const dispatch = useDispatch();
 
+  const isLogin = useSelector(selectIsLoggedIn);
+  const favorites = useSelector(selectFaforites);
+  console.log(favorites)
+  // const togleBtnColor = false;
+
+  const [togleBtnColor, setTogleBtnColor] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const openModal = () => {
     setIsModalOpen(true);
@@ -20,7 +33,7 @@ const NoticesItem = ({ item }) => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
-  // console.log(item);
+
   const {
     imgURL,
     title,
@@ -31,76 +44,111 @@ const NoticesItem = ({ item }) => {
     sex,
     species,
     comment,
+    _id,
   } = item;
   const rating = Math.round(popularity / 10);
-  const date =  Date.now()
+  const date = Date.now();
   const parsedDate = birthday ? parseISO(birthday) : date;
   const birthdayData = format(parsedDate, 'dd.MM.yyyy');
   const capitalizedSex = capitalizeFirstLetter(sex);
   const capitalizedCategory = capitalizeFirstLetter(category);
   const capitalizedSpecies = capitalizeFirstLetter(species);
+  const isFavorite = favorites.includes(_id);
 
-  // const onLoadMore = id => {
-  //   console.log('first');
-  // };
+  const onFavorite = async itemId => {
+    if (!isLogin) {
+      setIsModalOpen(true);
+      return;
+    }
+    if (isFavorite) {
+      await console.log('first');
+      // dispatch(delFavoritesThunk(itemId));
+      setTogleBtnColor(false);
+    } else {
+       console.log('qwe');
+      await dispatch(addFavoritesThunk(itemId));
+      setTogleBtnColor(true);
+    }
+  };
 
-  //  console.log(rating)
   return (
     <>
-     <li className={styles.itemWrap}>
-      <img className={styles.image} src={imgURL} alt="pet" />
-      <div className={styles.titleWrap}>
-        <h4 className={styles.title}>{title}</h4>
-        <div className={styles.rating}>
-          <Icon width={16} height={16} name={'icon-star'} />
-          <span>{rating}</span>
+      <li className={styles.itemWrap}>
+        <img className={styles.image} src={imgURL} alt="pet" />
+        <div className={styles.titleWrap}>
+          <h4 className={styles.title}>{title}</h4>
+          <div className={styles.rating}>
+            <Icon width={16} height={16} name={'icon-star'} />
+            <span>{rating}</span>
+          </div>
         </div>
-      </div>
-      <div className={styles.сategory}>
-        <div className={styles.сategoryItem}>
-          <h6>Name</h6>
-          <p>{name}</p>
+        <div className={styles.сategory}>
+          <div className={styles.сategoryItem}>
+            <h6>Name</h6>
+            <p>{name}</p>
+          </div>
+          <div className={styles.сategoryItem}>
+            <h6>Birthday</h6>
+            <p>{birthdayData}</p>
+          </div>
+          <div className={styles.сategoryItem}>
+            <h6>Sex</h6>
+            <p>{capitalizedSex}</p>
+          </div>
+          <div className={styles.сategoryItem}>
+            <h6>Species</h6>
+            <p>{capitalizedSpecies}</p>
+          </div>
+          <div className={styles.сategoryItem}>
+            <h6>Category</h6>
+            <p>{capitalizedCategory}</p>
+          </div>
         </div>
-        <div className={styles.сategoryItem}>
-          <h6>Birthday</h6>
-          <p>{birthdayData}</p>
+        <p className={styles.text}>{comment}</p>
+        <div className={styles.btnWrap}>
+          <Button
+            style={{ textTransform: 'lowercase' }}
+            type="button"
+            onClick={openModal}
+          >
+            Learn more
+          </Button>
+          <div
+            className={styles.wrapBtnHeart}
+            style={{
+              background: isFavorite || togleBtnColor ? '#fbe7c1' : '#fff4df',
+            }}
+          >
+            <button
+              className={styles.btn}
+              type="button"
+              onClick={() => onFavorite(_id)}
+            >
+              <Icon width={18} height={18} name={'icon-heart'} />
+            </button>
+          </div>
         </div>
-        <div className={styles.сategoryItem}>
-          <h6>Sex</h6>
-          <p>{capitalizedSex}</p>
-        </div>
-        <div className={styles.сategoryItem}>
-          <h6>Species</h6>
-          <p>{capitalizedSpecies}</p>
-        </div>
-        <div className={styles.сategoryItem}>
-          <h6>Category</h6>
-          <p>{capitalizedCategory}</p>
-        </div>
-      </div>
-      <p className={styles.text}>{comment}</p>
-      <div className={styles.btnWrap}>
-        <Button
-          style={{ textTransform: 'lowercase' }}
-          type="button"
-          onClick={openModal}
+      </li>
+      {isLogin ? (
+        <Modal
+          isOpen={isModalOpen}
+          onClose={closeModal}
+          height={446}
+          width={335}
         >
-          Learn more
-        </Button>
-        <button className={styles.btn} type="button">
-          <Icon width={18} height={18} name={'icon-heart'} />
-        </button>
-      </div>
-    </li>
-    {isLogin ? <Modal isOpen={isModalOpen} onClose={closeModal} height={446} width={335}>
-        <ModalNotice onClose={closeModal} item={item}/>
-      </Modal> :
-      <Modal isOpen={isModalOpen} onClose={closeModal} height={394} width={335}>
-      <ModalAttention onClose={closeModal}/>
-    </Modal>}
-    
+          <ModalNotice onClose={closeModal} item={item} />
+        </Modal>
+      ) : (
+        <Modal
+          isOpen={isModalOpen}
+          onClose={closeModal}
+          height={394}
+          width={335}
+        >
+          <ModalAttention onClose={closeModal} />
+        </Modal>
+      )}
     </>
-   
   );
 };
 

@@ -4,6 +4,8 @@ import {
     loginThunk,
     logOutThunk,
     refresThunk,
+    addFavoritesThunk,
+    delFavoritesThunk
   } from './operationsAuth';
 import {
     handleFulfilled,
@@ -18,6 +20,9 @@ const initialState = {
     isRefreshing: false,
     isLoading: false,
     error: null,
+    noticesFavorites: [],
+    pets: [],
+    noticesViewed: [],
   };
   
   const handleFulfilledRegister = (state, { payload }) => {
@@ -38,8 +43,21 @@ const initialState = {
   const handleFulfilledRefrech = (state, { payload }) => {
     state.user.name = payload.name;
     state.user.email = payload.email;
+    state.noticesFavorites = payload.noticesFavorites.map(el => el._id);
     state.isLoggedIn = true;
     state.isRefreshing = false;
+    handleFulfilled(state);
+  };
+
+  const handleFulfilledFavorites = (state, { payload }) => {
+    state.noticesFavorites = payload
+    state.isLoggedIn = true;
+    handleFulfilled(state);
+  };
+
+  const handleFulfilledFavoritesDel = (state, { payload }) => {
+    state.noticesFavorites = payload
+    state.isLoggedIn = true;
     handleFulfilled(state);
   };
   
@@ -66,7 +84,13 @@ const initialState = {
         .addCase(refresThunk.rejected, state => {
           state.isRefreshing = false;
           state.isLoading = false;
-        });
+        })
+        .addCase(addFavoritesThunk.pending, handlePending)
+        .addCase(addFavoritesThunk.fulfilled, handleFulfilledFavorites)
+        .addCase(addFavoritesThunk.rejected, handleRejected);
+        // .addCase(delFavoritesThunk.pending, handlePending)
+        // .addCase(delFavoritesThunk.fulfilled, handleFulfilledFavoritesDel)
+        // .addCase(delFavoritesThunk.rejected, handleRejected);
     },
   });
   export const authReducer = authSlice.reducer;

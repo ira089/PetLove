@@ -1,14 +1,13 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import * as authApi from '../../api/authApi';
+import {fetchAddNoticesFavorites, fetchDelNoticesFavorites} from '../../api/noticesApi'
 import { toast } from 'react-toastify';
 
 export const registerThunk = createAsyncThunk(
     'auth/register',
     async (data, thunkAPI) => {
-      console.log(data)
       try {
         const register = await authApi.fetchRegister(data);
-        console.log(register)
         toast.success('Congratulations! You have successfully registered!');
         return register;
       } catch (error) {
@@ -58,6 +57,33 @@ export const registerThunk = createAsyncThunk(
         return refresh;
       } catch (error) {
         // console.log(error.message);
+        return thunkAPI.rejectWithValue(error.message);
+      }
+    }
+  );
+
+  export const addFavoritesThunk = createAsyncThunk(
+    'auth/favorites',
+    async (id, thunkAPI) => {
+      console.log(id)
+      try {
+        const favorites = await fetchAddNoticesFavorites(id);
+        return favorites;
+      } catch (error) {
+        toast.error(`${error.message}`);
+        return thunkAPI.rejectWithValue(error.message);
+      }
+    }
+  );
+
+  export const delFavoritesThunk = createAsyncThunk(
+    'auth/favorites',
+    async (id, thunkAPI) => {
+      try {
+        const favorites = await fetchDelNoticesFavorites(id);
+        return favorites;
+      } catch (error) {
+        toast.error(`${error.message}`);
         return thunkAPI.rejectWithValue(error.message);
       }
     }
