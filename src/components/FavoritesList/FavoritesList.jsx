@@ -7,18 +7,12 @@ import NoticesItem from '../Notices/NoticesItem';
 import styles from '../Notices/noticesItem.module.css';
 
 const FavoritesList = () => {
-  const isVariant = { variant: false };
+  const isVariant = { variant: true };
   const isLoading = useSelector(select.selectIsLoadin);
   const error = useSelector(select.selectError);
   const favoritesPets = useSelector(select.selectFaforites);
-  const qwe = useSelector(select.selectPets);
-  const sxc = useSelector(select.selectViewed);
+  // const qwe = useSelector(select.selectPets);
 
-  console.log(isLoading);
-  console.log(error);
-  console.log(favoritesPets);
-  console.log(qwe);
-  console.log(sxc);
   const isFavoritesPets = Boolean(favoritesPets.length);
 
   const elements = favoritesPets.map(item => (

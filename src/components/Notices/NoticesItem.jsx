@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 import { parseISO, format } from 'date-fns';
 import {
   selectIsLoggedIn,
@@ -20,11 +21,10 @@ import styles from './noticesItem.module.css';
 const NoticesItem = ({ item, isVariant }) => {
   const { variant } = isVariant;
   const dispatch = useDispatch();
+  const location = useLocation();
 
   const isLogin = useSelector(selectIsLoggedIn);
   const favorites = useSelector(selectFaforitesId);
-  // console.log(favorites)
-  // const togleBtnColor = false;
 
   const [togleBtnColor, setTogleBtnColor] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -72,7 +72,7 @@ const NoticesItem = ({ item, isVariant }) => {
 
   const delFavorite = itemId => {
     dispatch(delFavoritesThunk(itemId));
-  }
+  };
 
   return (
     <>
@@ -116,7 +116,7 @@ const NoticesItem = ({ item, isVariant }) => {
           >
             Learn more
           </Button>
-          {variant ? (
+          {location.pathname === '/notices' && (
             <div
               className={styles.wrapBtnHeart}
               style={{
@@ -131,7 +131,9 @@ const NoticesItem = ({ item, isVariant }) => {
                 <Icon width={18} height={18} name={'icon-heart'} />
               </button>
             </div>
-          ) : (
+          )}
+
+          {variant && (
             <div
               className={styles.wrapBtnHeart}
               style={{ background: '#fff4df' }}

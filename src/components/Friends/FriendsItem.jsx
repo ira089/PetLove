@@ -4,7 +4,7 @@ import styles from './friendsItem.module.css';
 import Typography from '@mui/material/Typography';
 
 const FriendsItem = ({ item }) => {
-  const { workDays, imageUrl, title, email, phone, address } = item;
+  const { workDays, imageUrl, title, email, phone, address, _id } = item;
   // console.log(workDays);
   // console.log(item);
   const isLength = Boolean(workDays?.length);
@@ -15,7 +15,7 @@ const FriendsItem = ({ item }) => {
   // console.log(isLength);
 
   return (
-    <li className={styles.itemFriend}>
+    <li key={_id} className={styles.itemFriend}>
       <div className={styles.time}>
         {isLength ? (
           <span>{workDays[0].from || workDays[5].from}</span>

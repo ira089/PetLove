@@ -16,7 +16,7 @@ const NoticesList = () => {
   const selectPage = num => {
     dispatch(addPage(num));
   };
-  const isVariant = { variant: true };
+  const isVariant = { variant: false };
   const elements = notices.map(item => (
     <Grid item xs={12} md={6} lg={4}>
       <NoticesItem key={item._id} item={item} isVariant={isVariant} />
