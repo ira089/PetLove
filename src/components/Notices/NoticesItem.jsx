@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { parseISO, format } from 'date-fns';
 import {
   selectIsLoggedIn,
-  selectFaforites,
+  selectFaforitesId,
 } from '../../redux/auth/selectorsAuth';
 import {
   addFavoritesThunk,
@@ -22,7 +22,7 @@ const NoticesItem = ({ item, isVariant }) => {
   const dispatch = useDispatch();
 
   const isLogin = useSelector(selectIsLoggedIn);
-  const favorites = useSelector(selectFaforites);
+  const favorites = useSelector(selectFaforitesId);
   // console.log(favorites)
   // const togleBtnColor = false;
 

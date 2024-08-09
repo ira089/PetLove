@@ -49,14 +49,12 @@ export const registerThunk = createAsyncThunk(
       try {
         const state = thunkAPI.getState();
         const persistedToken = state.auth.token;
-        // console.log(persistedToken);
         if (persistedToken === null) {
           return thunkAPI.rejectWithValue('Unable to fetch user');
         }
         const refresh = await authApi.fetchRefresh(persistedToken);
         return refresh;
       } catch (error) {
-        // console.log(error.message);
         return thunkAPI.rejectWithValue(error.message);
       }
     }
@@ -87,3 +85,35 @@ export const registerThunk = createAsyncThunk(
       }
     }
   );
+
+  // export const currentFullThunk = createAsyncThunk(
+  //   'auth/full',
+  //   async (_, thunkAPI) => {
+  //     try {
+  //       const currentFull = await authApi.fetchCurrentFull();
+  //       console.log(currentFull)
+  //       return currentFull;
+        
+        
+  //     } catch (error) {
+  //       return thunkAPI.rejectWithValue(error.message);
+  //     }
+  //   }
+  // );
+
+  export const currentFullThunk = createAsyncThunk(
+    'auth/full',
+    async (_, thunkAPI) => {
+      try {
+        const state = thunkAPI.getState();
+        const persistedToken = state.auth.token;
+        if (persistedToken === null) {
+          return thunkAPI.rejectWithValue('Unable to fetch user');
+        }
+        const currentFull = await authApi.fetchCurrentFull(persistedToken);
+        return currentFull;
+      } catch (error) {
+        return thunkAPI.rejectWithValue(error.message);
+      }
+    }
+   );

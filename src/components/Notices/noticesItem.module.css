@@ -105,5 +105,18 @@ color: rgba(38, 38, 38, 0.5);
     border: none;
   }
 
+  .textOops {
+font-size: 14px;
+line-height: 129%;
+letter-spacing: -0.02em;
+text-align: center;
+color: #262626;
+  }
+
+  .textOops span {
+    font-weight: 700;
+    color: #f6b83d;
+  }
+
   
   

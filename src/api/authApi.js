@@ -40,3 +40,14 @@ export const fetchRefresh = async token => {
     throw error;
   }
 };
+
+export const fetchCurrentFull = async token => {
+  setAuthHeader(token);
+  try {
+    const { data } = await axios.get('/users/current/full');
+    return data;
+  } catch (error) {
+    clearAuthHeader();
+    throw error;
+  }
+};

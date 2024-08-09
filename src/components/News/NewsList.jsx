@@ -13,8 +13,9 @@ const NewsList = () => {
   const { isLoading, error, news, totalPages, page } = useSelector(
     selectorNew.selectNews
   );
+
   const dispatch = useDispatch();
-  
+
   const selectPage = num => {
     dispatch(addPage(num));
   };

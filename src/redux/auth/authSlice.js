@@ -5,7 +5,8 @@ import {
     logOutThunk,
     refresThunk,
     addFavoritesThunk,
-    delFavoritesThunk
+    delFavoritesThunk,
+    currentFullThunk
   } from './operationsAuth';
 import {
     handleFulfilled,
@@ -20,9 +21,10 @@ const initialState = {
     isRefreshing: false,
     isLoading: false,
     error: null,
-    noticesFavorites: [],
+    noticesFavoritesId: [],
     pets: [],
     noticesViewed: [],
+    noticesFavorites:[],
   };
   
   const handleFulfilledRegister = (state, { payload }) => {
@@ -43,23 +45,31 @@ const initialState = {
   const handleFulfilledRefrech = (state, { payload }) => {
     state.user.name = payload.name;
     state.user.email = payload.email;
-    state.noticesFavorites = payload.noticesFavorites.map(el => el._id);
+    state.noticesFavoritesId = payload.noticesFavorites.map(el => el._id);
     state.isLoggedIn = true;
     state.isRefreshing = false;
     handleFulfilled(state);
   };
 
   const handleFulfilledFavorites = (state, { payload }) => {
-    state.noticesFavorites = payload
+    state.noticesFavoritesId = payload
     state.isLoggedIn = true;
     handleFulfilled(state);
   };
 
   const handleFulfilledFavoritesDel = (state, { payload }) => {
-    state.noticesFavorites = payload
+    state.noticesFavoritesId = payload
     state.isLoggedIn = true;
     handleFulfilled(state);
   };
+
+  const handleFulfilledCurrentFull = (state, {payload}) => {
+    state.noticesFavorites = payload.noticesFavorites
+    state.pets = payload.pets
+    state.noticesViewed = payload.noticesViewed
+    state.isLoggedIn = true;
+    handleFulfilled(state);
+  }
   
   export const authSlice = createSlice({
     name: 'auth',
@@ -90,7 +100,10 @@ const initialState = {
         .addCase(addFavoritesThunk.rejected, handleRejected)
         .addCase(delFavoritesThunk.pending, handlePending)
         .addCase(delFavoritesThunk.fulfilled, handleFulfilledFavoritesDel)
-        .addCase(delFavoritesThunk.rejected, handleRejected);
+        .addCase(delFavoritesThunk.rejected, handleRejected)
+        .addCase(currentFullThunk.pending, handlePending)
+        .addCase(currentFullThunk.fulfilled, handleFulfilledCurrentFull)
+        .addCase(currentFullThunk.rejected, handleRejected);
     },
   });
   export const authReducer = authSlice.reducer;
