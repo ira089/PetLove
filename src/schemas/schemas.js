@@ -46,17 +46,17 @@ export const addPetSchema = yup.object().shape({
     .string()
     .required('Name is required'),
 
-    imgUrl: yup
-    .string()
-    .matches(
-      /^https?:\/\/.*\.(?:png|jpg|jpeg|gif|bmp|webp)$/,
-      'Enter a valid imgUrl'
-    )
-    .required('imgUrl is required'),
+    // imgUrl: yup
+    // .string()
+    // .matches(
+    //   /^https?:\/\/.*\.(?:png|jpg|jpeg|gif|bmp|webp)$/,
+    //   'Enter a valid imgUrl'
+    // )
+    // .required('imgUrl is required'),
 
-    species: yup
-    .string()
-    .required('Species is required'),
+    // species: yup
+    // .string()
+    // .required('Species is required'),
 
     birthday: yup
     .string()

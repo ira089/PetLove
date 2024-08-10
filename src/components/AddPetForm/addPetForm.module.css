@@ -46,15 +46,22 @@
 .female {
   background: rgba(244, 63, 94, 0.1);
 }
+.femaleInput:checked + .female {
+  background: #f43f5e;
+}
 
 .male {
   background: rgba(84, 173, 255, 0.1);
 }
-
+.maleInput:checked + .male {
+  background: #54adff;
+}
 .multiple {
   background: rgba(84, 173, 255, 0.1);
 }
-
+.multipleInput:checked + .multiple {
+  background: #f6b83d;
+}
 .wrapInput{
     display: flex;
     flex-direction: column;
@@ -62,6 +69,7 @@
     /* align-items: center; */
     gap: 10px;
     margin-bottom: 31px;
+    
 }
 
 .wrapImg {
@@ -74,6 +82,7 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 16px;
+  margin-left: 123px;
 }
 
 .uploadWrap {
@@ -144,7 +153,7 @@ label span {
     color: red;  
 }
 
-option {
+/* option {
     position: absolute;
     left: 0;
     bottom: -14px; 
@@ -152,31 +161,46 @@ option {
 line-height: 129%;
 letter-spacing: -0.03em;
 color: rgba(38, 38, 38, 0.6);
-}
+} */
 
 
 .wrapTab {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    gap: 8px;
+    margin-left: 127px;
 }
 
-.tab {
+.btn, .link {
     border-radius: 30px;
 padding: 12px ;
 width: 100px;
-height: 42px;
-background: rgba(38, 38, 38, 0.05);
-border: none;
+
+/* background: rgba(38, 38, 38, 0.05); */
+background: rebeccapurple;
+
 font-weight: 700;
 font-size: 14px;
 line-height: 129%;
 letter-spacing: -0.03em;
 color: #262626;
-border: none;
+
 }
 
-.tab:hover {  
+.link {
+  text-decoration: none;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.btn {
+  height: 42px;
+  border: none;
+ 
+}
+
+.btn:hover, link:hover {  
     background: #f6b83d;
 color: #fff;
 }
