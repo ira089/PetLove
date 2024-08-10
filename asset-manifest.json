@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/PetLove/static/css/main.53ce6b5a.css",
-    "main.js": "/PetLove/static/js/main.df0473e8.js",
+    "main.css": "/PetLove/static/css/main.4b5f9ccb.css",
+    "main.js": "/PetLove/static/js/main.9c3252f7.js",
     "static/media/kissDog.svg": "/PetLove/static/media/kissDog.0b6375a62bb40c66fae9.svg",
     "static/media/mainsvg .svg": "/PetLove/static/media/mainsvg .385c136b458872b4f06d.svg",
     "static/media/cat2D.png": "/PetLove/static/media/cat2D.035fb94a482bed3534bb.png",
@@ -25,18 +25,18 @@
     "static/media/Manrope-Medium.woff": "/PetLove/static/media/Manrope-Medium.4e55dc20921a95ef83f4.woff",
     "static/media/Manrope-Semibold.woff": "/PetLove/static/media/Manrope-Semibold.f4e54434d986b1395b3b.woff",
     "static/media/Manrope-ExtraBold.woff": "/PetLove/static/media/Manrope-ExtraBold.af754df8afbc222b77e8.woff",
+    "static/media/icons.svg": "/PetLove/static/media/icons.66dfb711b6d23ce6dd274f2d1deed86c.svg",
     "static/media/Manrope-Bold.woff2": "/PetLove/static/media/Manrope-Bold.1fc53579e1040cbf987d.woff2",
     "static/media/Manrope-Medium.woff2": "/PetLove/static/media/Manrope-Medium.9cccfee0f8d3153ae547.woff2",
     "static/media/Manrope-Semibold.woff2": "/PetLove/static/media/Manrope-Semibold.0d44fe833dd4c7229544.woff2",
     "static/media/Manrope-ExtraBold.woff2": "/PetLove/static/media/Manrope-ExtraBold.a90ad203eaed8bfd3323.woff2",
-    "static/media/icons.svg": "/PetLove/static/media/icons.a3c0ef505140a2835a6160e694cfb7a6.svg",
     "static/media/catIcon2.png": "/PetLove/static/media/catIcon2.8c90f6365e4f023b9a0f.png",
     "index.html": "/PetLove/index.html",
-    "main.53ce6b5a.css.map": "/PetLove/static/css/main.53ce6b5a.css.map",
-    "main.df0473e8.js.map": "/PetLove/static/js/main.df0473e8.js.map"
+    "main.4b5f9ccb.css.map": "/PetLove/static/css/main.4b5f9ccb.css.map",
+    "main.9c3252f7.js.map": "/PetLove/static/js/main.9c3252f7.js.map"
   },
   "entrypoints": [
-    "static/css/main.53ce6b5a.css",
-    "static/js/main.df0473e8.js"
+    "static/css/main.4b5f9ccb.css",
+    "static/js/main.9c3252f7.js"
   ]
 }
