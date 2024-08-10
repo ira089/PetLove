@@ -51,3 +51,15 @@ export const fetchCurrentFull = async token => {
     throw error;
   }
 };
+
+export const fetchAddPet = async token => {
+  setAuthHeader(token);
+  try {
+    const { data } = await axios.post('/users/current/pets/add');
+    console.log(data)
+    return data;
+  } catch (error) {
+    clearAuthHeader();
+    throw error;
+  }
+};

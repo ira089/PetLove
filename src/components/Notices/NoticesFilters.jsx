@@ -104,7 +104,6 @@ const NoticesFilters = () => {
 
   const onRadio = evt => {
     const byValue = evt.target.value;
-    console.log(byValue);
     switch (byValue) {
       case 'popular':
         dispatch(addByPopularity(true));

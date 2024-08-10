@@ -36,3 +36,35 @@ export const loginSchema = yup.object().shape({
     .min(7, 'Password must be at least 7 characters')
     .required('Password is required'),
 });
+
+export const addPetSchema = yup.object().shape({
+  title: yup
+    .string()
+    .required('Title is required'),
+
+  name: yup
+    .string()
+    .required('Name is required'),
+
+    imgUrl: yup
+    .string()
+    .matches(
+      /^https?:\/\/.*\.(?:png|jpg|jpeg|gif|bmp|webp)$/,
+      'Enter a valid imgUrl'
+    )
+    .required('imgUrl is required'),
+
+    species: yup
+    .string()
+    .required('Species is required'),
+
+    birthday: yup
+    .string()
+    .matches( /^\d{4}-\d{2}-\d{2}$/,'Enter a valid Birthday')
+    .required('Birthday is required'),
+
+    // sex: yup
+    // .string()
+    // .required('Pet gender is required'),
+});
+

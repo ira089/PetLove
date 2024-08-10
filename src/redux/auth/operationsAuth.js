@@ -86,21 +86,6 @@ export const registerThunk = createAsyncThunk(
     }
   );
 
-  // export const currentFullThunk = createAsyncThunk(
-  //   'auth/full',
-  //   async (_, thunkAPI) => {
-  //     try {
-  //       const currentFull = await authApi.fetchCurrentFull();
-  //       console.log(currentFull)
-  //       return currentFull;
-        
-        
-  //     } catch (error) {
-  //       return thunkAPI.rejectWithValue(error.message);
-  //     }
-  //   }
-  // );
-
   export const currentFullThunk = createAsyncThunk(
     'auth/full',
     async (_, thunkAPI) => {
@@ -112,6 +97,24 @@ export const registerThunk = createAsyncThunk(
         }
         const currentFull = await authApi.fetchCurrentFull(persistedToken);
         return currentFull;
+      } catch (error) {
+        return thunkAPI.rejectWithValue(error.message);
+      }
+    }
+   );
+
+   export const petAddThunk = createAsyncThunk(
+    'auth/addpet',
+    async (_, thunkAPI) => {
+      try {
+        const state = thunkAPI.getState();
+        const persistedToken = state.auth.token;
+        if (persistedToken === null) {
+          return thunkAPI.rejectWithValue('Unable to fetch user');
+        }
+        const addPet = await authApi.fetchAddPet(persistedToken);
+        console.log(addPet)
+        return addPet;
       } catch (error) {
         return thunkAPI.rejectWithValue(error.message);
       }

@@ -18,6 +18,7 @@ import Loader from './Loader/Loader';
 import { NewsPage } from 'Pages/NewsPage/NewsPage';
 import OurFriendsPage from 'Pages/OurFriendsPage/OurFriendsPage';
 import NoticesPage from 'Pages/NoticesPage/NoticesPage';
+import AddPetPage from 'Pages/AddPetPage/AddPetPage';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -47,6 +48,7 @@ const App = () => {
           </Route>
           <Route element={<PrivateRoute />}>
             <Route path="profile" element={<ProfilePage />} />
+            <Route path="add-pet" element={<AddPetPage/>} />
           </Route>
 
           <Route path="*" element={<NotFoundPage />} />

@@ -6,7 +6,8 @@ import {
     refresThunk,
     addFavoritesThunk,
     delFavoritesThunk,
-    currentFullThunk
+    currentFullThunk,
+    petAddThunk
   } from './operationsAuth';
 import {
     handleFulfilled,
@@ -70,6 +71,10 @@ const initialState = {
     state.isLoggedIn = true;
     handleFulfilled(state);
   }
+
+  // const handleFulfilledPetAdd = (state, {payload}) => {
+
+  // }
   
   export const authSlice = createSlice({
     name: 'auth',
@@ -103,7 +108,10 @@ const initialState = {
         .addCase(delFavoritesThunk.rejected, handleRejected)
         .addCase(currentFullThunk.pending, handlePending)
         .addCase(currentFullThunk.fulfilled, handleFulfilledCurrentFull)
-        .addCase(currentFullThunk.rejected, handleRejected);
+        .addCase(currentFullThunk.rejected, handleRejected)
+        .addCase(petAddThunk.pending, handlePending)
+        .addCase(petAddThunk.fulfilled, handleFulfilledCurrentFull)
+        .addCase(petAddThunk.rejected, handleRejected);
     },
   });
   export const authReducer = authSlice.reducer;
