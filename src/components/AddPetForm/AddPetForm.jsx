@@ -1,70 +1,60 @@
-import React, { useState } from 'react';
-// import { useDispatch } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import Select from 'react-select';
+import * as params from '../../api/filterApi';
 import { addPetSchema } from '../../schemas/schemas';
-// import { petAddThunk } from '../../redux/auth/operationsAuth';
+import { optionObj } from '../../helpers/functions';
+import { petAddThunk } from '../../redux/auth/operationsAuth';
 import Icon from 'components/Icon/Icon';
 import styles from './addPetForm.module.css';
 import customStyles from '../Notices/customStyles';
 
 const AddPetForm = () => {
-  const [selectedSex, setSelectedSex] = useState(null);
-  const handleChange = event => {
-    console.log(event.target.value);
-    setSelectedSex(event.target.value);
-  };
-  const options = [
-    { value: '', label: 'Show all' },
-    { value: 'female', label: 'Female' },
-    { value: 'male', label: 'Male' },
-    { value: 'multiple', label: 'Multiple' },
-    { value: 'unknown', label: 'Unknown' },
-  ];
-  // const dispatch = useDispatch();
-
-  //   function changeImg(event) {
-  //     console.log(event)
-  //     const avatarNew = event.target.files[0]
-  //     console.log(avatarNew)
-  //     const file = new FileReader();
-  //     file.onload = function () {
-  //       setPreview(file.result);
-  //     };
-  //     file.readAsDataURL(avatarNew);
-  // setValue("avatar", [avatarNew])
-  //   }
+  const dispatch = useDispatch();
+  const [avatarUrl, setAvatarUrl] = useState('');
+  const [avatarPreview, setAvatarPreview] = useState('');
+  const [byType, setByType] = useState([]);
+// console.log(avatarUrl)
+  
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const dataArr = await params.fetchSpecies();
+        const dataObj = optionObj(dataArr);
+        setByType(dataObj);
+      } catch (error) {
+        return error.message;
+      }
+    };
+    getData();
+  }, []);
+  
+  
 
   const submit = evt => {
-    console.log(evt);
+    // console.log(evt);
+
+    const formData = {
+      title: evt.title,
+      name: evt.name,
+      imgUrl: evt.imgUrl,
+      species: evt.species.value,
+      birthday: evt.birthday,
+      sex: evt.sex,
+    };
+    console.log(formData);
+    dispatch(petAddThunk(formData))
   };
-  // const formData = {
-  //   title: evt.title,
-  //   name: evt.name,
-  //   imgUrl: evt.imgUrl,
-  //   species: evt.species,
-  //   birthday: evt.birthday,
-  //   sex: evt.sex,
-
-  // const hasAvatar = evt.avatar.length > 0;
-  // if (hasAvatar) {
-  //   dispatch(updateUserAvatar(evt.avatar[0]))
-  // }
-  // const isValid = await addPetSchema.isValid(formData);
-
-  // if (!isValid) {
-  //   return;
-  // }
-
-  // dispatch(petAddThunk({ ...formData }));
 
   const {
     register,
     handleSubmit,
     control,
-    // setValue,
+    setValue,
+    watch,
     formState: { errors, isValid },
   } = useForm({
     defaultValues: {
@@ -78,6 +68,25 @@ const AddPetForm = () => {
     mode: 'onBlur',
     resolver: yupResolver(addPetSchema),
   });
+
+  const handleFileChange = e => {
+    const file = e.target.files[0];
+    console.log(file)
+    if (file) {
+      const url = URL.createObjectURL(file);
+      setAvatarPreview(url);
+      const imgUrl = `https://${file.name}`
+      console.log(imgUrl)
+      setAvatarUrl(imgUrl);
+       setValue('imgUrl', imgUrl)
+    }
+  };
+
+  const selectedSex = watch('sex');
+  const handleChange = value => {
+    setValue('sex', value); // обновляем значение в react-hook-form
+  };
+
   return (
     <div className={styles.wrapMyPet}>
       <h3 className={styles.title}>
@@ -95,7 +104,7 @@ const AddPetForm = () => {
               value="female"
               id="sex-female"
               // checked={selectedSex === 'female'}
-              onChange={handleChange}
+              onChange={() => handleChange('female')}
             />
             <div className={styles.female}>
               {selectedSex === 'female' ? (
@@ -114,7 +123,7 @@ const AddPetForm = () => {
               type="radio"
               value="male"
               id="sex-male"
-              onChange={handleChange}
+              onChange={() => handleChange('male')}
             />
             <div className={styles.male}>
               {selectedSex === 'male' ? (
@@ -133,7 +142,7 @@ const AddPetForm = () => {
               type="radio"
               value="multiple"
               id="sex-multiple"
-              onChange={handleChange}
+              onChange={() => handleChange('multiple')}
             />
             <div className={styles.multiple}>
               {selectedSex === 'multiple' ? (
@@ -145,9 +154,13 @@ const AddPetForm = () => {
           </label>
         </div>
 
-        {/* <div className={styles.wrapImg}>
+        {avatarPreview ? (
+          <img className={styles.img} src={avatarPreview} alt="pet" />
+        ) : (
+          <div className={styles.wrapImg}>
             <Icon width={34} height={34} name={'icon-paw'} />
-          </div> */}
+          </div>
+        )}
 
         <div className={styles.uploadWrap}>
           <label className={styles.label}>
@@ -156,7 +169,9 @@ const AddPetForm = () => {
               {...register('imgUrl')}
               name="imgUrl"
               placeholder="Enter URL"
-              type="url"
+              type="text"
+              value={avatarUrl}
+              // readOnly
             />
             {errors?.imgUrl && (
               <span className={styles.span}>
@@ -172,7 +187,7 @@ const AddPetForm = () => {
               type="file"
               name="avatar"
               placeholder="Upload photo"
-              // onChange={changeImg}
+              onChange={handleFileChange}
             />
             <Icon width={16} height={16} name={'icon-upload'} />
           </label>
@@ -226,7 +241,7 @@ const AddPetForm = () => {
             name="species"
             control={control}
             render={({ field }) => (
-              <Select {...field} options={options} styles={customStyles} />
+              <Select {...field} options={byType} styles={customStyles} />
             )}
           />
         </div>

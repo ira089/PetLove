@@ -7,8 +7,6 @@ import styles from './userBlock.module.css';
 const UserBlock = () => {
 
     const {name, email, phone} = useSelector(selectUser);
-    console.log(name)
-    console.log(phone)
 
   return (
     <>

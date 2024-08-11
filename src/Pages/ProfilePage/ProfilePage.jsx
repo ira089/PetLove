@@ -10,7 +10,6 @@ const ProfilePage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log('zncg')
     dispatch(currentFullThunk());
   }, [dispatch]);
 

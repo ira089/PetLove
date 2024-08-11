@@ -52,10 +52,11 @@ export const fetchCurrentFull = async token => {
   }
 };
 
-export const fetchAddPet = async token => {
+export const fetchAddPet = async (token, body) => {
+  console.log(body)
   setAuthHeader(token);
   try {
-    const { data } = await axios.post('/users/current/pets/add');
+    const { data } = await axios.post('/users/current/pets/add', body);
     console.log(data)
     return data;
   } catch (error) {

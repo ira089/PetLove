@@ -105,14 +105,14 @@ export const registerThunk = createAsyncThunk(
 
    export const petAddThunk = createAsyncThunk(
     'auth/addpet',
-    async (_, thunkAPI) => {
+    async (data, thunkAPI) => {
       try {
         const state = thunkAPI.getState();
         const persistedToken = state.auth.token;
         if (persistedToken === null) {
           return thunkAPI.rejectWithValue('Unable to fetch user');
         }
-        const addPet = await authApi.fetchAddPet(persistedToken);
+        const addPet = await authApi.fetchAddPet(persistedToken, data);
         console.log(addPet)
         return addPet;
       } catch (error) {
