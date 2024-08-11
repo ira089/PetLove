@@ -1,14 +1,17 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { parseISO, format } from 'date-fns';
 import Icon from 'components/Icon/Icon';
 import { capitalizeFirstLetter } from '../../../helpers/functions';
 import styles from './petsItem.module.css';
 
-const Petsitem = ({item}) => {
+const Petsitem = ({ item }) => {
+  const { _id, imgURL, title, name, birthday, sex, species } = item;
 
-const {_id, imgURL, title, name, birthday, sex, species} = item;
-
-    const date =  Date.now()
+  const [imageError, setImageError] = useState(false);
+  const handleImageError = () => {
+    setImageError(true);
+  };
+  const date = Date.now();
   const parsedDate = birthday ? parseISO(birthday) : date;
   const birthdayData = format(parsedDate, 'dd.MM.yyyy');
   const capitalizedSex = capitalizeFirstLetter(sex);
@@ -16,7 +19,19 @@ const {_id, imgURL, title, name, birthday, sex, species} = item;
 
   return (
     <li key={_id} className={styles.wrapItem}>
-      <img className={styles.image} src={imgURL} alt="notice" />
+      {imageError ? (
+        <div className={styles.wrapImg}>
+          <Icon width={34} height={34} name={'icon-paw'} />
+        </div>
+      ) : (
+        <img
+          className={styles.image}
+          src={imgURL}
+          alt="notice"
+          onError={handleImageError}
+        />
+      )}
+
       <div className={styles.textPet}>
         <h4>{title}</h4>
         <div className={styles.сategory}>
