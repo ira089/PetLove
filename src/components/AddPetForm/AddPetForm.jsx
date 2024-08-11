@@ -17,7 +17,7 @@ const AddPetForm = () => {
   const [avatarUrl, setAvatarUrl] = useState('');
   const [avatarPreview, setAvatarPreview] = useState('');
   const [byType, setByType] = useState([]);
-// console.log(avatarUrl)
+console.log(avatarPreview)
   
   useEffect(() => {
     const getData = async () => {
@@ -35,16 +35,17 @@ const AddPetForm = () => {
   
 
   const submit = evt => {
-    // console.log(evt);
+    console.log(evt);
 
     const formData = {
       title: evt.title,
       name: evt.name,
-      imgUrl: evt.imgUrl,
+      imgURL: evt.imgUrl,
       species: evt.species.value,
       birthday: evt.birthday,
       sex: evt.sex,
     };
+    // dispatch(updateUserAvatar(evt.avatar[0]))
     console.log(formData);
     dispatch(petAddThunk(formData))
   };
@@ -75,10 +76,11 @@ const AddPetForm = () => {
     if (file) {
       const url = URL.createObjectURL(file);
       setAvatarPreview(url);
-      const imgUrl = `https://${file.name}`
-      console.log(imgUrl)
-      setAvatarUrl(imgUrl);
-       setValue('imgUrl', imgUrl)
+      const urlImg = `https://${file.name}`
+      
+      console.log(urlImg)
+      setAvatarUrl(urlImg);
+      //  setValue('imgUrl', urlImg)
     }
   };
 
