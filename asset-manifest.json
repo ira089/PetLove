@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/PetLove/static/css/main.4b5f9ccb.css",
-    "main.js": "/PetLove/static/js/main.dab59a71.js",
+    "main.css": "/PetLove/static/css/main.0a55955d.css",
+    "main.js": "/PetLove/static/js/main.b724dd4b.js",
     "static/media/kissDog.svg": "/PetLove/static/media/kissDog.0b6375a62bb40c66fae9.svg",
     "static/media/mainsvg .svg": "/PetLove/static/media/mainsvg .385c136b458872b4f06d.svg",
     "static/media/cat2D.png": "/PetLove/static/media/cat2D.035fb94a482bed3534bb.png",
@@ -32,11 +32,11 @@
     "static/media/Manrope-ExtraBold.woff2": "/PetLove/static/media/Manrope-ExtraBold.a90ad203eaed8bfd3323.woff2",
     "static/media/catIcon2.png": "/PetLove/static/media/catIcon2.8c90f6365e4f023b9a0f.png",
     "index.html": "/PetLove/index.html",
-    "main.4b5f9ccb.css.map": "/PetLove/static/css/main.4b5f9ccb.css.map",
-    "main.dab59a71.js.map": "/PetLove/static/js/main.dab59a71.js.map"
+    "main.0a55955d.css.map": "/PetLove/static/css/main.0a55955d.css.map",
+    "main.b724dd4b.js.map": "/PetLove/static/js/main.b724dd4b.js.map"
   },
   "entrypoints": [
-    "static/css/main.4b5f9ccb.css",
-    "static/js/main.dab59a71.js"
+    "static/css/main.0a55955d.css",
+    "static/js/main.b724dd4b.js"
   ]
 }
