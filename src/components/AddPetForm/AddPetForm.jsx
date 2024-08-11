@@ -6,24 +6,24 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import Select from 'react-select';
 import * as params from '../../api/filterApi';
 import { addPetSchema } from '../../schemas/schemas';
-import { optionObj } from '../../helpers/functions';
+import { optionObjType } from '../../helpers/functions';
 import { petAddThunk } from '../../redux/auth/operationsAuth';
 import Icon from 'components/Icon/Icon';
 import styles from './addPetForm.module.css';
-import customStyles from '../Notices/customStyles';
+import customStyles from './customStyles';
 
 const AddPetForm = () => {
   const dispatch = useDispatch();
   const [avatarUrl, setAvatarUrl] = useState('');
   const [avatarPreview, setAvatarPreview] = useState('');
   const [byType, setByType] = useState([]);
-console.log(avatarPreview)
-  
+  // console.log(avatarPreview)
+
   useEffect(() => {
     const getData = async () => {
       try {
         const dataArr = await params.fetchSpecies();
-        const dataObj = optionObj(dataArr);
+        const dataObj = optionObjType(dataArr);
         setByType(dataObj);
       } catch (error) {
         return error.message;
@@ -31,11 +31,8 @@ console.log(avatarPreview)
     };
     getData();
   }, []);
-  
-  
 
   const submit = evt => {
-    console.log(evt);
 
     const formData = {
       title: evt.title,
@@ -45,9 +42,8 @@ console.log(avatarPreview)
       birthday: evt.birthday,
       sex: evt.sex,
     };
-    // dispatch(updateUserAvatar(evt.avatar[0]))
-    console.log(formData);
-    dispatch(petAddThunk(formData))
+    // console.log(formData);
+    dispatch(petAddThunk(formData));
   };
 
   const {
@@ -72,13 +68,12 @@ console.log(avatarPreview)
 
   const handleFileChange = e => {
     const file = e.target.files[0];
-    console.log(file)
+    console.log(file);
     if (file) {
       const url = URL.createObjectURL(file);
       setAvatarPreview(url);
-      const urlImg = `https://${file.name}`
-      
-      console.log(urlImg)
+      const urlImg = `https://${file.name}`;
+      // console.log(urlImg)
       setAvatarUrl(urlImg);
       //  setValue('imgUrl', urlImg)
     }
@@ -86,7 +81,7 @@ console.log(avatarPreview)
 
   const selectedSex = watch('sex');
   const handleChange = value => {
-    setValue('sex', value); // обновляем значение в react-hook-form
+    setValue('sex', value);
   };
 
   return (
@@ -165,9 +160,9 @@ console.log(avatarPreview)
         )}
 
         <div className={styles.uploadWrap}>
-          <label className={styles.label}>
+          <label className={styles.labelUrl}>
             <input
-              className={styles.input}
+              className={styles.inputUrl}
               {...register('imgUrl')}
               name="imgUrl"
               placeholder="Enter URL"
@@ -182,71 +177,73 @@ console.log(avatarPreview)
             )}
           </label>
 
-          <label>
+          <label className={styles.upload}>
+            Upload photo
             <input
-              className={styles.upload}
               {...register('avatar')}
               type="file"
               name="avatar"
-              placeholder="Upload photo"
               onChange={handleFileChange}
+              hidden
             />
             <Icon width={16} height={16} name={'icon-upload'} />
           </label>
         </div>
-
-        <label className={styles.label}>
-          <input
-            className={styles.input}
-            {...register('title')}
-            name="title"
-            placeholder="Title"
-            type="text"
-          />
-          {errors?.title && (
-            <span className={styles.span}>
-              {errors?.title?.message || 'Errors!'}
-            </span>
-          )}
-        </label>
-        <label className={styles.label}>
-          <input
-            className={styles.input}
-            {...register('name')}
-            name="name"
-            placeholder="Pets Name"
-            type="text"
-          />
-          {errors?.name && (
-            <span className={styles.span}>
-              {errors?.name?.message || 'Errors!'}
-            </span>
-          )}
-        </label>
-
-        <div className={styles.uploadWrap}>
+        <div className={styles.wrapInput}>
           <label className={styles.label}>
             <input
               className={styles.input}
-              {...register('birthday')}
-              name="birthday"
-              placeholder="00.00.0000"
-              type="date"
+              {...register('title')}
+              name="title"
+              placeholder="Title"
+              type="text"
             />
-            {errors?.birthday && (
+            {errors?.title && (
               <span className={styles.span}>
-                {errors?.birthday?.message || 'Errors!'}
+                {errors?.title?.message || 'Errors!'}
               </span>
             )}
           </label>
-          <Controller
-            name="species"
-            control={control}
-            render={({ field }) => (
-              <Select {...field} options={byType} styles={customStyles} />
+          <label className={styles.label}>
+            <input
+              className={styles.input}
+              {...register('name')}
+              name="name"
+              placeholder="Pets Name"
+              type="text"
+            />
+            {errors?.name && (
+              <span className={styles.span}>
+                {errors?.name?.message || 'Errors!'}
+              </span>
             )}
-          />
+          </label>
+
+          <div className={styles.uploadWrap}>
+            <label className={styles.labelUrl}>
+              <input
+                className={styles.inputUrl}
+                {...register('birthday')}
+                name="birthday"
+                placeholder="00.00.0000"
+                type="date"
+              />
+              {errors?.birthday && (
+                <span className={styles.span}>
+                  {errors?.birthday?.message || 'Errors!'}
+                </span>
+              )}
+            </label>
+            <Controller
+              name="species"
+              control={control}
+              render={({ field }) => (
+                <Select {...field} options={byType} styles={customStyles} placeholder={'Type of pet'}/>
+              )}
+            />
+          </div>
         </div>
+
         <div className={styles.wrapTab}>
           <NavLink className={styles.link} to="/profile">
             Back

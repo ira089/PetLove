@@ -120,3 +120,21 @@ export const registerThunk = createAsyncThunk(
       }
     }
    );
+
+   export const petDellThunk = createAsyncThunk(
+    'auth/dellpet',
+    async (id, thunkAPI) => {
+      try {
+        const state = thunkAPI.getState();
+        const persistedToken = state.auth.token;
+        if (persistedToken === null) {
+          return thunkAPI.rejectWithValue('Unable to fetch user');
+        }
+        const dellPet = await authApi.fetchDellPet(persistedToken, id);
+        console.log(dellPet)
+        return dellPet;
+      } catch (error) {
+        return thunkAPI.rejectWithValue(error.message);
+      }
+    }
+   );

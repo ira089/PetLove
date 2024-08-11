@@ -65,10 +65,10 @@
 .wrapInput{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    /* align-items: center; */
+    /* justify-content: center;
+    align-items: center; */
     gap: 10px;
-    margin-bottom: 31px;
+    /* margin-bottom: 31px; */
     
 }
 
@@ -85,31 +85,41 @@
   margin-left: 123px;
 }
 
+.img {
+  border-radius: 100px;
+  padding: 10px;
+  width: 68px;
+  height: 68px;
+  margin-bottom: 16px;
+  margin-left: 123px;
+  object-fit: cover;
+  object-position: center;
+}
+
 .uploadWrap {
     gap: 8px;
     display: flex;
     align-items: center;
+    margin-bottom: 10px;
     justify-content: space-between;
 }
 
 .upload {
   border-radius: 30px;
-  padding: 10px;
-  width: 117px;
+  /* padding: 10px; */
+  /* width: 117px; */
   height: 36px;
   background: #fff4df;
   gap: 5px;
   display: flex;
   align-items: center;
   border: none;
-  
-}
-
-.upload span {
   font-size: 12px;
   line-height: 133%;
   letter-spacing: -0.02em;
   color: #262626;
+  cursor: pointer;
+  
 }
 
 .label {
@@ -119,14 +129,24 @@
   letter-spacing: -0.02em;
   color: rgba(38, 38, 38, 0.5);
   width: 100%;
+  /* margin-bottom: 20px; */
   /* padding: 9px 20px 9px 10px;
     width: 170px;
     height: 36px; */
 }
 
+.labelUrl {
+  position: relative;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.02em;
+  color: rgba(38, 38, 38, 0.5);
+  width: 50%;
+}
+
 .input {
-    /* border: 1px solid rgba(38, 38, 38, 0.15); */
-    border: 1px solid red;
+    border: 1px solid rgba(38, 38, 38, 0.15);
+    /* border: 1px solid red; */
     border-radius: 30px; 
     padding: 9px 0 9px 10px;
     box-sizing: border-box;
@@ -134,7 +154,18 @@
   outline: none;
   width: 100%;
   background: transparent;
-  
+}
+
+.inputUrl {
+   border: 1px solid rgba(38, 38, 38, 0.15);
+   /* border: 1px solid red; */
+   border-radius: 30px; 
+   padding: 9px 0 9px 10px;
+   box-sizing: border-box;
+ cursor: pointer;
+ outline: none;
+ width: 100%;
+ background: transparent;
 }
 
 .input:focus {
@@ -153,21 +184,10 @@ label span {
     color: red;  
 }
 
-/* option {
-    position: absolute;
-    left: 0;
-    bottom: -14px; 
-    font-family: var(--font-family);
-line-height: 129%;
-letter-spacing: -0.03em;
-color: rgba(38, 38, 38, 0.6);
-} */
-
-
 .wrapTab {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    margin-top: 21px;
     gap: 8px;
     margin-left: 127px;
 }
@@ -177,8 +197,8 @@ color: rgba(38, 38, 38, 0.6);
 padding: 12px ;
 width: 100px;
 
-/* background: rgba(38, 38, 38, 0.05); */
-background: rebeccapurple;
+background: rgba(38, 38, 38, 0.05);
+/* background: rebeccapurple; */
 
 font-weight: 700;
 font-size: 14px;
@@ -200,7 +220,12 @@ color: #262626;
  
 }
 
-.btn:hover, link:hover {  
+.btn:hover, .link:hover {  
     background: #f6b83d;
+color: #fff;
+}
+
+.btn:active, .link:active {  
+  background: #f6b83d;
 color: #fff;
 }

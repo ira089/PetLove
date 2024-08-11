@@ -1,7 +1,6 @@
 import axios from 'axios';
 axios.defaults.baseURL = 'https://petlove.b.goit.study/api';
 
-
 const setAuthHeader = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
@@ -53,11 +52,20 @@ export const fetchCurrentFull = async token => {
 };
 
 export const fetchAddPet = async (token, body) => {
-  console.log(body)
   setAuthHeader(token);
   try {
     const { data } = await axios.post('/users/current/pets/add', body);
-    console.log(data)
+    return data;
+  } catch (error) {
+    clearAuthHeader();
+    throw error;
+  }
+};
+
+export const fetchDellPet = async (token, id) => {
+  setAuthHeader(token);
+  try {
+    const { data } = await axios.delete(`/users/current/pets/remove/${id}`);
     return data;
   } catch (error) {
     clearAuthHeader();

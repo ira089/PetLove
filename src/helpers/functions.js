@@ -17,12 +17,12 @@ export const capitalizeFirstLetter = string => {
   return string.charAt(0).toUpperCase() + string.slice(1);
 };
 
-//   export const optionObj = (arr) => {
-//     return arr.map(el => ({
-//         value: el,
-//         label: capitalizeFirstLetter(el)
-//     }))
-// }
+  export const optionObjType = (arr) => {
+    return arr.map(el => ({
+        value: el,
+        label: capitalizeFirstLetter(el)
+    }))
+}
 
 export const optionObj = arr => {
   const qwe = arr.map(el => ({

@@ -7,7 +7,8 @@ import {
     addFavoritesThunk,
     delFavoritesThunk,
     currentFullThunk,
-    petAddThunk
+    petAddThunk,
+    petDellThunk
   } from './operationsAuth';
 import {
     handleFulfilled,
@@ -111,7 +112,10 @@ const initialState = {
         .addCase(currentFullThunk.rejected, handleRejected)
         .addCase(petAddThunk.pending, handlePending)
         .addCase(petAddThunk.fulfilled, handleFulfilledCurrentFull)
-        .addCase(petAddThunk.rejected, handleRejected);
+        .addCase(petAddThunk.rejected, handleRejected)
+        .addCase(petDellThunk.pending, handlePending)
+        .addCase(petDellThunk.fulfilled, handleFulfilledCurrentFull)
+        .addCase(petDellThunk.rejected, handleRejected);
     },
   });
   export const authReducer = authSlice.reducer;
