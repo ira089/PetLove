@@ -13,8 +13,9 @@ import styles from './addPetForm.module.css';
 import customStyles from './customStyles';
 
 const AddPetForm = () => {
+  // https://i.imgur.com/NXwlMD1.jpg
   const dispatch = useDispatch();
-  const [avatarUrl, setAvatarUrl] = useState('');
+  // const [avatarUrl, setAvatarUrl] = useState('');
   const [avatarPreview, setAvatarPreview] = useState('');
   const [byType, setByType] = useState([]);
   // console.log(avatarPreview)
@@ -72,9 +73,9 @@ const AddPetForm = () => {
     if (file) {
       const url = URL.createObjectURL(file);
       setAvatarPreview(url);
-      const urlImg = `https://${file.name}`;
+      // const urlImg = `https://${file.name}`;
       // console.log(urlImg)
-      setAvatarUrl(urlImg);
+      // setAvatarUrl(urlImg);
       //  setValue('imgUrl', urlImg)
     }
   };
@@ -167,7 +168,7 @@ const AddPetForm = () => {
               name="imgUrl"
               placeholder="Enter URL"
               type="text"
-              value={avatarUrl}
+              // value={avatarUrl}
               // readOnly
             />
             {errors?.imgUrl && (

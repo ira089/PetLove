@@ -6,6 +6,16 @@
     
     
 }
+.img {
+    border-radius: 100px;
+    padding: 10px;
+    width: 94px;
+    height: 94px;
+    /* margin-bottom: 16px; */
+    /* margin-left: 98px; */
+    object-fit: cover;
+    object-position: center;
+  }
 
 .avatar {
     margin-bottom: 28px;

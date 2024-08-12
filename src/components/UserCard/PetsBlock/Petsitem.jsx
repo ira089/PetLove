@@ -15,7 +15,7 @@ const Petsitem = ({ item }) => {
     setImageError(true);
   };
   const dellPet = itemId => {
-    console.log(itemId)
+    // console.log(itemId)
     dispatch(petDellThunk(itemId));
   };
   const date = Date.now();

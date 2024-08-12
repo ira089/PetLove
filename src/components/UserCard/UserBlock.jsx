@@ -6,19 +6,21 @@ import styles from './userBlock.module.css';
 
 const UserBlock = () => {
 
-    const {name, email, phone} = useSelector(selectUser);
+    const {name, email, phone, avatar} = useSelector(selectUser);
 
   return (
     <>
+    
       <div className={styles.avatar}>
+        {avatar ? (<img className={styles.img} src={avatar} alt="user" />) :
         <Icon
-          width={94}
-          height={94}
-          name={'icon-pipl'}
-          fillColor="#f6b83d"
-          stroke="#fff4df"
-        />
-
+        width={94}
+        height={94}
+        name={'icon-pipl'}
+        fillColor="#f6b83d"
+        stroke="#fff4df"
+      />
+        }
         <p>Upload photo</p>
       </div>
       <div className={styles.info}>
