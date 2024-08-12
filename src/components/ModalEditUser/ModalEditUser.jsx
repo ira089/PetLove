@@ -1,24 +1,29 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectUser } from '../../redux/auth/selectorsAuth';
 import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import {editUserSchema} from '../../schemas/schemas';
+import { editUserThunk} from '../../redux/auth/operationsAuth'
 import Button from 'components/Button/Button';
-import styles from './modalEditUser.module.css'
 import Icon from 'components/Icon/Icon';
+import styles from './modalEditUser.module.css';
 
 const ModalEditUser = () => {
+  const dispatch = useDispatch();
+  const { name, email, phone, avatar } = useSelector(selectUser);
   const [avatarUrl, setAvatarUrl] = useState('');
   const [avatarPreview, setAvatarPreview] = useState('');
-
+console.log(avatarUrl)
   const submit = evt => {
     const formData = {
-      title: evt.title,
+      email: evt.email,
       name: evt.name,
-      imgURL: evt.imgUrl,
-      species: evt.species.value,
-      birthday: evt.birthday,
-      sex: evt.sex,
+      avatar:  avatarUrl,
+      phone: evt.phone,
     };
     console.log(formData);
-    // dispatch(petAddThunk(formData));
+    dispatch(editUserThunk(formData));
   };
 
   const {
@@ -27,25 +32,22 @@ const ModalEditUser = () => {
     formState: { errors, isValid },
   } = useForm({
     defaultValues: {
-      title: '',
-      name: '',
+      email:  email ,
+      name:  name ,
       imgUrl: '',
-      species: {},
-      birthday: '',
-      sex: '',
+      phone: '',
     },
     mode: 'onBlur',
-    // resolver: yupResolver(addPetSchema),
+    resolver: yupResolver(editUserSchema),
   });
 
   const handleFileChange = e => {
     const file = e.target.files[0];
-    console.log(file);
     if (file) {
       const url = URL.createObjectURL(file);
       setAvatarPreview(url);
       const urlImg = `https://${file.name}`;
-      // console.log(urlImg)
+      console.log(urlImg)
       setAvatarUrl(urlImg);
       //  setValue('imgUrl', urlImg)
     }
@@ -53,17 +55,23 @@ const ModalEditUser = () => {
 
   return (
     <div>
-      <h3>Edit information</h3>
+      <h3 className={styles.title}>Edit information</h3>
       <form onSubmit={handleSubmit(submit)} autoComplete="off">
-      {avatarPreview ? (
+        {avatarPreview ? (
           <img className={styles.img} src={avatarPreview} alt="pet" />
         ) : (
-          <div className={styles.wrapImg}>
-            <Icon width={34} height={34} name={'icon-paw'} />
+          <div className={styles.avatar}>
+            <Icon
+              width={80}
+              height={80}
+              name={'icon-pipl'}
+              fillColor="#f6b83d"
+              stroke="#fff4df"
+            />
           </div>
         )}
 
-<div className={styles.uploadWrap}>
+        <div className={styles.uploadWrap}>
           <label className={styles.labelUrl}>
             <input
               className={styles.inputUrl}
@@ -72,7 +80,6 @@ const ModalEditUser = () => {
               placeholder="Enter URL"
               type="text"
               value={avatarUrl}
-              // readOnly
             />
             {errors?.imgUrl && (
               <span className={styles.span}>
@@ -94,26 +101,13 @@ const ModalEditUser = () => {
           </label>
         </div>
 
-        <label className={styles.label}>
-            <input
-              className={styles.input}
-              {...register('title')}
-              name="title"
-              placeholder="Title"
-              type="text"
-            />
-            {errors?.title && (
-              <span className={styles.span}>
-                {errors?.title?.message || 'Errors!'}
-              </span>
-            )}
-          </label>
+        <div className={styles.labelWrap}>
           <label className={styles.label}>
             <input
               className={styles.input}
               {...register('name')}
               name="name"
-              placeholder="Pets Name"
+              placeholder="Name"
               type="text"
             />
             {errors?.name && (
@@ -122,13 +116,42 @@ const ModalEditUser = () => {
               </span>
             )}
           </label>
+          <label className={styles.label}>
+            <input
+              className={styles.input}
+              {...register('email')}
+              name="email"
+              placeholder="Email"
+              type="email"
+            />
+            {errors?.email && (
+              <span className={styles.span}>
+                {errors?.email?.message || 'Errors!'}
+              </span>
+            )}
+          </label>
+          <label className={styles.label}>
+            <input
+              className={styles.input}
+              {...register('phone')}
+              name="phone"
+              placeholder="phone"
+              type="text"
+            />
+            {errors?.phone && (
+              <span className={styles.span}>
+                {errors?.phone?.message || 'Errors!'}
+              </span>
+            )}
+          </label>
+        </div>
 
-          <Button style={{textTransform: 'lowercase'}} type="submit" disabled={!isValid}>Go to profile</Button>
-
+        <Button type="submit" disabled={!isValid}>
+          Go to profile
+        </Button>
       </form>
-      
     </div>
-  )
-}
+  );
+};
 
-export default ModalEditUser
+export default ModalEditUser;

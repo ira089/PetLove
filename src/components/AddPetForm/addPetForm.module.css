@@ -166,6 +166,7 @@
  outline: none;
  width: 100%;
  background: transparent;
+ text-overflow: ellipsis;
 }
 
 .input:focus {

@@ -72,3 +72,15 @@ export const fetchDellPet = async (token, id) => {
     throw error;
   }
 };
+
+export const fetchEditUser = async (token, body) => {
+  setAuthHeader(token);
+  try {
+    const { data } = await axios.patch('/users/current/edit', body);
+    console.log(data)
+    return data;
+  } catch (error) {
+    clearAuthHeader();
+    throw error;
+  }
+};

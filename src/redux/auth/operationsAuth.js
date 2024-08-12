@@ -138,3 +138,21 @@ export const registerThunk = createAsyncThunk(
       }
     }
    );
+
+   export const editUserThunk = createAsyncThunk(
+    'auth/edituser',
+    async (data, thunkAPI) => {
+      try {
+        const state = thunkAPI.getState();
+        const persistedToken = state.auth.token;
+        if (persistedToken === null) {
+          return thunkAPI.rejectWithValue('Unable to fetch user');
+        }
+        const editUser = await authApi.fetchEditUser(persistedToken, data);
+        console.log(editUser)
+        return editUser;
+      } catch (error) {
+        return thunkAPI.rejectWithValue(error.message);
+      }
+    }
+   );

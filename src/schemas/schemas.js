@@ -68,3 +68,25 @@ export const addPetSchema = yup.object().shape({
     .required('Pet gender is required'),
 });
 
+export const editUserSchema = yup.object().shape({
+  name: yup.string(),
+
+  email: yup
+    .string()
+    .matches(
+      /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/,
+      'Enter a valid Email'),
+
+    // imgUrl: yup
+    // .string()
+    // .matches(
+    //   /^https?:\/\/.*\.(?:png|jpg|jpeg|gif|bmp|webp)$/,
+    //   'Enter a valid imgUrl'),
+
+  //  phone: yup
+  //   .string()
+  //   .matches(
+  //     /^\+38\d{10}$/,
+  //     'Enter a valid Phone')
+});
+
