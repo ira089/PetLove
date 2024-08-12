@@ -67,6 +67,10 @@ const handleFulfilledFavoritesDel = (state, { payload }) => {
 };
 
 const handleFulfilledCurrentFull = (state, { payload }) => {
+  state.user.name = payload.name;
+  state.user.email = payload.email;
+  state.user.avatar = payload.avatar;
+  state.user.phone = payload.phone;
   state.noticesFavorites = payload.noticesFavorites;
   state.pets = payload.pets;
   state.noticesViewed = payload.noticesViewed;

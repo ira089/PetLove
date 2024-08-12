@@ -14,28 +14,30 @@ const ModalEditUser = () => {
   const { name, email, phone, avatar } = useSelector(selectUser);
   const [avatarUrl, setAvatarUrl] = useState('');
   const [avatarPreview, setAvatarPreview] = useState('');
-console.log(avatarUrl)
+console.log(avatarPreview)
   const submit = evt => {
+    // console.log(evt)
     const formData = {
       email: evt.email,
       name: evt.name,
-      avatar:  avatarUrl,
+      avatar:  evt.imgUrl,
       phone: evt.phone,
     };
-    console.log(formData);
+    // console.log(formData);
     dispatch(editUserThunk(formData));
   };
 
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors, isValid },
   } = useForm({
     defaultValues: {
       email:  email ,
       name:  name ,
-      imgUrl: '',
-      phone: '',
+      imgUrl: avatar,
+      phone: phone,
     },
     mode: 'onBlur',
     resolver: yupResolver(editUserSchema),
@@ -47,9 +49,9 @@ console.log(avatarUrl)
       const url = URL.createObjectURL(file);
       setAvatarPreview(url);
       const urlImg = `https://${file.name}`;
-      console.log(urlImg)
+      // console.log(urlImg)
       setAvatarUrl(urlImg);
-      //  setValue('imgUrl', urlImg)
+       setValue('imgUrl', urlImg)
     }
   };
 
@@ -57,8 +59,9 @@ console.log(avatarUrl)
     <div>
       <h3 className={styles.title}>Edit information</h3>
       <form onSubmit={handleSubmit(submit)} autoComplete="off">
+      {/* <img className={styles.img} src='http://localhost:3000/5d6b7523-eaca-49ab-9ae8-f630d7b288a0' alt="user" /> */}
         {avatarPreview ? (
-          <img className={styles.img} src={avatarPreview} alt="pet" />
+          <img className={styles.img} src={avatarPreview} alt="user" />
         ) : (
           <div className={styles.avatar}>
             <Icon
@@ -80,6 +83,7 @@ console.log(avatarUrl)
               placeholder="Enter URL"
               type="text"
               value={avatarUrl}
+              readOnly
             />
             {errors?.imgUrl && (
               <span className={styles.span}>

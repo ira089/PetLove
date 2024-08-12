@@ -77,16 +77,16 @@ export const editUserSchema = yup.object().shape({
       /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/,
       'Enter a valid Email'),
 
-    // imgUrl: yup
-    // .string()
-    // .matches(
-    //   /^https?:\/\/.*\.(?:png|jpg|jpeg|gif|bmp|webp)$/,
-    //   'Enter a valid imgUrl'),
+    imgUrl: yup
+    .string()
+    .matches(
+      /^https?:\/\/.*\.(?:png|jpg|jpeg|gif|bmp|webp)$/,
+      'Enter a valid imgUrl'),
 
-  //  phone: yup
-  //   .string()
-  //   .matches(
-  //     /^\+38\d{10}$/,
-  //     'Enter a valid Phone')
+   phone: yup
+    .string()
+    .matches(
+      /^\+38\d{10}$/,
+      'Enter a valid Phone')
 });
 
