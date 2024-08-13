@@ -2,9 +2,9 @@ import React from 'react'
 import { NavLink } from 'react-router-dom';
 import styles from '../heder.module.css';
 
-const AuthNav = ({borderColorLog}) => {
+const AuthNav = ({borderColorLog, flexDirection}) => {
   return (
-    <div className={styles.authNav}>
+    <div style={{flexDirection: flexDirection}} className={styles.authNav}>
       <NavLink style={{borderColor: borderColorLog }} className={styles.linkLogin} to="/login">
         Log In
       </NavLink>

@@ -4,15 +4,25 @@ import { selectUser } from '../../../redux/auth/selectorsAuth';
 import Icon from 'components/Icon/Icon';
 import styles from '../heder.module.css';
 
-const UserBar = ({background, fill}) => {
-  const { avatar} = useSelector(selectUser);
+const UserBar = ({ background, fill, color }) => {
+  const { avatar, name } = useSelector(selectUser);
   return (
-    <div>
-      {avatar ? (<img className={styles.img} src={avatar} alt="user" />) :
-      ( <Icon width={40} height={40} name={"icon-pipl"}  fillColor={fill} stroke={background}/>)}
-       
+    <div className={styles.nameWrap}>
+      {avatar ? (
+        <img className={styles.img} src={avatar} alt="user" />
+      ) : (
+        <Icon
+          className={styles.iconUserBar}
+          name={'icon-pipl'}
+          fillColor={fill}
+          stroke={background}
+        />
+      )}
+      <p style={{ color: color }} className={styles.name}>
+        {name}
+      </p>
     </div>
-  )
-}
+  );
+};
 
-export default UserBar
+export default UserBar;

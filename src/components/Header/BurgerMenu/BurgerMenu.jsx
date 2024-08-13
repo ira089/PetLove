@@ -21,7 +21,7 @@ const BurgerMenu = ({isOpen, open, background, color, borderColor,
         <Icon width={32} height={32} name={'icon-close2'}/>}
       </button>
       <Nav color={color} borderColor={borderColor} borderColorHover={borderColorHover}/>
-      {isLogin ? <UserNav/> : <AuthNav borderColorLog={borderColorLog}/>}
+      {isLogin ? <UserNav/> : <AuthNav flexDirection="column" borderColorLog={borderColorLog}/>}
       {/* <AuthNav borderColorLog={borderColorLog}/> */}
     </nav>
   );

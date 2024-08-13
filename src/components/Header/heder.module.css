@@ -5,6 +5,12 @@
   position: relative;
 }
 
+.navMenu {
+  display: none;
+  /* justify-content: center;
+  align-items: center; */
+}
+
 .link {
   text-decoration: none;
 }
@@ -48,6 +54,10 @@
   border: 0;
   cursor: pointer;
 }
+.burgerIcon {
+  width: 32px;
+  height: 32px;
+}
 
 .btnClose {
   position: absolute;
@@ -63,6 +73,11 @@
   font-size: 20px;
   line-height: 100%;
   letter-spacing: -0.04em;
+}
+
+.iconLogo {
+  width: 17px;
+  height: 17px;
 }
 
 .navList {
@@ -99,7 +114,7 @@
 
 .authNav {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
   gap: 8px;
@@ -110,7 +125,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0px 12px;
+  padding: 0px 35px;
   width: 100%;
   max-width: 178px;
   height: 42px;
@@ -150,4 +165,54 @@
   height: 40px;
   object-fit: cover;
   object-position: center;
+}
+
+.iconUserBar {
+  width: 40px;
+    height: 40px;
+}
+
+.name {
+  margin: 0;
+font-weight: 700;
+font-size: 20px;
+line-height: 100%;
+letter-spacing: -0.03em;
+/* color: #fff; */
+display: none;
+}
+.nameWrap {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .textLogo {
+    font-size: 28px;
+  }
+
+  .iconLogo {
+    width: 23px;
+    height: 23px;
+  }
+
+  .iconUserBar {
+    width: 50px;
+      height: 50px;
+  }
+  .name {
+    display: block;
+  }
+  .burgerIcon {
+    width: 36px;
+    height: 36px;
+  }
+  .rightMenu {
+    gap: 8px;
+  }
+  .navMenu {
+    display: flex;
+  }
 }

@@ -1,10 +1,10 @@
 import sprite from "../../assets/img/icons.svg"
 
-const Icon = ({ width, height, fillColor, strokeColor, name}) => {
+const Icon = ({ width, height, fillColor, strokeColor, name, className={}}) => {
 
   return (
     
- <svg width={width} height={height} fill={fillColor} stroke={strokeColor}>
+ <svg className={className}  width={width} height={height} fill={fillColor} stroke={strokeColor}>
         <use href={`${sprite}#${name}`} />
      </svg>
   )

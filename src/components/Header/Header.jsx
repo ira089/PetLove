@@ -7,6 +7,8 @@ import UserBar from './UserBar/UserBar';
 import styles from './heder.module.css';
 import Icon from '../Icon/Icon';
 import BurgerMenu from './BurgerMenu/BurgerMenu';
+import UserNav from './UserNav/UserNav';
+import AuthNav from './AuthNav/AuthNav';
 
 const Header = ({ color, fill, background }) => {
   const [open, setOpen] = useState(false);
@@ -20,12 +22,19 @@ const Header = ({ color, fill, background }) => {
         <Logo color={color} fill={fill} />
       </NavLink>
       <div className={styles.rightMenu}>
+        {location.pathname !== '/' && (
+          <div className={styles.navMenu}>
+            {isLogin ? <UserNav /> : <AuthNav flexDirection="row"/>}
+          </div>
+        )}
+
         {location.pathname !== '/register' &&
           location.pathname !== '/login' &&
           location.pathname !== '/news' &&
+          location.pathname !== '/friends' &&
           isLogin && (
             <NavLink className={styles.link} to="/profile">
-              <UserBar background={background} fill={fill} />
+              <UserBar background={background} fill={fill} color={color} />
             </NavLink>
           )}
 
@@ -53,9 +62,9 @@ const Header = ({ color, fill, background }) => {
 
         <button className={styles.burgerBtn} onClick={isOpen}>
           {location.pathname === '/' ? (
-            <Icon width={32} height={32} name={'icon-menu-01'} />
+            <Icon className={styles.burgerIcon} name={'icon-menu-01'} />
           ) : (
-            <Icon width={32} height={32} name={'icon-menu-03'} />
+            <Icon className={styles.burgerIcon} name={'icon-menu-03'} />
           )}
         </button>
       </div>
