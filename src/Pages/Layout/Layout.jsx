@@ -17,9 +17,9 @@ const Layout = () => {
         <div className={styles.container}>
           <Header background="#FFF4DF" fill="#F6B83D" color="#262626" />
           <Suspense fallback={<Loader />}>
-            <main>
+            
               <Outlet />
-            </main>
+            
           </Suspense>
         </div>
       )}

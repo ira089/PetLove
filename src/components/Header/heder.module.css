@@ -190,7 +190,11 @@ display: none;
   justify-content: center;
   align-items: center;
 }
-
+@media (min-width: 375px) and (max-width: 767px) {
+  .wrapHeader {
+    width: 335px;
+  }
+}
 @media (min-width: 768px) {
 
   .wrapHeader{

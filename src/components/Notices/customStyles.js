@@ -5,7 +5,7 @@ const customStyles = {
     fontFamily: 'Manrope',
     background: '#fff',
     borderRadius: '30px',
-    //   padding: '12px',
+      padding: '0 12px',
     height: '42px',
     display: 'flex',
     alignItems: 'center',
