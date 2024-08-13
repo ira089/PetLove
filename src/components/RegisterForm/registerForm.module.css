@@ -4,11 +4,12 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
+    width: 100%;
 }
 .wrapForma {
     padding: 20px 27px;
 }
-.title {
+.title, .titleLog {
     font-weight: 700;
     font-size: 28px;
     line-height: 100%;
@@ -16,6 +17,10 @@
     color: #262626;
     margin: 0; 
     margin-bottom: 12px;
+}
+
+.titleLog {
+    margin-top: 50px;
 }
 
 .text {
@@ -47,4 +52,29 @@
     text-decoration: underline;
     text-decoration-skip-ink: none;
     color: #f6b83d;
+}
+
+@media (min-width: 375px) and (max-width: 767px) {
+    .wrap {
+        width: 335px;
+    } 
+}
+
+@media (min-width: 768px) {
+    .wrap {
+        width: 424px;
+    } 
+    .title, .titleLog {
+        font-size: 54px;
+    }
+    .text {
+        font-size: 18px; 
+    }
+    .linkText {
+        font-size: 14px;
+        line-height: 143%;
+    }
+    .titleLog {
+        margin-top: 50px;
+    }
 }

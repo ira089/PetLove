@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './formaReactReg.module.css';
 import { Field, ErrorMessage } from 'formik';
 import InputField from './InputField'
+import styles from './formaReactReg.module.css';
 
 
 const Input = ({ name, placeholder,type}) => {

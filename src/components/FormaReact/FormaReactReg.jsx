@@ -36,7 +36,10 @@ const FormaReactReg = () => {
           placeholder="Confirm password"
           type="password"
         />
-        <Button className={styles.btn}>Registration</Button>
+        <div className={styles.btn}>
+        <Button style={{textTransform: 'uppercase'}}>Registration</Button>  
+        </div>
+
       </Form>
     </Formik>
   );

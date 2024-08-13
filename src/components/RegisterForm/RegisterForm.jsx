@@ -7,8 +7,8 @@ import Cat1P from '../../assets/img/cat1P.png';
 import Cat2D from '../../assets/img/cat2D.png';
 import Cat2M from '../../assets/img/cat2M.png';
 import Cat2P from '../../assets/img/cat2P.png';
-import styles from './registerForm.module.css';
 import FormaReactReg from 'components/FormaReact/FormaReactReg';
+import styles from './registerForm.module.css';
 
 const RegisterForm = () => {
   return (

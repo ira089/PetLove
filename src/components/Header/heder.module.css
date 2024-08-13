@@ -3,6 +3,9 @@
   justify-content: space-between;
   align-items: center;
   position: relative;
+  width: 100%;
+  /* max-width: 335px */
+  ;
 }
 
 .navMenu {
@@ -189,6 +192,10 @@ display: none;
 }
 
 @media (min-width: 768px) {
+
+  .wrapHeader{
+    width: 704px;
+  }
   .textLogo {
     font-size: 28px;
   }
