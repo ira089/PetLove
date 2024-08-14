@@ -17,7 +17,7 @@ const Header = ({ color, fill, background }) => {
   const isLogin = useSelector(selectIsLoggedIn);
 
   return (
-    <header className={styles.wrapHeader}>
+    <header  className={styles.wrapHeader}>
       <NavLink className={styles.link} to="/">
         <Logo color={color} fill={fill} />
       </NavLink>

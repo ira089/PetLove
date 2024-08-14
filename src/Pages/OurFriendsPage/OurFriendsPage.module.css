@@ -15,15 +15,15 @@
   color: #262626;
 }
 
-@media (min-width: 375px) and (max-width: 767px) {
+/* @media (min-width: 375px) and (max-width: 767px) {
   .wrap{
   width: 375px;
   }
-}
+} */
 
 @media (min-width: 768px) {
   .wrap{
-    width: 768px;
+    /* width: 768px; */
     margin-top: 68px;
     }
     .title {

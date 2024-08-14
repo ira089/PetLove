@@ -54,16 +54,16 @@
     color: #f6b83d;
 }
 
-@media (min-width: 375px) and (max-width: 767px) {
+/* @media (min-width: 375px) and (max-width: 767px) {
     .wrap {
         width: 335px;
     } 
-}
+} */
 
 @media (min-width: 768px) {
-    .wrap {
+    /* .wrap {
         width: 424px;
-    } 
+    }  */
     .title, .titleLog {
         font-size: 54px;
     }
