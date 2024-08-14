@@ -106,9 +106,9 @@ const AddPetForm = () => {
             />
             <div className={styles.female}>
               {selectedSex === 'female' ? (
-                <Icon width={20} height={20} name={'icon-female-white'} />
+                <Icon className={styles.icon} name={'icon-female-white'} />
               ) : (
-                <Icon width={20} height={20} name={'icon-female'} />
+                <Icon className={styles.icon} name={'icon-female'} />
               )}
             </div>
           </label>
@@ -125,9 +125,9 @@ const AddPetForm = () => {
             />
             <div className={styles.male}>
               {selectedSex === 'male' ? (
-                <Icon width={20} height={20} name={'icon-male-white'} />
+                <Icon className={styles.icon} name={'icon-male-white'} />
               ) : (
-                <Icon width={20} height={20} name={'icon-male'} />
+                <Icon className={styles.icon} name={'icon-male'} />
               )}
             </div>
           </label>
@@ -144,9 +144,9 @@ const AddPetForm = () => {
             />
             <div className={styles.multiple}>
               {selectedSex === 'multiple' ? (
-                <Icon width={20} height={20} name={'icon-multiple-white'} />
+                <Icon className={styles.icon} name={'icon-multiple-white'} />
               ) : (
-                <Icon width={20} height={20} name={'icon-Group'} />
+                <Icon className={styles.icon} name={'icon-Group'} />
               )}
             </div>
           </label>
@@ -156,7 +156,7 @@ const AddPetForm = () => {
           <img className={styles.img} src={avatarPreview} alt="pet" />
         ) : (
           <div className={styles.wrapImg}>
-            <Icon width={34} height={34} name={'icon-paw'} />
+            <Icon className={styles.iconPet} name={'icon-paw'} />
           </div>
         )}
 
@@ -221,7 +221,7 @@ const AddPetForm = () => {
           </label>
 
           <div className={styles.uploadWrap}>
-            <label className={styles.labelUrl}>
+            <label className={styles.labelDate}>
               <input
                 className={styles.inputUrl}
                 {...register('birthday')}
@@ -249,7 +249,7 @@ const AddPetForm = () => {
           <NavLink className={styles.link} to="/profile">
             Back
           </NavLink>
-          <button type="submit" disabled={!isValid} className={styles.btn}>
+          <button type="submit" disabled={!isValid}  className={styles.btn}>
             Submit
           </button>
         </div>

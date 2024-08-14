@@ -7,7 +7,8 @@
 .img {
   border-radius: 30px;
   width: 335px;
-  height: 280px;
+  /* height: 280px; */
+  height: 100%;
   object-fit: cover;
   object-position: center;
 }
@@ -16,13 +17,13 @@
   .img {
     border-radius: 60px;
     width: 704px;
-    height: 302px;
+    /* height: 302px; */
   }
 }
 
 @media (min-width: 1280px) {
   .img {
     width: 592px;
-    height: 654px;
+    /* height: 654px; */
   }
 }

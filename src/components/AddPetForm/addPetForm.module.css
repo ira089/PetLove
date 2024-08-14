@@ -1,8 +1,7 @@
 .wrapMyPet {
   border-radius: 30px;
-  max-width: 335px;
   width: 100%;
-  height: 489px;
+  /* height: 489px; */
   background: #fff;
   margin-top: 10px;
   padding: 28px 20px 20px 20px;
@@ -29,6 +28,11 @@
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+.icon{
+  width: 20px;
+  height: 20px;
 }
 
 .female,
@@ -83,6 +87,7 @@
   justify-content: center;
   margin-bottom: 16px;
   margin-left: 123px;
+  box-sizing: border-box;
 }
 
 .img {
@@ -95,6 +100,10 @@
   object-fit: cover;
   object-position: center;
 }
+.iconPet{
+  width: 34px;
+  height: 34px;
+}
 
 .uploadWrap {
     gap: 8px;
@@ -106,7 +115,7 @@
 
 .upload {
   border-radius: 30px;
-  /* padding: 10px; */
+  padding: 0 10px;
   /* width: 117px; */
   height: 36px;
   background: #fff4df;
@@ -135,12 +144,8 @@
     height: 36px; */
 }
 
-.labelUrl {
+.labelUrl, .labelDate {
   position: relative;
-  font-size: 14px;
-  line-height: 129%;
-  letter-spacing: -0.02em;
-  color: rgba(38, 38, 38, 0.5);
   width: 50%;
 }
 
@@ -154,6 +159,10 @@
   outline: none;
   width: 100%;
   background: transparent;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.02em;
+  color: #262626;;
 }
 
 .inputUrl {
@@ -167,6 +176,10 @@
  width: 100%;
  background: transparent;
  text-overflow: ellipsis;
+ font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.02em;
+  color: #262626;;
 }
 
 .input:focus {
@@ -213,11 +226,13 @@ color: #262626;
   text-decoration: none;
   box-sizing: border-box;
   text-align: center;
+  cursor: pointer;
 }
 
 .btn {
   height: 42px;
   border: none;
+  cursor: pointer;
  
 }
 
@@ -229,4 +244,80 @@ color: #fff;
 .btn:active, .link:active {  
   background: #f6b83d;
 color: #fff;
+}
+.btn:focus, .link:focus {  
+  background: #f6b83d;
+color: #fff;
+}
+
+@media (min-width: 375px) and (max-width: 767px) {
+  .wrapMyPet {
+    width: 295px;
+  }
+}
+@media (min-width: 768px) {
+  .wrapMyPet {
+    border-radius: 60px;
+    width: 704px;
+    margin-top: 16px;
+    padding: 40px 136px 40px 136px;
+    box-sizing: border-box;
+  }
+  .title {
+    margin-bottom: 40px;
+    font-size: 32px;
+  }
+  .title span {
+    font-size: 16px;
+    line-height: 125%;
+  }
+  .icon{
+    width: 24px;
+    height: 24px;
+  }
+  .female,
+.male,
+.multiple {
+  padding: 8px;
+  width: 40px;
+  height: 40px;
+}
+.wrapImg, .img {
+  width: 86px;
+  height: 86px;
+  margin-bottom: 12px;
+  margin-left: 173px;
+}
+.iconPet{
+  width: 44px;
+  height: 44px;
+}
+.inputUrl, .input{
+  height: 42px;
+  font-size: 16px;
+line-height: 125%;
+padding: 16px 16px 16px 16px;
+}
+.uploadWrap {
+  margin-bottom: 18px;
+}
+.wrapInput{
+  gap: 18px;
+  margin-bottom: 28px;
+}
+.labelUrl {
+  width: 68%;
+}
+.upload {
+  padding: 0 16px;
+}
+.btn, .link {
+padding: 14px ;
+width: 170px;
+font-size: 16px;
+line-height: 125%;
+}
+.btn {
+  height: 48px;
+}
 }

@@ -24,7 +24,14 @@ const Header = ({ color, fill, background }) => {
       <div className={styles.rightMenu}>
         {location.pathname !== '/' && (
           <div className={styles.navMenu}>
-            {isLogin ? <UserNav /> : <AuthNav flexDirection="row"/>}
+            {isLogin ? (
+              <UserNav
+                background="#f9b020"
+                color="#fff"
+              />
+            ) : (
+              <AuthNav flexDirection="row"/>
+            )}
           </div>
         )}
 

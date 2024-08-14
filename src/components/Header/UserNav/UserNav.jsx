@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import styles from '../heder.module.css';
 import Modal from 'components/Modal/Modal';
 import ModalApproveAction from 'components/ModalApproveAction/ModalApproveAction';
+import styles from '../heder.module.css';
 
-const UserNav = () => {
+const UserNav = ({background, color}) => {
   
   const [isModalOpen, setIsModalOpen] = useState(false);
   const openModal = () => {
@@ -16,7 +16,7 @@ const UserNav = () => {
   return (
     <>
       <div className={styles.authNav}>
-        <button className={styles.linkReg} type="button" onClick={openModal}>
+        <button style={{background: background, color:color}} className={styles.linkLogOut} type="button" onClick={openModal}>
           Log out
         </button>
       </div>
