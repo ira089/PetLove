@@ -1,11 +1,12 @@
 .wrapUserCard {
     border-radius: 30px;
 width: 100%;
-max-width: 335px;
+/* max-width: 335px; */
 /* height: 864px; */
 background: #fff;
 padding: 20px;
 margin-bottom: 40px;
+border: 1px solid blue;
 }
 
 .wrapEdit {
@@ -40,3 +41,15 @@ color: #fff;
     background: #fff4df;
     border: none;
 }
+
+@media (min-width: 375px) and (max-width: 767px) {
+    .wrapUserCard {
+      width: 375px;
+    }
+  }
+  @media (min-width: 768px) {
+    .wrapUserCard {
+        width: 686px;
+        padding: 40px;
+      }
+  }

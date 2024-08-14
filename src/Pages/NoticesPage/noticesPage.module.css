@@ -22,7 +22,7 @@ color: #262626;
   
   @media (min-width: 768px) {
     .wrapNotices{
-      width: 704px;
+      width: 768px;
       margin-top: 68px;
       }
       .title {

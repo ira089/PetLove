@@ -210,13 +210,13 @@ display: none;
 }
 @media (min-width: 375px) and (max-width: 767px) {
   .wrapHeader {
-    width: 295px;
+    width: 375px;
   }
 }
 @media (min-width: 768px) {
 
   .wrapHeader{
-    width: 640px;
+    width: 768px;
   }
   .textLogo {
     font-size: 28px;
