@@ -13,18 +13,16 @@ const ModalEditUser = () => {
   // https://i.imgur.com/f62ayWm.jpg
   const dispatch = useDispatch();
   const { name, email, phone, avatar } = useSelector(selectUser);
-  // const [avatarUrl, setAvatarUrl] = useState('');
   const [avatarPreview, setAvatarPreview] = useState('');
   console.log(avatarPreview);
   const submit = evt => {
-    console.log(evt);
     const formData = {
       email: evt.email,
       name: evt.name,
       avatar: evt.imgUrl,
       phone: evt.phone,
     };
-    // console.log(formData);
+
     dispatch(editUserThunk(formData));
   };
 
@@ -48,10 +46,6 @@ const ModalEditUser = () => {
     if (file) {
       const url = URL.createObjectURL(file);
       setAvatarPreview(url);
-      // const urlImg = `https://${file.name}`;
-      // console.log(urlImg)
-      // setAvatarUrl(urlImg);
-      //  setValue('imgUrl', urlImg)
     }
   };
 
@@ -59,7 +53,6 @@ const ModalEditUser = () => {
     <div>
       <h3 className={styles.title}>Edit information</h3>
       <form onSubmit={handleSubmit(submit)} autoComplete="off">
-        {/* <img className={styles.img} src='http://localhost:3000/5d6b7523-eaca-49ab-9ae8-f630d7b288a0' alt="user" /> */}
         {avatar ? (
           <img className={styles.img} src={avatar} alt="user" />
         ) : avatarPreview ? (
@@ -84,8 +77,6 @@ const ModalEditUser = () => {
               name="imgUrl"
               placeholder="Enter URL"
               type="text"
-              // value={avatarUrl}
-              // readOnly
             />
             {errors?.imgUrl && (
               <span className={styles.span}>
@@ -153,7 +144,7 @@ const ModalEditUser = () => {
         </div>
 
         <Button type="submit" disabled={!isValid}>
-          Go to profile
+          Save
         </Button>
       </form>
     </div>

@@ -11,10 +11,8 @@
   background: #f6b83d;
   border-radius: 30px;
   width: 100%;
-  /* max-width: 295px; */
   height: 390px;
   padding: 18px 20px 50px 20px;
-  /* box-sizing: border-box; */
 }
 
 .title {
@@ -42,8 +40,6 @@
 .image {
   border-radius: 30px;
   width: 100%;
-  /* max-width: 335px; */
-  /* width: 335px; */
   height: 402px;
   background-image: url('../../assets/img/kissDog.svg');
   background-repeat: no-repeat;
@@ -54,217 +50,12 @@
   background-position: center;
 }
 
-/* header */
-.wrapHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  width: 100%;
-  
-}
-
-.link {
-  text-decoration: none;
-}
-
-.rightMenu {
-  display: flex;
-  align-items: center;
-  gap: 2px;
-}
-
-.burger {
-  position: fixed;
-  top: -28px;
-  right: -268px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 280px;
-  width: 65%;
-  max-width: 218px;
-  height: 110vh;
-  /* background-color: #fff; */
-  transition: transform 0.3s linear;
-  border: 1px solid red;
-  padding: 20px 20px 40px 20px;
-
-  /* z-index: 5; */
-}
-
-.active {
-  transform: translateX(-80%);
-  position: absolute;
-}
-
-.burgerBtn {
-  display: block;
-  margin-left: auto;
-  background-color: transparent;
-  padding: 0;
-  border: 0;
-  cursor: pointer;
-}
-.burgerIcon {
-  width: 32px;
-  height: 32px;
-}
-
-.btnClose {
-  position: absolute;
-  top: 28px;
-  right: 20px;
-  background-color: transparent;
-  padding: 0;
-  border: none;
-}
-
-.textLogo {
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 100%;
-  letter-spacing: -0.04em;
-}
-
-.iconLogo {
-  width: 17px;
-  height: 17px;
-}
-
-.navList {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.navItem {
-  border: 1px solid;
-  border-radius: 30px;
-  padding: 0px 15px;
-  width: 119px;
-  height: 48px;
-  font-size: 14px;
-  line-height: 129%;
-  letter-spacing: -0.03em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.navLink {
-  text-decoration: none;
-  cursor: pointer;
-  /* color: #262626; */
-}
-
-.authNav {
-  display: flex;
-  /* flex-direction: column; */
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-}
-
-.linkLogin {
-  border-radius: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0px 35px;
-  width: 100%;
-  max-width: 178px;
-  height: 42px;
-  background: #f6b83d;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 129%;
-  letter-spacing: -0.03em;
-  text-transform: uppercase;
-  color: #fff;
-  text-decoration: none;
-}
-
-.linkReg {
-  border-radius: 30px;
-  padding: 0px 12px;
-  width: 100%;
-  height: 42px;
-  background: #fff4df;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 129%;
-  letter-spacing: -0.03em;
-  text-transform: uppercase;
-  color: #f6b83d;
-  text-decoration: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: none;
-}
-
-.linkLogOut {
-  border-radius: 30px;
-padding: 0 60px;
-width: 100%;
-height: 42px;
-background: #fff4df;
-display: flex;
-  justify-content: center;
-  align-items: center;
-  border: none;
-font-weight: 700;
-font-size: 14px;
-line-height: 129%;
-letter-spacing: -0.03em;
-text-transform: uppercase;
-color: #f6b83d;
-text-decoration: none;
-}
-
-.img {
-  border-radius: 50px;
-  width: 40px;
-  height: 40px;
-  object-fit: cover;
-  object-position: center;
-}
-
-.iconUserBar {
-  width: 40px;
-    height: 40px;
-}
-
-.name {
-  margin: 0;
-font-weight: 700;
-font-size: 20px;
-line-height: 100%;
-letter-spacing: -0.03em;
-/* color: #fff; */
-display: none;
-}
-.nameWrap {
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-  align-items: center;
-}
-
 @media (min-width: 375px) and (max-width: 767px) {
-  .container{
-  width: 295px;
+  .container {
+    width: 320px;
   }
   .image {
-    width: 375px;
+    width: 360px;
   }
 }
 
@@ -278,7 +69,6 @@ display: none;
   }
   .image {
     width: 768px;
-    /* height: 496px; */
   }
   .title {
     font-size: 80px;
@@ -315,7 +105,7 @@ display: none;
 
   .iconUserBar {
     width: 50px;
-      height: 50px;
+    height: 50px;
   }
   .name {
     display: block;
@@ -323,9 +113,6 @@ display: none;
   .burgerIcon {
     width: 36px;
     height: 36px;
-  }
-  .rightMenu {
-    gap: 8px;
   }
 }
 @media (min-width: 1280px) {
@@ -343,9 +130,7 @@ display: none;
     font-size: 90px;
     line-height: 97%;
     margin-top: 0;
-  margin-bottom: 0;
-  /* margin-right: 73px; */
-    /* margin-top: 100px; */
+    margin-bottom: 0;
   }
   .titleWrap {
     display: flex;
@@ -363,5 +148,4 @@ display: none;
   .titleDiv {
     width: 760px;
   }
-  
 }

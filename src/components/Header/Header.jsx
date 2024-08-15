@@ -19,7 +19,6 @@ const Header = ({ color, fill, background, borderColor, borderColorHover }) => {
 
   return (
     <header className={styles.wrapHeader}>
-      {/* <div className={styles.header}> */}
       <NavLink className={styles.link} to="/">
         <Logo color={color} fill={fill} />
       </NavLink>
@@ -32,7 +31,7 @@ const Header = ({ color, fill, background, borderColor, borderColorHover }) => {
       </div>
 
       <div className={styles.rightMenu}>
-        {location.pathname !== '/' && (
+        {location.pathname !== '/' ? (
           <div className={styles.navMenu}>
             {isLogin ? (
               <UserNav background="#f9b020" color="#fff" />
@@ -40,6 +39,8 @@ const Header = ({ color, fill, background, borderColor, borderColorHover }) => {
               <AuthNav flexDirection="row" />
             )}
           </div>
+        ) : (
+          <div className={styles.navMenu}>{!isLogin && <AuthNav />}</div>
         )}
 
         {location.pathname !== '/register' &&
@@ -52,7 +53,6 @@ const Header = ({ color, fill, background, borderColor, borderColorHover }) => {
             </NavLink>
           )}
 
-        {/* </div> */}
         {location.pathname === '/' ? (
           <BurgerMenu
             isOpen={isOpen}
