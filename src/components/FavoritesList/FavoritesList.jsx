@@ -13,7 +13,6 @@ const FavoritesList = () => {
   const isLoading = useSelector(select.selectIsLoadin);
   const error = useSelector(select.selectError);
   const favoritesPets = useSelector(select.selectFaforites);
-  // const qwe = useSelector(select.selectPets);
 
   const isFavoritesPets = Boolean(favoritesPets.length);
 

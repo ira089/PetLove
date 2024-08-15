@@ -20,6 +20,7 @@ const BurgerMenu = ({
 }) => {
   const location = useLocation();
   const isLogin = useSelector(selectIsLoggedIn);
+
   return (
     <nav
       style={{ backgroundColor: background }}
