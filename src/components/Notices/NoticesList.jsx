@@ -4,6 +4,8 @@ import { addPage } from '../../redux/search/searchSlice';
 import { selectNotices } from '../../redux/notices/selectornotices';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
+import theme from '../../assets/theme';
+import { ThemeProvider } from '@mui/material/styles';
 import PaginationMy from 'components/Pagination/PaginationMy';
 import NoticesItem from './NoticesItem';
 
@@ -18,7 +20,7 @@ const NoticesList = () => {
   };
   const isVariant = { variant: false };
   const elements = notices.map(item => (
-    <Grid item xs={12} md={6} lg={4}>
+    <Grid item mobile={12} tablet={6} desktop={4}>
       <NoticesItem key={item._id} item={item} isVariant={isVariant} />
     </Grid>
   ));
@@ -26,15 +28,17 @@ const NoticesList = () => {
     <>
       {isLoading && <p>...Loading</p>}
       {error && <p>{error.message}</p>}
-      <Box sx={{ width: '100%' }}>
-        <Grid
-          container
-          rowSpacing={{ xs: 2.5, sm: 2.5, lg: 5 }}
-          columnSpacing={{ sm: 2.5, lg: 4 }}
-        >
-          {elements}
-        </Grid>
-      </Box>
+      <ThemeProvider theme={theme}>
+        <Box sx={{ width: '100%' }}>
+          <Grid
+            container
+            rowSpacing={{ mobile: 2.5, tablet: 2.5, desktop: 5 }}
+            columnSpacing={{ tablet: 2.5, desktop: 4 }}
+          >
+            {elements}
+          </Grid>
+        </Box>
+      </ThemeProvider>
 
       {!!totalPages && totalPages !== 1 && (
         <PaginationMy

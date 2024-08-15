@@ -13,7 +13,7 @@
     .container {
         display: flex;
         gap: 32px;
-        align-items: flex-end;
+        align-items: baseline;
         justify-content: center;
       }
   }
