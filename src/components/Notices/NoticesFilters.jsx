@@ -8,6 +8,7 @@ import {
   addByPrice,
   addByPopularity,
   addLocation,
+  addGender,
 } from '../../redux/search/searchSlice';
 import { optionObj, optionObjLoc } from '../../helpers/functions';
 import SearchField from 'components/SearchField/SearchField';
@@ -18,15 +19,10 @@ import styles from './noticesFilters.module.css';
 const NoticesFilters = () => {
   const [category, setCategory] = useState([]);
   const [byType, setByType] = useState([]);
+  const [bySex, setBysex] = useState([]);
   const [location, setLocation] = useState([]);
   const [inputValue, setInputValue] = useState('');
-  // console.log(typeof(inputValue))
-  // const isInputValue = Boolean(inputValue)
-  // console.log(isInputValue)
-
-  // const [selectedOption, setSelectedOption] = useState(null);
-  // console.log(selectedOption)
-  // console.log(location)
+  const [selectedOption, setSelectedOption] = useState({});
 
   const dispatch = useDispatch();
 
@@ -36,6 +32,19 @@ const NoticesFilters = () => {
         const dataArr = await params.fetchCategories();
         const dataObj = optionObj(dataArr);
         setCategory(dataObj);
+      } catch (error) {
+        return error.message;
+      }
+    };
+    getData();
+  }, []);
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const dataArr = await params.fetchSex();
+        const dataObj = optionObj(dataArr);
+        setBysex(dataObj);
       } catch (error) {
         return error.message;
       }
@@ -56,14 +65,6 @@ const NoticesFilters = () => {
     getData();
   }, []);
 
-  const options = [
-    { value: '', label: 'Show all' },
-    { value: 'female', label: 'Female' },
-    { value: 'male', label: 'Male' },
-    { value: 'multiple', label: 'Multiple' },
-    { value: 'unknown', label: 'Unknown' },
-  ];
-
   useEffect(() => {
     const getData = async () => {
       try {
@@ -81,20 +82,25 @@ const NoticesFilters = () => {
     dispatch(addCategory(value.value));
   };
 
+  const handleChangeSex = value => {
+    dispatch(addGender(value.value));
+  };
+
   const handleChangeType = value => {
     dispatch(addType(value.value));
   };
 
   const handleChangeLocation = value => {
     dispatch(addLocation(value.value));
-    // setSelectedOption(value);
+    setSelectedOption(value);
   };
 
   const clearValue = () => {
     dispatch(addLocation(''));
+    selectedOption('');
   };
 
-  const handleInputChange = (value) => {
+  const handleInputChange = value => {
     setInputValue(value);
   };
 
@@ -133,7 +139,8 @@ const NoticesFilters = () => {
           styles={customStyles}
         />
         <Select
-          options={options}
+          options={bySex}
+          onChange={handleChangeSex}
           styles={customStyles}
           placeholder={'By gender'}
         />
@@ -148,16 +155,14 @@ const NoticesFilters = () => {
           onChange={handleChangeLocation}
           onInputChange={handleInputChange}
           inputValue={inputValue}
-          // value={selectedOption}
+          value={selectedOption}
           styles={customStyles}
-          // components={{  ClearIndicator, DropdownIndicator}}
-          components={{ DropdownIndicator,
-            // ClearIndicator
-            // ClearIndicator: <ClearIndicator clearValue={handleClear} /> 
-            ClearIndicator: (props) => <ClearIndicator {...props} clearValue={clearValue} />  
-            
-           }}
-           
+          components={{
+            DropdownIndicator,
+            ClearIndicator: props => (
+              <ClearIndicator {...props} clearValue={clearValue} />
+            ),
+          }}
           isClearable
           placeholder={'Location'}
           filterOption={customFilter}

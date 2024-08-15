@@ -3,7 +3,6 @@
   flex-direction: column;
   gap: 20px;
   width: 100%;
-  /* background: #f9f9f9; */
 }
 
 .title {
@@ -15,19 +14,12 @@
   color: #262626;
 }
 
-/* @media (min-width: 375px) and (max-width: 767px) {
-  .wrap{
-  width: 375px;
-  }
-} */
-
 @media (min-width: 768px) {
-  .wrap{
-    /* width: 768px; */
+  .wrap {
     margin-top: 68px;
-    }
-    .title {
-      font-size: 54px;
-      margin-bottom: 24px;
-    }
+  }
+  .title {
+    font-size: 54px;
+    margin-bottom: 24px;
+  }
 }

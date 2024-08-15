@@ -5,10 +5,8 @@ import { selectIsLoggedIn } from '../../redux/auth/selectorsAuth';
 
 const PrivateRoute = () => {
   const isLogin = useSelector(selectIsLoggedIn);
-  // const isLogin = true
 
   return !isLogin ? <Navigate to="/login" /> : <Outlet />;
 };
 
-
-export default PrivateRoute
+export default PrivateRoute;

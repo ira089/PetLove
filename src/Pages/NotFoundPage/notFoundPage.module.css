@@ -23,19 +23,10 @@
   margin: 0;
 }
 
-/* .wrapImg {
-    border-radius: 1000px;
-    width: 109px;
-    height: 109px;  
-    background: rgba(255, 255, 255, 0.1);
-} */
-
 .img {
   object-fit: cover;
   object-position: center;
   border-radius: 1000px;
-  /* width: 109px;
-  height: 109px; */
 }
 
 .textWrap {
@@ -61,7 +52,7 @@
   text-align: center;
   border-radius: 30px;
   padding: 12px 30px;
-  /* width: 150px; */
+
   height: 42px;
   background: #fff4df;
   font-weight: 700;
@@ -78,7 +69,6 @@
 }
 
 @media (min-width: 768px) {
-  
   .title {
     font-size: 300px;
   }

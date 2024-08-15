@@ -1,99 +1,100 @@
 .wrap {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
 }
 .wrapForma {
-    padding: 20px 27px;
-    width: 100%;
-    border: 1px solid red;
-    border-radius: 30px;
-    background: #fff;
-    box-sizing: border-box;
+  padding: 20px 27px;
+  width: 100%;
+
+  border-radius: 30px;
+  background: #fff;
+  box-sizing: border-box;
 }
-.title, .titleLog {
-    font-weight: 700;
-    font-size: 28px;
-    line-height: 100%;
-    letter-spacing: -0.04em;
-    color: #262626;
-    margin: 0; 
-    margin-bottom: 12px;
+.title,
+.titleLog {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 100%;
+  letter-spacing: -0.04em;
+  color: #262626;
+  margin: 0;
+  margin-bottom: 12px;
 }
 
 .titleLog {
-    margin-top: 50px;
+  margin-top: 50px;
 }
 
 .text {
-    font-size: 14px;
-    line-height: 129%;
-    letter-spacing: -0.02em;
-    color: #262626;
-    margin: 0; 
-    margin-bottom: 20px;  
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.02em;
+  color: #262626;
+  margin: 0;
+  margin-bottom: 20px;
 }
 
-
-.linkWrap, .linkWrapLog {
-    display: flex;
-    justify-content: center;
-    align-items: center; 
+.linkWrap,
+.linkWrapLog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .linkText {
-    font-size: 12px;
-    line-height: 117%;
-    letter-spacing: -0.03em;
-    color: rgba(38, 38, 38, 0.5); 
-    margin: 0;
+  font-size: 12px;
+  line-height: 117%;
+  letter-spacing: -0.03em;
+  color: rgba(38, 38, 38, 0.5);
+  margin: 0;
 }
 
 .link {
-    font-weight: 700;
-    text-decoration: underline;
-    text-decoration-skip-ink: none;
-    color: #f6b83d;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #f6b83d;
 }
 
 @media (min-width: 768px) and (max-width: 1279px) {
-    .wrapForma {
-        padding: 30px 140px;
-}
+  .wrapForma {
+    padding: 30px 140px;
+  }
 }
 
 @media (min-width: 768px) {
-    /* .wrap {
+  /* .wrap {
         width: 424px;
     }  */
-    .title, .titleLog {
-        font-size: 54px;
-    }
-    .text {
-        font-size: 18px; 
-    }
-    .linkText {
-        font-size: 14px;
-        line-height: 143%;
-    }
-    .titleLog {
-        margin-top: 50px;
-    }
-    
-.linkWrapLog {
-   margin-bottom: 41px; 
-}
+  .title,
+  .titleLog {
+    font-size: 54px;
+  }
+  .text {
+    font-size: 18px;
+  }
+  .linkText {
+    font-size: 14px;
+    line-height: 143%;
+  }
+  .titleLog {
+    margin-top: 50px;
+  }
+
+  .linkWrapLog {
+    margin-bottom: 41px;
+  }
 }
 @media (min-width: 1280px) {
-    .wrap {
-        flex-direction: row;
-    }
-    .wrapForma {
-        padding: 77px 84px;
-        height: 654px;
-
-}
+  .wrap {
+    flex-direction: row;
+  }
+  .wrapForma {
+    padding: 77px 84px;
+    height: 654px;
+  }
 }

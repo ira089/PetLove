@@ -26,7 +26,7 @@
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 2;
-  line-clamp:inherit;
+  line-clamp: inherit;
   -webkit-box-orient: vertical;
   white-space: normal;
   width: calc(100% - 20px);
@@ -44,14 +44,12 @@
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 4;
-  line-clamp:inherit;
+  line-clamp: inherit;
   -webkit-box-orient: vertical;
   white-space: normal;
   width: calc(100% - 20px);
-  /* display: -moz-box; */
+
   -moz-box-orient: vertical;
-  /* max-width: 100%;
-  overflow-wrap: anywhere; */
 }
 
 .wrapDateLink {
@@ -97,5 +95,4 @@
   .link {
     font-size: 16px;
   }
-  
 }

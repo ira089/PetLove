@@ -3,8 +3,6 @@ const customStyles = {
       ...provided,
       fontFamily: 'Manrope',
       background: '#fff',
-    //   borderRadius: '30px',
-        // padding: '12px',
       width: '50%',
       height: '42px',
       display: 'flex',

@@ -1,11 +1,8 @@
 .itemFriend {
   list-style-type: none;
-  /* border: 1px solid red; */
   padding: 12px 12px 0 20px;
   display: block;
   border-radius: 15px;
-  /* width: 335px;
-height: 184px; */
   background: #fff;
 }
 
@@ -37,7 +34,6 @@ height: 184px; */
   line-height: 125%;
   letter-spacing: -0.04em;
   color: #262626;
-  /* text-align: center; */
   margin: 0;
 }
 
@@ -55,8 +51,6 @@ height: 184px; */
   letter-spacing: -0.02em;
   color: #262626;
   max-width: 196px;
-  /* внести в переломы и менее 375px */
-  /* height: 70px;  */
 }
 
 .text span {
@@ -69,4 +63,7 @@ height: 184px; */
   line-height: 129%;
   letter-spacing: -0.02em;
   color: #262626;
+}
+a:hover {
+  color: rgb(23, 23, 158);
 }

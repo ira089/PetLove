@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import {logOutThunk} from '../../redux/auth/operationsAuth'
 import CatIcon from '../../assets/img/catIcon.png';
 import CatIcon2 from '../../assets/img/catIcon2.png';
@@ -8,8 +9,12 @@ import styles from './modalApproveAction.module.css';
 const ModalApproveAction = ({onClose}) => {
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const handeleLogOut = () => {
+    navigate('/');
     dispatch(logOutThunk());
+    
   };
 
   return (

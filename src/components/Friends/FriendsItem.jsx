@@ -5,14 +5,10 @@ import Typography from '@mui/material/Typography';
 
 const FriendsItem = ({ item }) => {
   const { workDays, imageUrl, title, email, phone, address, _id } = item;
-  // console.log(workDays);
-  // console.log(item);
+
   const isLength = Boolean(workDays?.length);
   const isAddress = Boolean(address);
   const isPhone = Boolean(phone);
-  // const qwe =
-  //   workDays && workDays.length ? workDays[0].from || workDays[5].from : 0;
-  // console.log(isLength);
 
   return (
     <li key={_id} className={styles.itemFriend}>
@@ -33,11 +29,20 @@ const FriendsItem = ({ item }) => {
             <Typography noWrap>
               <span>Email: </span>
               <a href="#">{email}</a>
-              
             </Typography>
             <Typography noWrap>
               <span>Address: </span>
-              {isAddress ? <a href="#">{address}</a> : 'website only'}
+              {isAddress ? (
+                <a
+                  href="https://www.google.com/maps"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {address}
+                </a>
+              ) : (
+                'website only'
+              )}
             </Typography>
             <Typography noWrap>
               <span>Phone: </span>

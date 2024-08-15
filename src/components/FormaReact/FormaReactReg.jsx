@@ -1,6 +1,5 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-// import { Navigate } from 'react-router-dom';
 import { registerThunk } from '../../redux/auth/operationsAuth';
 import { Formik, Form } from 'formik';
 import styles from './formaReactReg.module.css';
@@ -24,7 +23,6 @@ const FormaReactReg = () => {
         dispatch(registerThunk(dataThunk));
 
         resetForm();
-        
       }}
     >
       <Form className={styles.form}>
@@ -37,9 +35,8 @@ const FormaReactReg = () => {
           type="password"
         />
         <div className={styles.btn}>
-        <Button style={{textTransform: 'uppercase'}}>Registration</Button>  
+          <Button style={{ textTransform: 'uppercase' }}>Registration</Button>
         </div>
-
       </Form>
     </Formik>
   );

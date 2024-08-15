@@ -10,8 +10,7 @@
   padding: 10px;
   width: 94px;
   height: 94px;
-  /* margin-bottom: 16px; */
-  /* margin-left: 98px; */
+
   object-fit: cover;
   object-position: center;
 }
@@ -24,13 +23,6 @@
   margin-bottom: 28px;
   align-items: center;
 }
-/* .wrapImg {
-    border-radius: 100px;
-    padding: 10px;
-    width: 94px;
-    height: 94px; 
-    background: #fff4df;
-} */
 
 .avatar p {
   font-size: 12px;
@@ -53,7 +45,6 @@
   color: #2b2b2a;
   margin: 0;
   margin-bottom: 20px;
-  /* margin-right: auto; */
 }
 
 .info ul {
@@ -68,7 +59,7 @@
 .info li {
   border: 1px solid rgba(38, 38, 38, 0.15);
   border-radius: 30px;
-  /* padding: 12px 250px 12px 12px; */
+
   padding-left: 12px;
   width: 100%;
   max-width: 295px;

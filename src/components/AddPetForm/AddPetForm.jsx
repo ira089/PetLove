@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import Select from 'react-select';
@@ -15,10 +15,10 @@ import customStyles from './customStyles';
 const AddPetForm = () => {
   // https://i.imgur.com/NXwlMD1.jpg
   const dispatch = useDispatch();
-  // const [avatarUrl, setAvatarUrl] = useState('');
+  const navigate = useNavigate();
+
   const [avatarPreview, setAvatarPreview] = useState('');
   const [byType, setByType] = useState([]);
-  // console.log(avatarPreview)
 
   useEffect(() => {
     const getData = async () => {
@@ -34,7 +34,6 @@ const AddPetForm = () => {
   }, []);
 
   const submit = evt => {
-
     const formData = {
       title: evt.title,
       name: evt.name,
@@ -43,8 +42,9 @@ const AddPetForm = () => {
       birthday: evt.birthday,
       sex: evt.sex,
     };
-    // console.log(formData);
+
     dispatch(petAddThunk(formData));
+    navigate('/profile')
   };
 
   const {
@@ -73,10 +73,6 @@ const AddPetForm = () => {
     if (file) {
       const url = URL.createObjectURL(file);
       setAvatarPreview(url);
-      // const urlImg = `https://${file.name}`;
-      // console.log(urlImg)
-      // setAvatarUrl(urlImg);
-      //  setValue('imgUrl', urlImg)
     }
   };
 
@@ -101,7 +97,6 @@ const AddPetForm = () => {
               type="radio"
               value="female"
               id="sex-female"
-              // checked={selectedSex === 'female'}
               onChange={() => handleChange('female')}
             />
             <div className={styles.female}>
@@ -168,8 +163,6 @@ const AddPetForm = () => {
               name="imgUrl"
               placeholder="Enter URL"
               type="text"
-              // value={avatarUrl}
-              // readOnly
             />
             {errors?.imgUrl && (
               <span className={styles.span}>
@@ -239,7 +232,12 @@ const AddPetForm = () => {
               name="species"
               control={control}
               render={({ field }) => (
-                <Select {...field} options={byType} styles={customStyles} placeholder={'Type of pet'}/>
+                <Select
+                  {...field}
+                  options={byType}
+                  styles={customStyles}
+                  placeholder={'Type of pet'}
+                />
               )}
             />
           </div>
@@ -249,7 +247,7 @@ const AddPetForm = () => {
           <NavLink className={styles.link} to="/profile">
             Back
           </NavLink>
-          <button type="submit" disabled={!isValid}  className={styles.btn}>
+          <button type="submit" disabled={!isValid} className={styles.btn}>
             Submit
           </button>
         </div>

@@ -1,27 +1,23 @@
 .inputSearch {
-    /* border: 1px solid transparent; */
-border-radius: 30px;
-/* padding: 12px 278px 12px 12px; */
-width: 100%;
-max-width: 335px;
-/* height: 42px; */
+  border-radius: 30px;
 
-font-size: 16px;
-line-height: 125%;
-letter-spacing: -0.03em;
-color: rgba(38, 38, 38, 0.5);
+  width: 100%;
+  max-width: 335px;
+
+  font-size: 16px;
+  line-height: 125%;
+  letter-spacing: -0.03em;
+  color: rgba(38, 38, 38, 0.5);
 }
 
 .inputSearch:focus {
-    border: 1px solid #f6b83d;
-    color: #262626;
+  border: 1px solid #f6b83d;
+  color: #262626;
 }
 
 :global {
-     .ant-input {
-        font-family: Arial, sans-serif; /* Задание шрифта */
-        border-color: #f6b83d; /* Задание цвета рамки */
-      }
+  .ant-input {
+    font-family: Arial, sans-serif;
+    border-color: #f6b83d;
+  }
 }
-
-

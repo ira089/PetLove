@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { parseISO, format } from 'date-fns';
 import Icon from 'components/Icon/Icon';
 import { capitalizeFirstLetter } from '../../../helpers/functions';
-import {petDellThunk} from '../../../redux/auth/operationsAuth';
+import { petDellThunk } from '../../../redux/auth/operationsAuth';
 import styles from './petsItem.module.css';
 
 const Petsitem = ({ item }) => {
@@ -15,7 +15,6 @@ const Petsitem = ({ item }) => {
     setImageError(true);
   };
   const dellPet = itemId => {
-    // console.log(itemId)
     dispatch(petDellThunk(itemId));
   };
   const date = Date.now();
@@ -60,7 +59,7 @@ const Petsitem = ({ item }) => {
           </div>
         </div>
       </div>
-      <button  onClick={() => dellPet(_id)} className={styles.btnTrach}>
+      <button onClick={() => dellPet(_id)} className={styles.btnTrach}>
         <Icon name={'icon-trash-2'} width={16} height={16} fill={'#F6B83D'} />
       </button>
     </div>
