@@ -1,8 +1,8 @@
-__#Pet Love__
+# Pet Love
 
 This is an app about pets. You can record your pet's details, read about other people's pets, sort animals by popularity, price, location, gender, animal type, or category. You can search simply by keyword simply by keyword. You can read news about animals or see partners' contacts.
 ***
-_##The app consists of 8 pages:_
+### The app consists of 8 pages:
 1. Home Page - contains the title of the app and its brief description.
 2. OurFriendspage - a list of companies - where you can buy everything you need for your pets. The page contains information about the company's working hours, address, phone number, and email. Clicking on the address will take you to Google maps, where you can plot your route or just see where the company is located
 3. NewPage - brief information about news from the animal world. Clicking on the Read more button - you will be able to read the entire article in a new browser tab
@@ -13,7 +13,7 @@ You can view all these 4 pages without registering on the site. Go through a sim
 5. ProfilePage - this is your personal page. It contains your data, which you can edit, your viewed and favorite pets
 6. By clicking on the Add pet button, going to the AddPetPage page, you can enter the data of your favorite pet. After that, the list of your pets will be displayed on your ProfilePage
 ***
-_##The following technologies were used in the development of this project:_
+### The following technologies were used in the development of this project:
 
 1.	Reduxjs-toolkit
 
