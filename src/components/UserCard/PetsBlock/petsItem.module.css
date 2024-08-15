@@ -66,6 +66,18 @@ color: rgba(38, 38, 38, 0.5);
     border: none;
     padding: 0;
   }
+  .wrapList {
+    margin-bottom: 20px;
+  }
 
+  @media (min-width: 1280px) {
+    .wrapItem {
+      max-width: 350px;
+      height: 132px;
+      padding: 20px;
+     justify-content: space-between;
+    }
+    }
+  
 
-
+  

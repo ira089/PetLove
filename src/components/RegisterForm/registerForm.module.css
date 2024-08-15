@@ -8,6 +8,11 @@
 }
 .wrapForma {
     padding: 20px 27px;
+    width: 100%;
+    border: 1px solid red;
+    border-radius: 30px;
+    background: #fff;
+    box-sizing: border-box;
 }
 .title, .titleLog {
     font-weight: 700;
@@ -33,7 +38,7 @@
 }
 
 
-.linkWrap {
+.linkWrap, .linkWrapLog {
     display: flex;
     justify-content: center;
     align-items: center; 
@@ -54,11 +59,11 @@
     color: #f6b83d;
 }
 
-/* @media (min-width: 375px) and (max-width: 767px) {
-    .wrap {
-        width: 335px;
-    } 
-} */
+@media (min-width: 768px) and (max-width: 1279px) {
+    .wrapForma {
+        padding: 30px 140px;
+}
+}
 
 @media (min-width: 768px) {
     /* .wrap {
@@ -77,4 +82,18 @@
     .titleLog {
         margin-top: 50px;
     }
+    
+.linkWrapLog {
+   margin-bottom: 41px; 
+}
+}
+@media (min-width: 1280px) {
+    .wrap {
+        flex-direction: row;
+    }
+    .wrapForma {
+        padding: 77px 84px;
+        height: 654px;
+
+}
 }

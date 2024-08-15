@@ -27,7 +27,7 @@ const LoginForm = () => {
           Welcome! Please enter your credentials to login to the platform:
         </p>
         <LoginReactForma />
-        <div className={styles.linkWrap}>
+        <div className={styles.linkWrapLog}>
           <p className={styles.linkText}>Don’t have an account?</p>
           <NavLink className={styles.link} to="/register">
             Register

@@ -4,33 +4,40 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { selectIsLoggedIn } from '../../redux/auth/selectorsAuth';
 import Logo from './Logo/Logo';
 import UserBar from './UserBar/UserBar';
-import styles from './heder.module.css';
 import Icon from '../Icon/Icon';
 import BurgerMenu from './BurgerMenu/BurgerMenu';
 import UserNav from './UserNav/UserNav';
 import AuthNav from './AuthNav/AuthNav';
+import Nav from './Nav/Nav';
+import styles from './heder.module.css';
 
-const Header = ({ color, fill, background }) => {
+const Header = ({ color, fill, background, borderColor, borderColorHover }) => {
   const [open, setOpen] = useState(false);
   const isOpen = () => setOpen(!open);
   const location = useLocation();
   const isLogin = useSelector(selectIsLoggedIn);
 
   return (
-    <header  className={styles.wrapHeader}>
+    <header className={styles.wrapHeader}>
+      {/* <div className={styles.header}> */}
       <NavLink className={styles.link} to="/">
         <Logo color={color} fill={fill} />
       </NavLink>
+      <div className={styles.wrapNav}>
+        <Nav
+          color={color}
+          borderColor={borderColor}
+          borderColorHover={borderColorHover}
+        />
+      </div>
+
       <div className={styles.rightMenu}>
         {location.pathname !== '/' && (
           <div className={styles.navMenu}>
             {isLogin ? (
-              <UserNav
-                background="#f9b020"
-                color="#fff"
-              />
+              <UserNav background="#f9b020" color="#fff" />
             ) : (
-              <AuthNav flexDirection="row"/>
+              <AuthNav flexDirection="row" />
             )}
           </div>
         )}
@@ -45,6 +52,7 @@ const Header = ({ color, fill, background }) => {
             </NavLink>
           )}
 
+        {/* </div> */}
         {location.pathname === '/' ? (
           <BurgerMenu
             isOpen={isOpen}

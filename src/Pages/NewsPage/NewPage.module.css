@@ -41,3 +41,10 @@ color: #262626;
             align-items: center;
          }
 }
+
+@media (min-width: 1280px) {
+    .wrapNews{
+        /* margin-top: 90px;   */
+       margin: 90px 64px 80px 64px;
+    }
+}

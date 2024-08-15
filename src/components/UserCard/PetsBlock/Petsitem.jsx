@@ -25,7 +25,7 @@ const Petsitem = ({ item }) => {
   const capitalizedSpecies = capitalizeFirstLetter(species);
 
   return (
-    <li key={_id} className={styles.wrapItem}>
+    <div key={_id} className={styles.wrapItem}>
       {imageError ? (
         <div className={styles.wrapImg}>
           <Icon width={34} height={34} name={'icon-paw'} />
@@ -63,7 +63,7 @@ const Petsitem = ({ item }) => {
       <button  onClick={() => dellPet(_id)} className={styles.btnTrach}>
         <Icon name={'icon-trash-2'} width={16} height={16} fill={'#F6B83D'} />
       </button>
-    </li>
+    </div>
   );
 };
 

@@ -13,9 +13,7 @@ const UserBlock = () => {
     
       <div className={styles.avatar}>
         {avatar ? (<img className={styles.img} src={avatar} alt="user" />) :
-        <Icon
-        width={94}
-        height={94}
+        <Icon className={styles.icon}
         name={'icon-pipl'}
         fillColor="#f6b83d"
         stroke="#fff4df"

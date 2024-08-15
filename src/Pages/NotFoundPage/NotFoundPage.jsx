@@ -17,11 +17,11 @@ const NotFoundPage = () => {
           <div className={styles.wrapImg}>
             <picture className={styles.img}>
               <source
-                media="(min-width: 320px)"
+               media="(max-width: 767px)"
                 srcSet={`${cat1M} 1x, ${cat2M} 2x`}
               />
               <source
-                media="(min-width: 768px)"
+                media="(min-width: 768px) and (max-width: 1279px)"
                 srcSet={`${cat1P} 1x, ${cat2P} 2x`}
               />
               <source

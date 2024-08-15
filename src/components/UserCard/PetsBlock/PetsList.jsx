@@ -4,7 +4,7 @@ import * as select from '../../../redux/auth/selectorsAuth';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Petsitem from './Petsitem'
-// import styles from '../Notices/noticesItem.module.css';
+import styles from './petsItem.module.css';
 
 const PetsList = () => {
   const isLoading = useSelector(select.selectIsLoadin);
@@ -23,15 +23,18 @@ const PetsList = () => {
     {isLoading && <p>...Loading</p>}
     {error && <p>{error.message}</p>}
     {isUserPets && (
-      <Box sx={{ width: '100%' }}>
+      <div className={styles.wrapList}>
+<Box sx={{ width: '100%' }}>
         <Grid
           container
           rowSpacing={ 1.75}
-          columnSpacing={{ sm: 1.75 }}
+          columnSpacing={  1 }
         >
           {elements}
         </Grid>
       </Box>
+      </div>
+      
     )}
   </>
   )

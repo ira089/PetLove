@@ -15,11 +15,15 @@ const Layout = () => {
         <HomePage />
       ) : (
         <div className={styles.container}>
-          <Header background="#FFF4DF" fill="#F6B83D" color="#262626" />
+          <Header
+            background="#FFF4DF"
+            fill="#F6B83D"
+            color="#262626"
+            borderColor="rgba(38, 38, 38, 0.15)"
+            borderColorHover="#f6b83d"
+          />
           <Suspense fallback={<Loader />}>
-            
-              <Outlet />
-            
+            <Outlet />
           </Suspense>
         </div>
       )}

@@ -9,14 +9,14 @@ const MyNotices = () => {
     setActiveTab(tab);
   };
   return (
-    <>
+    <div>
      <div className={styles.wrapTab}>
-    <button className={styles.tab} onClick={() => handleTabClick('tabFavorite')}>My favorite pets</button>
+    <button autoFocus className={`${styles.tab} ${activeTab === 'tabFavorite' ? styles.activeTab : ''}`} onClick={() => handleTabClick('tabFavorite')}>My favorite pets</button>
     <button className={styles.tab} onClick={() => handleTabClick('tabViewed')}>Viewed</button>
   </div>
   {activeTab === 'tabFavorite' && <FavoritesList/>}
   {activeTab === 'tabViewed' && <ViewedList/>}
-    </>
+    </div>
    
   )
 }

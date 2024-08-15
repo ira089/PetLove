@@ -45,14 +45,23 @@
   color: #262626;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1279px) {
   .wrapFilter {
     height: 280px;
   }
+}
+
+@media (min-width: 768px) {
+  
   .wrapInput {
     row-gap: 16px;
     column-gap: 16px;
     padding-bottom: 40px;
     padding: 40px 32px;
 }
+}
+@media (min-width: 1280px) {
+  .wrapFilter {
+    height: 216px;
+  }
 }

@@ -21,9 +21,16 @@
 .tab:hover {
   background: #f6b83d;
   color: #fff;
+  border: none;
 }
 
 .tab:active {
   background: #f6b83d;
   color: #fff;
+  border: none;
+}
+.activeTab {
+  background: #f6b83d;
+  color: #fff;
+  border: none;
 }

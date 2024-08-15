@@ -1,6 +1,5 @@
 .wrap404 {
   border-radius: 30px;
-  max-width: 335px;
   width: 100%;
   height: 712px;
   background: #f6b83d;
@@ -35,8 +34,8 @@
   object-fit: cover;
   object-position: center;
   border-radius: 1000px;
-  width: 109px;
-  height: 109px;
+  /* width: 109px;
+  height: 109px; */
 }
 
 .textWrap {
@@ -72,8 +71,29 @@
   color: #f6b83d;
 }
 
+@media (min-width: 768px) and (max-width: 1279px) {
+  .wrap404 {
+    height: 712px;
+  }
+}
+
 @media (min-width: 768px) {
+  
+  .title {
+    font-size: 300px;
+  }
+  .text {
+    font-size: 24px;
+    line-height: 117%;
+  }
+  .link {
+    font-size: 16px;
+    line-height: 125%;
+  }
 }
 
 @media (min-width: 1280px) {
+  .wrap404 {
+    height: 800px;
+  }
 }

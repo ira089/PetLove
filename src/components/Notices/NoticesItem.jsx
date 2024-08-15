@@ -76,7 +76,7 @@ const NoticesItem = ({ item, isVariant }) => {
 
   return (
     <>
-      <li key={_id} className={styles.itemWrap}>
+      <div key={_id} className={styles.itemWrap}>
         <img className={styles.image} src={imgURL} alt="pet" />
         <div className={styles.titleWrap}>
           <h4 className={styles.title}>{title}</h4>
@@ -148,7 +148,7 @@ const NoticesItem = ({ item, isVariant }) => {
             </div>
           )}
         </div>
-      </li>
+      </div>
       {isLogin ? (
         <Modal
           isOpen={isModalOpen}
