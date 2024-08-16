@@ -87,7 +87,6 @@
   letter-spacing: -0.03em;
   color: #fff;
   border-radius: 30px;
-
   height: 44px;
   background: #f6b83d;
   border: none;
@@ -96,10 +95,12 @@
   justify-content: center;
   gap: 8px;
 }
+.btn:hover {
+  background: #F9B020;
+}
 
 .link {
   border-radius: 30px;
-
   width: 134px;
   height: 44px;
   background: #fff4df;
@@ -116,4 +117,8 @@
   letter-spacing: -0.03em;
   color: #f6b83d;
   cursor: pointer;
+}
+
+.link:hover{
+  background: #fbe7c1;
 }

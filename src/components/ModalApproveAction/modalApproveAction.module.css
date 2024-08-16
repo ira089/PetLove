@@ -28,7 +28,6 @@
   padding: 12px 57px;
   width: 137px;
   height: 42px;
-  font-family: var(--font-family);
   font-weight: 700;
   font-size: 14px;
   line-height: 129%;
@@ -48,3 +47,10 @@
   background: rgba(38, 38, 38, 0.05);
   color: #262626;
 }
+.btnYes:hover{
+  background: #f9b020;;
+}
+.btnCancel:hover {
+  border: 1px solid #f6b83d;
+}
+

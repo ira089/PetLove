@@ -37,6 +37,9 @@
   background: #fff4df;
   border: none;
 }
+.pencil:hover {
+  background: #fbe7c1;
+}
 
 @media (min-width: 375px) and (max-width: 767px) {
   .wrapUserCard {

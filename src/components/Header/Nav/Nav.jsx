@@ -20,11 +20,15 @@ const Nav = ({ color, borderColor, borderColorHover }) => {
         key="1"
         onMouseEnter={() => handleMouseEnter('1')}
         onMouseLeave={handleMouseLeave}
-        style={{
-          borderColor: hoveredIndex === '1' ? borderColorHover : borderColor,
-        }}
       >
-        <NavLink style={{ color: color }} className={styles.navLink} to="/news">
+        <NavLink
+          style={{
+            color: color,
+            borderColor: hoveredIndex === '1' ? borderColorHover : borderColor,
+          }}
+          className={styles.navLink}
+          to="/news"
+        >
           News
         </NavLink>
       </li>
@@ -33,12 +37,12 @@ const Nav = ({ color, borderColor, borderColorHover }) => {
         key="2"
         onMouseEnter={() => handleMouseEnter('2')}
         onMouseLeave={handleMouseLeave}
-        style={{
-          borderColor: hoveredIndex === '2' ? borderColorHover : borderColor,
-        }}
       >
         <NavLink
-          style={{ color: color }}
+          style={{
+            color: color,
+            borderColor: hoveredIndex === '2' ? borderColorHover : borderColor,
+          }}
           className={styles.navLink}
           to="/notices"
         >
@@ -50,12 +54,12 @@ const Nav = ({ color, borderColor, borderColorHover }) => {
         key="3"
         onMouseEnter={() => handleMouseEnter('3')}
         onMouseLeave={handleMouseLeave}
-        style={{
-          borderColor: hoveredIndex === '3' ? borderColorHover : borderColor,
-        }}
       >
         <NavLink
-          style={{ color: color }}
+          style={{
+            color: color,
+            borderColor: hoveredIndex === '3' ? borderColorHover : borderColor,
+          }}
           className={styles.navLink}
           to="/friends"
         >

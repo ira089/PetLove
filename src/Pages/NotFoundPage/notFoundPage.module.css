@@ -52,7 +52,6 @@
   text-align: center;
   border-radius: 30px;
   padding: 12px 30px;
-
   height: 42px;
   background: #fff4df;
   font-weight: 700;
@@ -60,6 +59,9 @@
   line-height: 129%;
   letter-spacing: -0.03em;
   color: #f6b83d;
+}
+.link:hover {
+  background: #fbe7c1;
 }
 
 @media (min-width: 768px) and (max-width: 1279px) {

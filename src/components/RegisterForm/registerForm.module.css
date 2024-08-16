@@ -59,6 +59,9 @@
   text-decoration-skip-ink: none;
   color: #f6b83d;
 }
+.link:hover {
+  color: #bc830f;
+}
 
 @media (min-width: 768px) and (max-width: 1279px) {
   .wrapForma {
@@ -67,9 +70,6 @@
 }
 
 @media (min-width: 768px) {
-  /* .wrap {
-        width: 424px;
-    }  */
   .title,
   .titleLog {
     font-size: 54px;

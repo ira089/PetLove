@@ -13,7 +13,7 @@ import styles from './addPetForm.module.css';
 import customStyles from './customStyles';
 
 const AddPetForm = () => {
-  // https://i.imgur.com/NXwlMD1.jpg
+  
   const dispatch = useDispatch();
   const navigate = useNavigate();
 

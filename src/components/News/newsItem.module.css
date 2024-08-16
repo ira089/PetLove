@@ -74,6 +74,9 @@
   text-decoration-skip-ink: none;
   color: #f6b83d;
 }
+.link:hover{
+  color: #f9b020 ;
+}
 @media (min-width: 768px) {
   .image {
     width: 340px;
