@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { lazy } from 'react';
-import Layout from '../Pages/Layout/Layout';
+import Layout from '../components/Layout/Layout';
 import { selectIsRefreshing } from '../redux/auth/selectorsAuth';
 import { refresThunk } from '../redux/auth/operationsAuth';
 import PrivateRoute from './PrivateRoute/PrivateRoute';

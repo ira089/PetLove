@@ -2,9 +2,9 @@ import React from 'react';
 import { Suspense } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import styles from './layout.module.css';
-import Header from 'components/Header/Header';
-import Loader from 'components/Loader/Loader';
-import HomePage from 'Pages/HomePage/HomePage';
+import Header from '../Header/Header';
+import Loader from '../Loader/Loader';
+import HomePage from '../../Pages/HomePage/HomePage';
 
 const Layout = () => {
   const location = useLocation();
