@@ -32,6 +32,9 @@
   border: 0;
   cursor: pointer;
 }
+.burgerBtn:hover {
+  background-color: #fff4df;
+} 
 .burgerIcon {
   width: 32px;
   height: 32px;

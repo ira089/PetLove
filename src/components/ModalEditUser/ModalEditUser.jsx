@@ -10,7 +10,7 @@ import Icon from 'components/Icon/Icon';
 import styles from './modalEditUser.module.css';
 
 const ModalEditUser = () => {
-  // https://i.imgur.com/f62ayWm.jpg
+  
   const dispatch = useDispatch();
   const { name, email, phone, avatar } = useSelector(selectUser);
   const [avatarPreview, setAvatarPreview] = useState('');

@@ -8,17 +8,20 @@ import theme from '../../assets/theme';
 import { ThemeProvider } from '@mui/material/styles';
 import PaginationMy from 'components/Pagination/PaginationMy';
 import NoticesItem from './NoticesItem';
+import styles from './noticesItem.module.css';
 
 const NoticesList = () => {
   const { isLoading, error, notices, totalPages, page } =
     useSelector(selectNotices);
 
   const dispatch = useDispatch();
+  const isVariant = { variant: false };
+  const isNotices = Boolean(notices.length);
 
   const selectPage = num => {
     dispatch(addPage(num));
   };
-  const isVariant = { variant: false };
+  
   const elements = notices.map(item => (
     <Grid item mobile={12} tablet={6} desktop={4}>
       <NoticesItem key={item._id} item={item} isVariant={isVariant} />
@@ -28,7 +31,7 @@ const NoticesList = () => {
     <>
       {isLoading && <p>...Loading</p>}
       {error && <p>{error.message}</p>}
-      <ThemeProvider theme={theme}>
+      {isNotices ? <ThemeProvider theme={theme}>
         <Box sx={{ width: '100%' }}>
           <Grid
             container
@@ -38,7 +41,8 @@ const NoticesList = () => {
             {elements}
           </Grid>
         </Box>
-      </ThemeProvider>
+      </ThemeProvider> : <p className={styles.sorry}>Sorry, nothing was found for your request.</p>}
+      
 
       {!!totalPages && totalPages !== 1 && (
         <PaginationMy

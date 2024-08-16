@@ -9,8 +9,6 @@ const Logo = ({ color, fill }) => {
         petl
         <Icon
           className={styles.iconLogo}
-          // width={17}
-          // height={17}
           name={'icon-hearFill'}
           fillColor={fill}
         />

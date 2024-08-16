@@ -117,18 +117,22 @@ const NoticesItem = ({ item, isVariant }) => {
             Learn more
           </Button>
           {location.pathname === '/notices' && (
-            <div
-              className={styles.wrapBtnHeart}
-              style={{
-                background: isFavorite || togleBtnColor ? '#fbe7c1' : '#fff4df',
-              }}
-            >
+            <div className={styles.wrapBtnHeart}>
               <button
                 className={styles.btn}
                 type="button"
                 onClick={() => onFavorite(_id)}
               >
-                <Icon width={18} height={18} name={'icon-heart'} />
+                {isFavorite || togleBtnColor ? (
+                  <Icon
+                    width={18}
+                    height={18}
+                    name={'icon-hearFill'}
+                    fillColor="#f6b83d"
+                  />
+                ) : (
+                  <Icon width={18} height={18} name={'icon-heart'} />
+                )}
               </button>
             </div>
           )}

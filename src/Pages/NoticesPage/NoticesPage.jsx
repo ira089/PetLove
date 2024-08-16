@@ -1,22 +1,29 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import{selectSearch} from '../../redux/search/selectorSearch'
+import { selectSearch } from '../../redux/search/selectorSearch';
 import { noticesThunk } from '../../redux/notices/operationsNotices';
 import NoticesFilters from 'components/Notices/NoticesFilters';
 import NoticesList from 'components/Notices/NoticesList';
 import styles from './noticesPage.module.css';
 
-
 const NoticesPage = () => {
   const dispatch = useDispatch();
-  // const {notices} = useSelector(selectNotices);
-  const {page, query,  category, type, location, byPrice, byPopularity} = useSelector(selectSearch);
-// params.fetchSex()
 
-  // console.log(notices)
-  // console.log(page)
+  const { page, query, category, type, location, byPrice, byPopularity } =
+    useSelector(selectSearch);
+
   useEffect(() => {
-    dispatch(noticesThunk({ page, query,  category, type, location, byPrice, byPopularity }))
+    dispatch(
+      noticesThunk({
+        page,
+        query,
+        category,
+        type,
+        location,
+        byPrice,
+        byPopularity,
+      })
+    );
   }, [byPopularity, byPrice, category, dispatch, location, page, query, type]);
 
   return (

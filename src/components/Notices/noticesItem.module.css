@@ -91,7 +91,7 @@
   padding: 0 4px;
   width: 46px;
   height: 46px;
-
+  background: #fff4df;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -100,6 +100,9 @@
 .btn {
   background-color: transparent;
   border: none;
+}
+.btn:hover {
+  background-color: #fbe7c1;
 }
 
 .textOops {
@@ -113,4 +116,7 @@
 .textOops span {
   font-weight: 700;
   color: #f6b83d;
+}
+.sorry {
+  text-align: center;
 }
