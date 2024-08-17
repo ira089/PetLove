@@ -3,10 +3,10 @@ import { components } from 'react-select';
 import Icon from '../Icon/Icon';
 
 export const ClearIndicator = props => {
-  console.log(props)
+ 
   const {
     children = <Icon width={18} height={18} name="icon-cross" />,
-    clearValue,
+    handlerClearValue,
     innerProps: { ref, ...restInnerProps },
   } = props;
 
@@ -14,11 +14,8 @@ export const ClearIndicator = props => {
     <div
       {...restInnerProps}
       ref={ref}
-      onClick={evt => {
-        console.log('hello');
-        evt.stopPropagation();
-        clearValue();
-        // props.clearValue();
+      onClick={() => {
+        handlerClearValue();
       }}
     >
       <div style={{ padding: '0px 0px' }}>{children}</div>

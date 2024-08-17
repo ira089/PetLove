@@ -26,9 +26,6 @@ const NoticesFilters = () => {
   const [bySex, setBysex] = useState([]);
   const [location, setLocation] = useState([]);
   const [inputValue, setInputValue] = useState('');
-  const [selectedOption, setSelectedOption] = useState(null);
-
-  const isInputValue = Boolean(inputValue);
 
   const dispatch = useDispatch();
 
@@ -97,17 +94,17 @@ const NoticesFilters = () => {
   };
 
   const handleChangeLocation = value => {
-    console.log('qwe');
-    dispatch(addLocation(value ? value.value : ''));
-    setSelectedOption(value);
+    if (!value) {
+      dispatch(addLocation(''));
+    } else {
+      dispatch(addLocation(value.value));
+    }
   };
 
-  // const clearValue = () => {
-  //   console.log('first');
-  //   dispatch(addLocation(''));
-  //   setInputValue('');
-  //   setSelectedOption(null);
-  // };
+  const handleClearValue = () => {
+    dispatch(addLocation(''));
+    setInputValue('');
+  };
 
   const handleInputChange = value => {
     setInputValue(value);
@@ -165,20 +162,14 @@ const NoticesFilters = () => {
           closeMenuOnSelect={false}
           components={{
             DropdownIndicator: props => <DropdownIndicator {...props} />,
-            ClearIndicator: props =>
-               (<ClearIndicator {...props}  />
-                // <ClearIndicator {...props} clearValue={clearValue} />
-              ),
-            // ClearIndicator: props =>
-            //   isInputValue && (
-            //     <ClearIndicator {...props} clearValue={clearValue} />
-            //   ),
+            ClearIndicator: props => (
+              <ClearIndicator {...props} handlerClearValue={handleClearValue} />
+            ),
             Option: CustomOption,
           }}
           onChange={handleChangeLocation}
           onInputChange={handleInputChange}
           inputValue={inputValue}
-          value={selectedOption}
           styles={customStyles}
           isClearable
           filterOption={customFilter}
