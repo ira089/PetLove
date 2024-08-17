@@ -14,7 +14,7 @@ const customStyles = {
     lineHeight: '129%',
     letterSpacing: '-0.03em',
     justifyContent: 'space-between',
-    minWidth: '227px',
+    minWidth: '190px',
     borderColor: state.isFocused ? '#f6b83d' : 'transparent',
     boxShadow: state.isFocused ? '#f6b83d' : '0 0 0 1px transparent',
 
