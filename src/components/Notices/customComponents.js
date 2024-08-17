@@ -1,48 +1,32 @@
 import React from 'react';
-import { components} from 'react-select';
+import { components } from 'react-select';
 import Icon from '../Icon/Icon';
 
-// const CustomClearIcon = () => <Icon width={18} height={18} name={'icon-cross'} />;
-// export const ClearIndicator = (
-//     props
-//   ) => {
-//     const {
-//       children =  <Icon width={18} height={18} name={'icon-cross'} />,
-//       // getStyles,
-//       // innerProps: { ref, ...restInnerProps },
-//     } = props;
-//     return (
-//       <div
-//       // {...restInnerProps}
-//       // ref={ref}
-//       // style={getStyles('clearIndicator', props)}
-//     >
-//       <div style={{ padding: '0px 5px' }}>{children}</div>
-//     </div>
-//     );
-//   };
+export const ClearIndicator = props => {
+  console.log(props)
+  const {
+    children = <Icon width={18} height={18} name="icon-cross" />,
+    clearValue,
+    innerProps: { ref, ...restInnerProps },
+  } = props;
 
-//   export const ClearIndicatorStyles = (
-//     base,
-//     state
-//   ) => ({
-//     ...base,
-//     cursor: 'pointer',
-//     fillColor: state.isFocused ? 'blue' : 'black',
-//   });
+  return (
+    <div
+      {...restInnerProps}
+      ref={ref}
+      onClick={evt => {
+        console.log('hello');
+        evt.stopPropagation();
+        clearValue();
+        // props.clearValue();
+      }}
+    >
+      <div style={{ padding: '0px 0px' }}>{children}</div>
+    </div>
+  );
+};
 
-// export const DropdownIndicator = props =>
-//   components.DropdownIndicator && (
-//     <components.DropdownIndicator {...props}>
-//       <div onClick={props.handleChangeLocation}>
-//         <Icon width={18} height={18} name={'icon-loofah'} />
-//       </div>
-//     </components.DropdownIndicator>
-//   );
-
-export const DropdownIndicator = (
-  props
-) => {
+export const DropdownIndicator = props => {
   return (
     <components.DropdownIndicator {...props}>
       <Icon width={18} height={18} name={'icon-loofah'} />
@@ -50,22 +34,24 @@ export const DropdownIndicator = (
   );
 };
 
-// export const ClearIndicator = props =>
-//   components.ClearIndicator && (
-//     <components.ClearIndicator {...props}>
-//       <div onClick={props.clearValue}>
-//         <Icon width={18} height={18} name={'icon-cross'} />
-//       </div>
-//     </components.ClearIndicator>
-//   );
+export const CustomOption = ({ children, ...props }) => {
+  const { inputValue } = props.selectProps;
+  const startIndex = children.toLowerCase().indexOf(inputValue.toLowerCase());
 
-  export const ClearIndicator = (
-    props
-  ) => {
-    return (
-      <components.ClearIndicator {...props}>
-       <Icon width={18} height={18} name={'icon-cross'} />
-      </components.ClearIndicator>
-    );
-  };
-  
+  if (startIndex === -1) {
+    return <components.Option {...props}>{children}</components.Option>;
+  }
+
+  const endIndex = startIndex + inputValue.length;
+  const beforeMatch = children.slice(0, startIndex);
+  const match = children.slice(startIndex, endIndex);
+  const afterMatch = children.slice(endIndex);
+
+  return (
+    <components.Option {...props}>
+      {beforeMatch}
+      <span style={{ color: '#262626' }}>{match}</span>
+      {afterMatch}
+    </components.Option>
+  );
+};
