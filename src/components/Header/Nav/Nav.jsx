@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
 import styles from '../heder.module.css';
 
 const Nav = ({ color, borderColor, borderColorHover }) => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
+
 
   const handleMouseEnter = index => {
     setHoveredIndex(index);
@@ -12,7 +13,7 @@ const Nav = ({ color, borderColor, borderColorHover }) => {
   const handleMouseLeave = () => {
     setHoveredIndex(null);
   };
-
+  
   return (
     <ul className={styles.navList}>
       <li
@@ -22,18 +23,20 @@ const Nav = ({ color, borderColor, borderColorHover }) => {
         onMouseLeave={handleMouseLeave}
       >
         <NavLink
+        
           style={{
             color: color,
             borderColor: hoveredIndex === '1' ? borderColorHover : borderColor,
+            
           }}
-          className={styles.navLink}
+          className={styles.navLink} 
           to="/news"
         >
           News
         </NavLink>
       </li>
       <li
-        className={styles.navItem}
+        className={styles.navItem} 
         key="2"
         onMouseEnter={() => handleMouseEnter('2')}
         onMouseLeave={handleMouseLeave}
@@ -43,7 +46,7 @@ const Nav = ({ color, borderColor, borderColorHover }) => {
             color: color,
             borderColor: hoveredIndex === '2' ? borderColorHover : borderColor,
           }}
-          className={styles.navLink}
+          className={styles.navLink} 
           to="/notices"
         >
           Find pet

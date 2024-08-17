@@ -89,8 +89,9 @@
   justify-content: center;
   align-items: center;
 }
-.lnavLink:global(.active) {
- border-color: #f6b83d ;
+
+.navLink:global(.active) {
+  color: #f6b83d ;
 }
 
 .authNav {
