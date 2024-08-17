@@ -13,7 +13,7 @@ import {
 import { optionObj, optionObjLoc } from '../../helpers/functions';
 import SearchField from 'components/SearchField/SearchField';
 import customStyles from './customStyles';
-import { DropdownIndicator, ClearIndicator } from './customComponents';
+import { DropdownIndicator, ClearIndicator, ClearIndicatorStyles } from './customComponents';
 import styles from './noticesFilters.module.css';
 
 const NoticesFilters = () => {
@@ -95,14 +95,14 @@ const NoticesFilters = () => {
     setSelectedOption(value);
   };
 
-  const clearValue = () => {
-    dispatch(addLocation(''));
-    selectedOption('');
-  };
+  // const clearValue = () => {
+  //   dispatch(addLocation(''));
+  //   selectedOption('');
+  // };
 
-  const handleInputChange = value => {
-    setInputValue(value);
-  };
+  // const handleInputChange = value => {
+  //   setInputValue(value);
+  // };
 
   const customFilter = (option, inputValue) => {
     return option.label.toLowerCase().includes(inputValue.toLowerCase());
@@ -151,20 +151,30 @@ const NoticesFilters = () => {
           styles={customStyles}
         />
         <Select
+       placeholder='Location'
           options={location}
+          // isSearchable={false}
+        //   onBlur={}
+        //   onFocus={}
+        //  onMenuClose={}
+        closeMenuOnSelect={false}
+        components={{ DropdownIndicator: props => (<DropdownIndicator {...props}/>),
+        ClearIndicator: props => (<ClearIndicator {...props}/>)
+      }}
+       defaultInputValue='Location'
           onChange={handleChangeLocation}
-          onInputChange={handleInputChange}
+          // onInputChange={handleInputChange}
           inputValue={inputValue}
           value={selectedOption}
-          styles={customStyles}
-          components={{
-            DropdownIndicator,
-            ClearIndicator: props => (
-              <ClearIndicator {...props} clearValue={clearValue} />
-            ),
-          }}
+          styles={{customStyles, clearIndicator: ClearIndicatorStyles }}
+          // components={{
+          //   DropdownIndicator,
+          //   ClearIndicator: props => (
+          //     <ClearIndicator {...props} clearValue={clearValue} />
+          //   ),
+          // }}
           isClearable
-          placeholder={'Location'}
+          
           filterOption={customFilter}
         />
       </div>
