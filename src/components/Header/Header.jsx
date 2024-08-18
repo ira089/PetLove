@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink, useLocation } from 'react-router-dom';
 import { selectIsLoggedIn } from '../../redux/auth/selectorsAuth';
@@ -16,6 +16,17 @@ const Header = ({ color, fill, background, borderColor, borderColorHover }) => {
   const isOpen = () => setOpen(!open);
   const location = useLocation();
   const isLogin = useSelector(selectIsLoggedIn);
+
+  const handleResize = () => {
+    if (window.innerWidth >= 1280) {
+      setOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <header className={styles.wrapHeader}>
