@@ -53,20 +53,4 @@ export const CustomOption = ({ children, ...props }) => {
   );
 };
 
-export const Control = ({ children, ...props }) => {
 
-  
-  const {  onEmojiClick } = props.selectProps;
-  
-  const style = { cursor: 'pointer', paddingLeft: '10px' };
-
-  return (
-    <components.Control {...props}>
-      
-      {children}
-      <span onMouseDown={onEmojiClick} style={style}>
-      <Icon width={18} height={18} name="icon-cross" />
-      </span>
-    </components.Control>
-  );
-};

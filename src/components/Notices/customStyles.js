@@ -18,18 +18,7 @@ const customStyles = {
     borderColor: state.isFocused ? '#f6b83d' : 'transparent',
     boxShadow: state.isFocused ? '#f6b83d' : '0 0 0 1px transparent',
 
-    //   '&:focus': {
-    //     borderColor: '#f6b83d',
-    //     boxShadow: '0 0 0 1px #f6b83d'
-    //   },
-    //   '&:hover': {
-    //     borderColor: '#f6b83d',
-    //     boxShadow: '0 0 0 1px #f6b83d'
-    //   },
-    //   '&:active': {
-    //     borderColor: '#f6b83d',
-    //      boxShadow: '0 0 0 1px #f6b83d'
-    //   }
+    
   }),
   placeholder: provided => ({
     ...provided,

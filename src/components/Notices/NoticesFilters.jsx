@@ -16,7 +16,7 @@ import customStyles from './customStyles';
 import {
   DropdownIndicator,
   ClearIndicator,
-  CustomOption, Control
+  CustomOption
 } from './customComponents';
 import styles from './noticesFilters.module.css';
 
@@ -26,7 +26,6 @@ const NoticesFilters = () => {
   const [bySex, setBysex] = useState([]);
   const [location, setLocation] = useState([]);
   const [inputValue, setInputValue] = useState('');
-  console.log(inputValue)
 
   const dispatch = useDispatch();
 
@@ -102,17 +101,11 @@ const NoticesFilters = () => {
     }
   };
 
-  // const handleClearValue = () => {
-  //   dispatch(addLocation(''));
-  //   setInputValue('');
-  // };
-  const onClick = (e) => {
-    console.log('first')
+  const handleClearValue = () => {
     dispatch(addLocation(''));
     setInputValue('');
-    e.preventDefault();
-    e.stopPropagation();
   };
+  
   const handleInputChange = value => {
     setInputValue(value);
   };
@@ -166,26 +159,21 @@ const NoticesFilters = () => {
           styles={customStyles}
         />
         <Select
-        // eslint-disable-next-line no-undef
-        // {...props}
-        onEmojiClick={onClick}
-      components={{ Control: props => <Control {...props} />}}
-      // isSearchable
           placeholder="Location"
           options={location}
           closeMenuOnSelect={false}
-          // components={{
-          //   DropdownIndicator: props => <DropdownIndicator {...props} />,
-          //   ClearIndicator: props => (
-          //     <ClearIndicator {...props} handlerClearValue={handleClearValue} />
-          //   ),
-          //   Option: CustomOption,
-          // }}
+          components={{
+            DropdownIndicator: props => <DropdownIndicator {...props} />,
+            ClearIndicator: props => (
+              <ClearIndicator {...props} handlerClearValue={handleClearValue} />
+            ),
+            Option: CustomOption,
+          }}
           onChange={handleChangeLocation}
           onInputChange={handleInputChange}
           inputValue={inputValue}
           styles={customStyles}
-          // isClearable
+          isClearable
           filterOption={customFilter}
         />
       </div>

@@ -103,6 +103,12 @@
 }
 .btn:hover {
   background-color: #fbe7c1;
+  border-radius: 100%;
+  width: 46px;
+  height: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .textOops {

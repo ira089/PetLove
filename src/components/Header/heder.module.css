@@ -15,7 +15,7 @@
 }
 
 .link:hover {
-  background: #fbe7c1;
+  background: #fbe7c1 ;
 }
 
 .rightMenu {
@@ -153,7 +153,7 @@
   text-decoration: none;
 }
 .linkLogOut:hover {
-  background: #fbe7c1;
+  background: #fbe7c1 !important;
 }
 
 .img {
