@@ -62,9 +62,17 @@
 }
 
 .btnTrach {
-  background-color: transparent;
+  background: #fff4df;
+  /* background-color: transparent; */
   border: none;
-  padding: 0;
+  /* padding: 0; */
+  border-radius: 30px;
+padding: 7px;
+width: 32px;
+height: 32px;
+}
+.btnTrach:hover {
+  background: #fbe7c1;
 }
 .wrapList {
   margin-bottom: 20px;

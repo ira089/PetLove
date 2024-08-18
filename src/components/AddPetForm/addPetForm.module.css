@@ -69,7 +69,6 @@
 .wrapInput {
   display: flex;
   flex-direction: column;
-
   gap: 10px;
 }
 
@@ -113,7 +112,6 @@
 .upload {
   border-radius: 30px;
   padding: 0 10px;
-
   height: 36px;
   background: #fff4df;
   gap: 5px;
@@ -126,6 +124,10 @@
   color: #262626;
   cursor: pointer;
 }
+.upload input:hover{
+  background: #fbe7c1;
+}
+
 
 .label {
   position: relative;
@@ -144,7 +146,6 @@
 
 .input {
   border: 1px solid rgba(38, 38, 38, 0.15);
-
   border-radius: 30px;
   padding: 9px 0 9px 10px;
   box-sizing: border-box;
@@ -160,7 +161,6 @@
 
 .inputUrl {
   border: 1px solid rgba(38, 38, 38, 0.15);
-
   border-radius: 30px;
   padding: 9px 0 9px 10px;
   box-sizing: border-box;
@@ -175,11 +175,11 @@
   color: #262626;
 }
 
-.input:focus {
+.input:focus, .inputUrl:focus {
   border: 1px solid #f6b83d;
 }
 
-.input:hover {
+.inputUrl:hover, .input:hover {
   border: 1px solid #f6b83d;
 }
 

@@ -34,3 +34,7 @@
     padding: 0;
     border: none;
 }
+.btnClose:hover {
+    border-radius: 100px;
+    background: #fff4df;
+} 

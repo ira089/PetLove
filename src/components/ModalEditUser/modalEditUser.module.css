@@ -45,6 +45,9 @@
   color: #262626;
   cursor: pointer;
 }
+.upload input:hover{
+  background: #fbe7c1;
+}
 
 .labelUrl {
   position: relative;
@@ -57,7 +60,6 @@
 
 .inputUrl {
   border: 1px solid rgba(38, 38, 38, 0.15);
-
   border-radius: 30px;
   padding: 9px 0 9px 10px;
   box-sizing: border-box;
@@ -65,6 +67,9 @@
   width: 100%;
   background: transparent;
   text-overflow: ellipsis;
+}
+.inputUrl:hover, .input:hover {
+  border: 1px solid #f6b83d;
 }
 
 .labelWrap {
@@ -86,7 +91,6 @@
 
 .input {
   border: 1px solid rgba(38, 38, 38, 0.15);
-
   border-radius: 30px;
   padding: 9px 0 9px 10px;
   box-sizing: border-box;
