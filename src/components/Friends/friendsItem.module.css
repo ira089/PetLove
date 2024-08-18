@@ -64,6 +64,6 @@
   letter-spacing: -0.02em;
   color: #262626;
 }
-a:hover {
+.text a:hover {
   color: rgb(23, 23, 158);
 }
