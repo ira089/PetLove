@@ -1,6 +1,5 @@
 .wrapFilter {
   border-radius: 30px;
-  /* height: 378px; */
   background: #ffeedf;
   padding: 20px;
   margin-bottom: 20px;
@@ -15,7 +14,6 @@
 .wrapInput {
   row-gap: 10px;
   align-items: center;
-  /* justify-content: center; */
   column-gap: 12px;
   padding-bottom: 20px;
   border-bottom: 1px solid rgba(38, 38, 38, 0.1);
@@ -41,25 +39,13 @@
   color: #262626;
 }
 
-@media (min-width: 768px) and (max-width: 1279px) {
-  .wrapFilter {
-    /* height: 280px; */
-  }
-}
-
 @media (min-width: 768px) {
-  .wrapFilter{
+  .wrapFilter {
     padding: 40px 32px;
   }
   .wrapInput {
     row-gap: 16px;
     column-gap: 16px;
     padding-bottom: 40px;
-    
-  }
-}
-@media (min-width: 1280px) {
-  .wrapFilter {
-    /* height: 216px; */
   }
 }
