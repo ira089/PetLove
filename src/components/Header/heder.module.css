@@ -159,6 +159,7 @@
   text-transform: uppercase;
   color: #f6b83d;
   text-decoration: none;
+  cursor: pointer;
 }
 .linkLogOut:hover {
   background: #fbe7c1 !important;

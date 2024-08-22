@@ -1,6 +1,6 @@
 # Pet Love
 
-This is an app about pets. You can record your pet's details, read about other people's pets, sort animals by popularity, price, location, gender, animal type, or category. You can search simply by keyword simply by keyword. You can read news about animals or see partners' contacts.
+This is an app about pets. You can record your pet's details, read about other people's pets, sort animals by popularity, price, location, animal type, or category. You can search simply by keyword. You can read news about animals or see partners' contacts.
 ***
 ### The app consists of 8 pages:
 1. Home Page - contains the title of the app and its brief description.

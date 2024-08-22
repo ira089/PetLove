@@ -3,18 +3,11 @@
     <symbol id="icon-heart" viewBox="0 0 32 32">
       <path fill="none" stroke="#f6b83d" style="stroke:var(--color1, #f6b83d)" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.667" d="M27.788 6.147a7.345 7.345 0 0 0-5.187-2.15 7.33 7.33 0 0 0-5.187 2.15L16.001 7.56l-1.413-1.413a7.333 7.333 0 0 0-10.374 0 7.333 7.333 0 0 0 0 10.374l11.787 11.787 11.787-11.787a7.345 7.345 0 0 0 2.149-5.187 7.33 7.33 0 0 0-2.149-5.187z"/>
     </symbol>
-    <symbol id="icon-calendar" viewBox="0 0 32 32">
-      <path stroke-linejoin="round" stroke-linecap="round" stroke-width="2.88" d="M25.333 5.333H6.666A2.667 2.667 0 0 0 3.999 8v18.667a2.667 2.667 0 0 0 2.667 2.667h18.667A2.667 2.667 0 0 0 28 26.667V8a2.667 2.667 0 0 0-2.667-2.667zM21.333 2.667V8M10.667 2.667V8M4 13.333h24"/>
-    </symbol>
-    <symbol id="icon-chevron-down" viewBox="0 0 32 32">
-      <path stroke-linejoin="round" stroke-linecap="round" stroke-width="3.556" d="m8 12 8 8 8-8"/>
-    </symbol>
+   
     <symbol id="icon-cross-small" viewBox="0 0 32 32">
       <path fill="none" stroke="#ef2447" style="stroke:var(--color2, #ef2447)" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.909" d="M25.333 6.667 6.666 25.334m0-18.667 18.667 18.667"/>
     </symbol>
-    <symbol id="icon-cross-smallq" viewBox="0 0 32 32">
-      <path  stroke-linejoin="round" stroke-linecap="round" stroke-width="2.909" d="M25.333 6.667 6.666 25.334m0-18.667 18.667 18.667"/>
-    </symbol>
+    
     <symbol id="icon-edit-2pen" viewBox="0 0 32 32">
       <path fill="none" stroke="#f6b83d" style="stroke:var(--color1, #f6b83d)" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.667" d="M22.667 4a3.766 3.766 0 0 1 4.109-.817 3.766 3.766 0 0 1 2.327 3.484 3.779 3.779 0 0 1-1.104 2.666l-18 18-7.333 2 2-7.333 18-18z"/>
     </symbol>
