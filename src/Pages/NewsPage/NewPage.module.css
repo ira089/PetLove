@@ -9,7 +9,7 @@
 
 .title {
   margin: 0;
-
+  margin-bottom: 20px;
   font-weight: 700;
   font-size: 28px;
   line-height: 100%;
@@ -23,6 +23,7 @@
   }
   .title {
     font-size: 54px;
+    margin: 0;
   }
   .wrapTitle {
     display: flex;
